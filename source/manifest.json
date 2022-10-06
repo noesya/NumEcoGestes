@@ -6,4 +6,5 @@
   "action": {
     "default_popup": "index.html",
     "default_con": "icon.png"
+  }
 }
