@@ -1,17 +1,33 @@
 #!/bin/bash
 
-if [ ! -d "build" ]
+if [ ! -d "./build" ]
 then
   echo "Création du dossier \"build\""
   mkdir build
 fi
 
-if [ -f "build/chrome.zip" ]
+if [ -f "./build/chrome.zip" ]
 then
   echo "Suppression de l'ancien fichier ZIP pour Google Chrome"
-  rm -rf build/chrome.zip
+  rm -rf ./build/chrome.zip
 fi
 
 echo "Création du fichier ZIP pour Google Chrome"
-zip -r build/chrome.zip ./source/*
+
+# Copying to random tmp directory
+uuid=$(uuidgen)
+cp -r ./source ./tmp/$uuid
+
+# Removing Manifest V2
+rm ./tmp/$uuid/manifest.json
+# Renaming Manifest V3
+mv ./tmp/$uuid/manifest.v3.json ./tmp/$uuid/manifest.json
+
+# Building ZIP file
+cd tmp/$uuid
+zip -r ../../build/chrome.zip *
+cd ../..
+# Cleaning tmp directory
+rm -rf ./tmp/$uuid
+
 echo "Terminé !"

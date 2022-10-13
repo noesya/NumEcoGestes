@@ -1,9 +1,14 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{50e1cbb4-563d-457c-8041-0e8e238607ea}"
+    }
+  },
   "name": "Écogestes",
   "description": "DINUM",
   "version": "1.0",
-  "action": {
+  "browser_action": {
     "default_popup": "index.html",
     "default_con": "icon.png"
   }
