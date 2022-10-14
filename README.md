@@ -18,3 +18,5 @@ https://chrome.google.com/webstore/devconsole/98444501-20ce-4092-847e-357539a159
 ## Edge
 
 ## Firefox
+
+https://addons.mozilla.org/fr/firefox/addon/%C3%A9cogestes/
