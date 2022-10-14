@@ -1,15 +1,27 @@
 # Ecogestes
 
+## Setup
+
+```bash
+npm install -g web-ext
+```
+
 ## Build
 
-Pour compiler l'extension pour Chrome/Edge
+Pour compiler l'ensemble:
+```bash
+scripts/build.sh
+```
 
-- `scripts/build-chrome.sh`
+Pour compiler l'extension pour Chrome/Edge:
+```bash
+scripts/build-chrome.sh
+```
 
-Pour compiler l'extension pour Firefox
-
-- Installer `web-ext` si ce n'est pas déjà fait : `npm install -g web-ext`
-- `scripts/build-firefox.sh`
+Pour compiler l'extension pour Firefox:
+```bash
+scripts/build-firefox.sh
+```
 
 ## Chrome
 

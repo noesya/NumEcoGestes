@@ -13,7 +13,9 @@ uuid=$(uuidgen)
 cp -r ./source ./tmp/$uuid
 
 # Removing Manifest V3
-rm ./tmp/$uuid/manifest.v3.json
+rm ./tmp/$uuid/manifest.json
+# Renaming Manifest V2
+mv ./tmp/$uuid/manifest.v2.json ./tmp/$uuid/manifest.json
 
 # Building ZIP file
 web-ext build --source-dir=./tmp/$uuid --artifacts-dir=./build --filename=firefox.zip

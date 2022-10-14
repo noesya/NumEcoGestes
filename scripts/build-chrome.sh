@@ -19,9 +19,7 @@ uuid=$(uuidgen)
 cp -r ./source ./tmp/$uuid
 
 # Removing Manifest V2
-rm ./tmp/$uuid/manifest.json
-# Renaming Manifest V3
-mv ./tmp/$uuid/manifest.v3.json ./tmp/$uuid/manifest.json
+rm ./tmp/$uuid/manifest.v2.json
 
 # Building ZIP file
 cd tmp/$uuid
