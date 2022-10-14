@@ -8,11 +8,11 @@ fi
 
 if [ -f "./build/chrome.zip" ]
 then
-  echo "Suppression de l'ancien fichier ZIP pour Google Chrome"
+  echo "Suppression de l'ancien fichier ZIP pour navigateurs Chromium-based (Chrome et Edge)"
   rm -rf ./build/chrome.zip
 fi
 
-echo "Création du fichier ZIP pour Google Chrome"
+echo "Création du fichier ZIP pour navigateurs Chromium-based (Chrome et Edge)"
 
 # Copying to random tmp directory
 uuid=$(uuidgen)
