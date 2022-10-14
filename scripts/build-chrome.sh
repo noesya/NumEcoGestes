@@ -16,16 +16,16 @@ echo "Création du fichier ZIP pour navigateurs Chromium-based (Chrome et Edge)"
 
 # Copying to random tmp directory
 uuid=$(uuidgen)
-cp -r ./source ./tmp/$uuid
+cp -r ./source ./scripts/tmp/$uuid
 
 # Removing Manifest V2
-rm ./tmp/$uuid/manifest.v2.json
+rm ./scripts/tmp/$uuid/manifest.v2.json
 
 # Building ZIP file
-cd tmp/$uuid
-zip -r ../../build/chrome.zip *
-cd ../..
+cd scripts/tmp/$uuid
+zip -r ../../../build/chrome.zip *
+cd ../../..
 # Cleaning tmp directory
-rm -rf ./tmp/$uuid
+rm -rf ./scripts/tmp/$uuid
 
 echo "Terminé !"

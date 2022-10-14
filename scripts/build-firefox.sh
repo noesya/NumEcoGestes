@@ -10,16 +10,16 @@ echo "Création du fichier ZIP pour Mozilla Firefox"
 
 # Copying to random tmp directory
 uuid=$(uuidgen)
-cp -r ./source ./tmp/$uuid
+cp -r ./source ./scripts/tmp/$uuid
 
 # Removing Manifest V3
-rm ./tmp/$uuid/manifest.json
+rm ./scripts/tmp/$uuid/manifest.json
 # Renaming Manifest V2
-mv ./tmp/$uuid/manifest.v2.json ./tmp/$uuid/manifest.json
+mv ./scripts/tmp/$uuid/manifest.v2.json ./scripts/tmp/$uuid/manifest.json
 
 # Building ZIP file
-web-ext build --source-dir=./tmp/$uuid --artifacts-dir=./build --filename=firefox.zip
+web-ext build --source-dir=./scripts/tmp/$uuid --artifacts-dir=./build --filename=firefox.zip
 # Cleaning tmp directory
-rm -rf ./tmp/$uuid
+rm -rf ./scripts/tmp/$uuid
 
 echo "Terminé !"
