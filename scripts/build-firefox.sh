@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ ! command -v web-ext &> /dev/null ]
+then
+    echo "web-ext n'est pas installé. Veuillez l'installer avec la commande suivante :"
+    echo "  $ npm install -g web-ext"
+    exit
+fi
+
 if [ -f "./build/firefox.zip" ]
 then
   echo "Suppression de l'ancien fichier ZIP pour Mozilla Firefox"

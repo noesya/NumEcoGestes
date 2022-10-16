@@ -3,6 +3,15 @@
   "name": "Écogestes",
   "description": "DINUM",
   "version": "1.0",
+  "permissions": [
+    "background",
+    "storage",
+    "notifications",
+    "alarms"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
     "default_popup": "index.html",
     "default_icon": "icon.png"
