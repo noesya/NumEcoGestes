@@ -10,7 +10,12 @@
       <h1 class="fr-mt-1w">Écogestes</h1>
       <ul id="signals-list"></ul>
       <h2 class="fr-mt-2w fr-mb-1v">Débogage</h2>
-      <button class="fr-btn fr-my-2w" id="debug-notification-btn">Notification</button>
+      <label class="fr-label" for="delay-input">Délai (en secondes)</label>
+      <input class="fr-input" type="number" id="delay-input" min="0" step="1" value="0">
+      <div class="fr-my-2w">
+        <button class="fr-btn" id="debug-notification-btn">Notification</button>
+        <button class="fr-btn" id="debug-banner-btn">Bannière</button>
+      </div>
     </main>
     <script type="application/javascript" src="assets/js/dsfr.nomodule.min.js"></script>
     <script type="application/javascript" src="assets/js/action.js"></script>

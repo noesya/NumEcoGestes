@@ -11,8 +11,10 @@
   "permissions": [
     "background",
     "storage",
+    "unlimitedStorage",
     "notifications",
-    "alarms"
+    "alarms",
+    "tabs"
   ],
   "background": {
     "scripts": [
@@ -24,6 +26,19 @@
     "default_popup": "index.html",
     "default_icon": "icon.png"
   },
+  "content_scripts": [
+    {
+      "js": [
+        "content.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file:///*"
+      ],
+      "run_at": "document_end"
+    }
+  ],
   "icons": {
     "128": "icon.png"
   }
