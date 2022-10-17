@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Réduire autant que possible la température du chauffage",
+    "description": "Baisser la température de 1°C, c’est 7 % de consommation d’énergie en moins.<br>La réduction peut varier en fonction de l’occupation et de la température extérieure : 19°C pour les pièces occupées, 16°C hors période d’occupation, 8°C si les lieux sont inoccupés plus de deux jours.",
+    "source": "",
+    "category": "Economie"
+  },
+  {
+    "id": 2,
+    "title": "Arrêter la charge des appareils électriques sauf impératif",
+    "description": "Voiture, smartphone, ordinateur portable, vélo, trotinette, batteries externes, écouteurs...",
+    "source": "",
+    "category": "Décalage de charge"
+  },
+  {
+    "id": 3,
+    "title": "Couper la vidéo lors des conférences à distance",
+    "description": "La vidéo représente un surplus de bande passante de XX %",
+    "source": "ademe / greenIT / sources fournisseurs",
+    "category": "Economie"
+  }
+]
