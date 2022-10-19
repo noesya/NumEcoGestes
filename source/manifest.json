@@ -9,8 +9,16 @@
     "unlimitedStorage",
     "notifications",
     "alarms",
-    "tabs"
+    "tabs",
+    "activeTab"
   ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_security_policy": {
+    "extension_page": "script-src 'self' ; object-src 'self'"
+  },
   "background": {
     "service_worker": "background.js"
   },
@@ -29,6 +37,16 @@
         "file:///*"
       ],
       "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content/banner.html"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
     }
   ],
   "icons": {

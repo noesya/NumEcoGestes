@@ -1,0 +1,22 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  background: white;
+  border-bottom: 2px solid red;
+  color: red;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+
+p {
+  margin: 0;
+}

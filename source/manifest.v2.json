@@ -14,7 +14,8 @@
     "unlimitedStorage",
     "notifications",
     "alarms",
-    "tabs"
+    "tabs",
+    "activeTab"
   ],
   "background": {
     "scripts": [
