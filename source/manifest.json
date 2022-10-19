@@ -9,12 +9,7 @@
     "unlimitedStorage",
     "notifications",
     "alarms",
-    "tabs",
     "activeTab"
-  ],
-  "host_permissions": [
-    "http://*/*",
-    "https://*/*"
   ],
   "content_security_policy": {
     "extension_page": "script-src 'self' ; object-src 'self'"
