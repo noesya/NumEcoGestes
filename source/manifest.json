@@ -6,7 +6,6 @@
   "permissions": [
     "background",
     "storage",
-    "unlimitedStorage",
     "notifications",
     "alarms",
     "activeTab"
