@@ -1,5 +1,5 @@
 const getData = function () {
-    fetch("https://raw.githubusercontent.com/noesya/ecogestes-mirror/main/file/ecowatt.json").then(function (res) {
+    fetch("https://ecoresponsable.numerique.gouv.fr/api/ecowatt/ecowatt.json").then(function (res) {
         return res.json();
     }).then(function (signals) {
         chrome.storage.local.set({ signals });
