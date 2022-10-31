@@ -8,11 +8,11 @@ fi
 
 if [ -f "./build/chrome.zip" ]
 then
-  echo "Suppression de l'ancien fichier ZIP pour Chrome"
-  rm -rf ./build/chrome.zip
+  echo "Suppression de l'ancien fichier ZIP pour Edge"
+  rm -rf ./build/edge.zip
 fi
 
-echo "Création du fichier ZIP pour Chrome"
+echo "Création du fichier ZIP pour Edge"
 
 # Copying to random tmp directory
 uuid=$(uuidgen)
@@ -23,7 +23,7 @@ rm ./scripts/tmp/$uuid/manifest.v2.json
 
 # Building ZIP file
 cd scripts/tmp/$uuid
-zip -r ../../../build/chrome.zip *
+zip -r ../../../build/edge.zip *
 cd ../../..
 # Cleaning tmp directory
 rm -rf ./scripts/tmp/$uuid
