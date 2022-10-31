@@ -3,21 +3,135 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/css/dsfr.main.min.css">
+    <link rel="stylesheet" href="assets/css/utility/icons/icons-buildings.min.css">
+    <link rel="stylesheet" href="assets/css/utility/icons/icons-system.min.css">
+    <link rel="stylesheet" href="assets/css/utility/icons/icons-custom.css">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-    <main role="main" id="content" class="fr-container">
-      <h1 class="fr-mt-1w">Écogestes</h1>
-      <ul id="signals-list"></ul>
-      <h2 class="fr-mt-2w fr-mb-1v">Débogage</h2>
-      <label class="fr-label" for="delay-input">Délai (en secondes)</label>
-      <input class="fr-input" type="number" id="delay-input" min="0" step="1" value="0">
-      <div class="fr-my-2w">
-        <button class="fr-btn" id="debug-notification-btn">Notification</button>
-        <button class="fr-btn" id="debug-banner-btn">Bannière</button>
-      </div>
-    </main>
+    <div class="fr-container fr-pt-3w">
+      <header role="banner" class="fr-header fr-mb-3w">
+        <div class="fr-header__body">
+          <div class="fr-container">
+            <div class="fr-header__body-row">
+              <div class="fr-header__brand fr-enlarge-link">
+                <div class="fr-header__brand-top">
+                  <div class="fr-header__logo">
+                    <img class="fr-responsive-img" src="icon.png" alt="NumÉcoGestes">
+                  </div>
+                  <div class="fr-header__navbar">
+                    <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-499" aria-haspopup="menu" id="button-500" title="Menu">
+                      Menu
+                    </button>
+                  </div>
+                </div>
+                <div class="fr-header__service">
+                  <a href="/index.html" title="Accueil - NumÉcoGestes">
+                    <p class="fr-header__service-title">NumÉcoGestes</p>
+                  </a>
+                  <p class="fr-header__service-tagline">Une extension proposée par la mission interministérielle<br>numérique écoresponsable</p>
+                </div>
+              </div>
+              <div class="fr-header__tools">
+                <div class="fr-header__tools-links">
+                  <ul class="fr-btns-group">
+                    <li>
+                      <a class="fr-btn fr-icon-home-4-line" href="/index.html">
+                        Accueil
+                      </a>
+                    </li>
+                    <li>
+                      <a class="fr-btn fr-icon-apps-2-line" href="/index.html#menu">
+                        Menu
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fr-header__menu fr-modal" id="modal-499" aria-labelledby="button-500">
+          <div class="fr-container">
+            <button class="fr-btn--close fr-btn" aria-controls="modal-499" title="Fermer">
+              Fermer
+            </button>
+            <div class="fr-header__menu-links">
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <nav role="navigation" class="fr-breadcrumb" aria-label="vous êtes ici :">
+        <button class="fr-breadcrumb__button" aria-expanded="false" aria-controls="breadcrumb-1">Voir le fil d’Ariane</button>
+        <div class="fr-collapse" id="breadcrumb-1">
+          <ol class="fr-breadcrumb__list">
+            <li>
+              <a class="fr-breadcrumb__link" href="/index.html#menu">Menu</a>
+            </li>
+            <li>
+              <a class="fr-breadcrumb__link" aria-current="page">Accueil météo</a>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <main role="main" id="content">
+        <div class="fr-grid-row">
+          <div class="fr-col">
+            <p class="fr-mb-0">Date</p>
+            <p>31.10.2022</p>
+          </div>
+          <div class="fr-col">
+            <p class="fr-mb-0">Heure</p>
+            <p>11:44</p>
+          </div>
+          <div class="fr-col">
+            <p class="fr-mb-0">Mon score</p>
+            <p>245</p>
+          </div>
+          <div class="fr-col">
+            <p class="fr-mb-0">Mes badges</p>
+            <div>
+              <img src="assets/images/badges/badge1.png" alt="Badge Novice">
+              <img src="assets/images/badges/badge1.png" alt="Badge Novice">
+              <img src="assets/images/badges/badge1.png" alt="Badge Novice">
+              <img src="assets/images/badges/badge1.png" alt="Badge Novice">
+            </div>
+          </div>
+        </div>
+
+        <p>Alertes prévues aujourd'hui</p>
+
+        <div class="fr-grid-row fr-grid-row--gutters fr-mb-1w">
+          <div class="fr-col">
+            <div class="fr-alert fr-alert--error">
+              <p>Alerte(s) rouge(s) : coupures inévitables si la consommation n’est pas réduite.</p>
+            </div>
+          </div>
+          <div class="fr-col">
+            <div class="fr-alert fr-alert--warning">
+              <p>Alerte(s) orange(s) : la réduction et le décalage des consommations d’énergie sont nécessaires.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fr-grid-row daysplit" id="numecogestes-daysplit">
+        </div>
+
+        <hr>
+
+        <h2 class="fr-mt-2w fr-mb-1v">Débogage</h2>
+        <label class="fr-label" for="delay-input">Délai (en secondes)</label>
+        <input class="fr-input" type="number" id="delay-input" min="0" step="1" value="0">
+        <div class="fr-my-2w">
+          <button class="fr-btn" id="debug-notification-btn">Notification</button>
+          <button class="fr-btn" id="debug-banner-btn">Bannière</button>
+        </div>
+      </main>
+    </div>
     <script type="application/javascript" src="assets/js/dsfr.nomodule.min.js"></script>
-    <script type="application/javascript" src="assets/js/action.js"></script>
+    <script type="application/javascript" src="assets/js/action/daysplit.js"></script>
+    <script type="application/javascript" src="assets/js/action/debug.js"></script>
   </body>
 </html>

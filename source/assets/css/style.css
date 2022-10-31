@@ -1,4 +1,35 @@
 body {
-  min-width: 400px;
-  min-height: 300px;
+    min-width: 400px;
+    min-height: 300px;
+}
+
+.fr-header__logo img {
+    max-width: 64px;
+    vertical-align: middle;
+}
+
+.daysplit {
+    margin: -0.05rem;
+}
+
+.daysplit__item {
+    padding: 0 0.05rem;
+}
+
+.daysplit__item__square {
+    background: #CACAFB;
+    height: 24px;
+    width: 100%;
+}
+
+.daysplit__item__square--high {
+    background: #6A6AF4;
+}
+
+.daysplit__item__square--warning {
+    background: #F69051;
+}
+
+.daysplit__item__square--alert {
+    background: #F93F42;
 }
