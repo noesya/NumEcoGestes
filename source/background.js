@@ -6,6 +6,18 @@ const getData = function () {
     });
 };
 
+const initScore = function () {
+    var currentDate = new Date(),
+        year = currentDate.getFullYear(),
+        month = currentDate.getMonth(),
+        scoresData;
+
+    scoresData[year] = {};
+    scoresData[year][month] = 0;
+
+    chrome.storage.local.set({ scores: scoresData });
+};
+
 chrome.alarms.onAlarm.addListener(function (alarm) {
     if (alarm.name === "ecogestes-data") {
         getData();
@@ -15,6 +27,7 @@ chrome.alarms.onAlarm.addListener(function (alarm) {
 chrome.runtime.onInstalled.addListener(function () {
     chrome.alarms.create("ecogestes-data", { periodInMinutes: 60 });
     getData();
+    initScore();
 });
 
 chrome.notifications.onClicked.addListener(function (notificationId) {

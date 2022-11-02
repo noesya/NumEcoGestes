@@ -1,4 +1,4 @@
-body {
+html, body {
     min-width: 400px;
     min-height: 300px;
 }
@@ -6,6 +6,11 @@ body {
 .fr-header__logo img {
     max-width: 64px;
     vertical-align: middle;
+}
+
+.home__highlight__value {
+    font-size: 3rem;
+    line-height: 3.5rem;
 }
 
 .daysplit {
@@ -32,4 +37,29 @@ body {
 
 .daysplit__item__square--alert {
     background: #F93F42;
+}
+
+.daysplit__legend {
+    display: flex;
+    font-size: 0.85rem;
+    margin: 0 -1rem 1rem;
+}
+
+.daysplit__legend__item {
+    margin: 0 1rem;
+}
+
+.daysplit__legend__square {
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    vertical-align: middle;
+}
+
+.daysplit__legend__square--regular {
+    background: #CACAFB;
+}
+
+.daysplit__legend__square--high {
+    background: #6A6AF4;
 }
