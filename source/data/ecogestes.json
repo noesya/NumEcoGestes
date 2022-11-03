@@ -1,5 +1,5 @@
 {
-  "temperature-chauffage": {
+  "chauffage": {
     "title": "Réduire autant que possible la température du chauffage",
     "thanks": "Merci pour votre contribution, chaque geste compte !",
     "description": "1 °C en moins, c’est 7 % de consommation d’énergie économisée. Dans l'idéal : 19 °C pour les pièces occupées sinon 16°C, et 8 °C si les lieux sont inoccupés plus de deux jours.",
@@ -10,11 +10,83 @@
   },
   "ecrans": {
     "title": "Eteindre tous les écrans (TV, moniteur secondaire) non-indispensables",
-    "description": "La consommation moyenne d'une TV oscille entre 100kWh/an (TV LED haute définition) et plus de 400kWh/an (TV plasma). La définition joue également sur la consommation : selon les estimations, une TV 4K consomme 30% à 50% en plus qu'une TV HD.",
     "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "La consommation moyenne d'une TV oscille entre 100kWh/an (TV LED haute définition) et plus de 400kWh/an (TV plasma). La définition joue également sur la consommation : selon les estimations, une TV 4K consomme 30% à 50% en plus qu'une TV HD.",
     "sources": "ADEME",
     "tag": "j-eteins",
     "points": 70,
     "credit": "John Smit"
+  },
+  "lumieres": {
+    "title": "Eteindre les lumières non-indispensables",
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "C'est pas Versailles ici ! Plutôt que d’installer un éclairage unique de forte intensité, privilégiez les petites sources d’éclairage bien ciblées et qui consomment moins. Privilégiez des lampes qui consomment peu d’électricité et durent longtemps comme les LED (jusqu'à 40000h) ou les fluocompactes (LFC, jusqu'à 8000h).",
+    "sources": "Déclics",
+    "tag": "j-eteins",
+    "points": 70,
+    "credit": "Isabella and Zsa Fischer"
+  },
+  "videoconf": {
+    "title": "Couper la vidéo lors des conférences à distance",
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "Désactiver la vidéo lors d'une visioconférence permet d'économiser en moyenne 53% d'énergie par minute ou encore de consommer 91% de données en moins (la réduction peut varier en fonction de l'outil utilisé).",
+    "sources": "Greenspector",
+    "tag": "je-baisse",
+    "points": 50,
+    "credit": "Christin Hume"
+  },
+  "electromenager": {
+    "title": "Décaler l'utilisation des appareils électroménager",
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "Le sèche linge, le lave vaisselle et la machine à laver sont les appareils électroménagers qui consomment le plus d'électricité dans leur usage au quotidien.",
+    "sources": "Ecowatt, Déclics",
+    "tag": "je-decale",
+    "points": 30,
+    "credit": "rawpixel.com"
+  },
+  "chargement": {
+    "title": "Décaler le chargement des appareils pouvant fonctionner sur batterie sauf impératif",
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "Concerne surtout les véhicules, dont la demande en puissance est la plus conséquente. D'après les chiffres de Selectra, si 20000 voitures électriques sont rechargées en même temps",
+    "sources": "ADEME / Ecowatt",
+    "tag": "je-decale",
+    "points": 30,
+    "credit": "CHUTTERSNAP"
+  },
+  "box": {
+    "title": "Programmer la box internet ou l'éteindre lors des périodes d'inactivités",
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "Une box consomme en moyenne de 150 à 300 kWh par an (un peu plus qu'un lave-linge). Pour économiser, débranchez votre box quand vous n’en avez pas besoin, ou branchez la sur une prise programmable.",
+    "sources": "ADEME",
+    "tag": "j-eteins",
+    "points": 70,
+    "credit": "Compare Fibre"
+  },
+  "veille": {
+    "title": "Eteindre les appareils qui se trouvent en mode veille",
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "Allumés ou en veille, les appareils consomment de l'électricité même s'ils ne sont pas utilisés. La consommation des veilles a connu une augmentation de 30 % ces dix dernières années. Elle peut atteindre 300 à 500 kWh par an et par logement, tous équipements confondus.",
+    "sources": "ADEME",
+    "tag": "j-eteins",
+    "points": 70,
+    "credit": "Isaac Li Shung Tan"
+  },
+  "teletravail": {
+    "title": "Favoriser le télétravail pour éviter les déplacements",
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "",
+    "sources": "ADEME",
+    "tag": "je-baisse",
+    "points": 50,
+    "credit": "rawpixel.com"
+  },
+  "telephone": {
+    "title": "Priviliégier les appels téléphoniques plutôt que les visioconférences",
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "",
+    "sources": "ADEME, Shift Project",
+    "tag": "je-baisse",
+    "points": 50,
+    "credit": "Berkeley Communications"
   }
 }
