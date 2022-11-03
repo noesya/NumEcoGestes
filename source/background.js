@@ -30,6 +30,10 @@ chrome.runtime.onInstalled.addListener(function () {
     // initScore();
 });
 
+(chrome.action || chrome.browserAction).onClicked.addListener(() => {
+    chrome.tabs.create({ url: "index.html" });
+});
+
 chrome.notifications.onClicked.addListener(function (notificationId) {
     if (notificationId === "ECOGESTES_DEBUG_NOTIF") {
         chrome.notifications.clear("ECOGESTES_DEBUG_NOTIF");
