@@ -1,23 +1,20 @@
-[
-  {
-    "id": "temperature-chauffage",
+{
+  "temperature-chauffage": {
     "title": "Réduire autant que possible la température du chauffage",
-    "description": "Baisser la température de 1°C, c’est 7 % de consommation d’énergie en moins.<br>La réduction peut varier en fonction de l’occupation et de la température extérieure : 19°C pour les pièces occupées, 16°C hors période d’occupation, 8°C si les lieux sont inoccupés plus de deux jours.",
-    "source": "",
-    "category": "Economie"
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "1 °C en moins, c’est 7 % de consommation d’énergie économisée. Dans l'idéal : 19 °C pour les pièces occupées sinon 16°C, et 8 °C si les lieux sont inoccupés plus de deux jours.",
+    "sources": "Gouvernement (Ministère de la transition écologique)",
+    "tag": "je-baisse",
+    "points": 50,
+    "credit": "Bernard Hermant"
   },
-  {
-    "id": "arreter-charge",
-    "title": "Arrêter la charge des appareils électriques sauf impératif",
-    "description": "Voiture, smartphone, ordinateur portable, vélo, trotinette, batteries externes, écouteurs...",
-    "source": "",
-    "category": "Décalage de charge"
-  },
-  {
-    "id": "couper-video",
-    "title": "Couper la vidéo lors des conférences à distance",
-    "description": "La vidéo représente un surplus de bande passante de XX %",
-    "source": "ademe / greenIT / sources fournisseurs",
-    "category": "Economie"
+  "ecrans": {
+    "title": "Eteindre tous les écrans (TV, moniteur secondaire) non-indispensables",
+    "description": "La consommation moyenne d'une TV oscille entre 100kWh/an (TV LED haute définition) et plus de 400kWh/an (TV plasma). La définition joue également sur la consommation : selon les estimations, une TV 4K consomme 30% à 50% en plus qu'une TV HD.",
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "sources": "ADEME",
+    "tag": "j-eteins",
+    "points": 70,
+    "credit": "John Smit"
   }
-]
+}
