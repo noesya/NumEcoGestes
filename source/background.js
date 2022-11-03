@@ -27,7 +27,7 @@ chrome.alarms.onAlarm.addListener(function (alarm) {
 chrome.runtime.onInstalled.addListener(function () {
     chrome.alarms.create("ecogestes-data", { periodInMinutes: 60 });
     getData();
-    initScore();
+    // initScore();
 });
 
 chrome.notifications.onClicked.addListener(function (notificationId) {

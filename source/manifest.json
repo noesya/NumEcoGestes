@@ -17,7 +17,7 @@
     "extension_page": "script-src 'self' ; object-src 'self'"
   },
   "action": {
-    "default_popup": "index.html",
+    "default_title": "Cliquer pour afficher les écogestes",
     "default_icon": "icon.png"
   },
   "content_scripts": [
