@@ -1,4 +1,4 @@
-const getData = function () {
+const getEcowattData = function () {
     fetch("https://ecoresponsable.numerique.gouv.fr/api/ecowatt/ecowatt.json").then(function (res) {
         return res.json();
     }).then(function (signals) {
@@ -10,7 +10,7 @@ const initScore = function () {
     var currentDate = new Date(),
         year = currentDate.getFullYear(),
         month = currentDate.getMonth(),
-        scoresData;
+        scoresData = {};
 
     scoresData[year] = {};
     scoresData[year][month] = 0;
@@ -19,15 +19,15 @@ const initScore = function () {
 };
 
 chrome.alarms.onAlarm.addListener(function (alarm) {
-    if (alarm.name === "ecogestes-data") {
-        getData();
+    if (alarm.name === "ecogestes-ecowatt-data") {
+        getEcowattData();
     }
 })
 
 chrome.runtime.onInstalled.addListener(function () {
-    chrome.alarms.create("ecogestes-data", { periodInMinutes: 60 });
-    getData();
-    // initScore();
+    chrome.alarms.create("ecogestes-ecowatt-data", { periodInMinutes: 60 });
+    getEcowattData();
+    initScore();
 });
 
 (chrome.action || chrome.browserAction).onClicked.addListener(() => {
