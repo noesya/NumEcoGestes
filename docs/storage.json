@@ -1,0 +1,44 @@
+{
+  "months": {
+    "2022-10": {
+      "label": {
+        "month": "Octobre",
+        "year": "2022"
+      },
+      "score": 490,
+      "alerts": {
+        "red": 0,
+        "orange": 4
+      },
+      "days": {
+        "2022-11-03": {
+          "alerts": {
+            "red": 0,
+            "orange": 2 // 2 heures en alerte orange
+          },
+          "ecogestes": [
+            {
+              "id": "chauffage",
+              "time": "12:00:00",
+              "score": {
+                "raw": 50,
+                "multiplier": 1.5,
+                "total": 75
+              }
+            },
+            {
+              "id": "couper-video",
+              "time": "12:00:00",
+              "score": {
+                "raw": 50,
+                "multiplier": 0,
+                "total": 0
+              }
+            }
+          ],
+          "score": 75
+        }
+      }
+    }
+  }
+}
