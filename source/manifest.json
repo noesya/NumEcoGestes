@@ -7,8 +7,7 @@
     "background",
     "storage",
     "notifications",
-    "alarms",
-    "activeTab"
+    "alarms"
   ],
   "background": {
     "service_worker": "background.js"
@@ -20,29 +19,6 @@
     "default_title": "Cliquer pour afficher les écogestes",
     "default_icon": "icon.png"
   },
-  "content_scripts": [
-    {
-      "js": [
-        "content.js"
-      ],
-      "matches": [
-        "http://*/*",
-        "https://*/*",
-        "file:///*"
-      ],
-      "run_at": "document_end"
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "content/banner.html"
-      ],
-      "matches": [
-        "<all_urls>"
-      ]
-    }
-  ],
   "icons": {
     "128": "icon.png"
   }

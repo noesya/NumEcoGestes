@@ -51,28 +51,5 @@ chrome.runtime.onMessage.addListener(data => {
                 type: 'basic'
             });
         }, 1000 * data.delayInSeconds);
-    } else if (data.type === 'ecogestes-debug-banner') {
-        setTimeout(function () {
-            chrome.tabs.query({ active: true, lastFocusedWindow: true }).then(function (tabs) {
-                chrome.tabs.sendMessage(tabs[0].id, {
-                    type: 'ecogestes-debug-banner-display'
-                });
-            });
-        }, 1000 * data.delayInSeconds);
-    } else if (data.type === 'ecogestes-send-close-banner') {
-        chrome.tabs.query({ active: true, lastFocusedWindow: true }).then(function (tabs) {
-            chrome.tabs.sendMessage(tabs[0].id, {
-                type: 'ecogestes-close-banner'
-            });
-        });
-    } else if (data.type === 'ecogestes-send-open-from-banner') {
-        chrome.tabs.query({ active: true, lastFocusedWindow: true }).then(function (tabs) {
-            chrome.tabs.sendMessage(tabs[0].id, {
-                type: 'ecogestes-close-banner'
-            });
-            setTimeout(function () {
-                chrome.tabs.create({ url: chrome.runtime.getURL("index.html") });
-            }, 50);
-        });
     }
 });

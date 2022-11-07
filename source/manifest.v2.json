@@ -7,8 +7,7 @@
     "background",
     "storage",
     "notifications",
-    "alarms",
-    "activeTab"
+    "alarms"
   ],
   "background": {
     "scripts": [
@@ -20,19 +19,6 @@
     "default_title": "Cliquer pour afficher les écogestes",
     "default_icon": "icon.png"
   },
-  "content_scripts": [
-    {
-      "js": [
-        "content.js"
-      ],
-      "matches": [
-        "http://*/*",
-        "https://*/*",
-        "file:///*"
-      ],
-      "run_at": "document_end"
-    }
-  ],
   "icons": {
     "128": "icon.png"
   },
