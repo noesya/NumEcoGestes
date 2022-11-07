@@ -34,9 +34,10 @@ window.addEventListener("DOMContentLoaded", function () {
     };
 
     chrome.storage.local.get("signals").then(function (data) {
-        console.log(data);
+        var now = new Date(),
+            isoDate = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, 0)}-${now.getDate().toString().padStart(2, 0)}`;
         const currentDay = data.signals.signals.find(item => {
-            return true;
+            return item.jour.indexOf(isoDate) !== -1;
         });
 
         if (currentDay) {

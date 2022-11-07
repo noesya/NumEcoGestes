@@ -6,16 +6,32 @@ const getEcowattData = function () {
     });
 };
 
-const initScore = function () {
+const initData = function () {
     var currentDate = new Date(),
-        year = currentDate.getFullYear(),
-        month = currentDate.getMonth(),
-        scoresData = {};
+        monthKey = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, 0)}`,
+        dayKey = `${monthKey}-${currentDate.getDate().toString().padStart(2, 0) }`,
+        monthsData = {},
+        monthNames = [
+            "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+            "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+        ];
 
-    scoresData[year] = {};
-    scoresData[year][month] = 0;
+    monthsData[monthKey] = {
+        label: {
+            month: monthNames[currentDate.getMonth()],
+            year: currentDate.getFullYear().toString()
+        },
+        score: 0,
+        alerts: { red: 0, orange: 0 },
+        days: {}
+    };
+    monthsData[monthKey]["days"][dayKey] = {
+        alerts: { red: 0, orange: 0 },
+        ecogestes: {},
+        score: 0
+    }
 
-    chrome.storage.local.set({ scores: scoresData });
+    chrome.storage.local.set({ months: monthsData });
 };
 
 chrome.alarms.onAlarm.addListener(function (alarm) {
@@ -27,7 +43,7 @@ chrome.alarms.onAlarm.addListener(function (alarm) {
 chrome.runtime.onInstalled.addListener(function () {
     chrome.alarms.create("ecogestes-ecowatt-data", { periodInMinutes: 60 });
     getEcowattData();
-    initScore();
+    initData();
 });
 
 (chrome.action || chrome.browserAction).onClicked.addListener(() => {
