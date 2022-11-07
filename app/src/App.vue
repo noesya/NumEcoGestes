@@ -1,32 +1,49 @@
-<script>
+<script setup>
 import { RouterLink, RouterView } from "vue-router"
 
-export default {
-  data() {
-    return {
-      quickLinks: [{
-        label : "Créer un espace",
-        to : "/",
-        icon : "ri-add-circle-line"
-      }]
-    }
-  }
-}
+const quickLinks = [{
+    label: 'Notifications',
+    path: '/',
+    icon: 'ri-notification-3-line',
+    iconOnly: true,
+    button: true
+  },
+  {
+    label: 'À propos',
+    path: '/'
+  },
+  {
+    label: 'DSFR',
+    href: 'https://systeme-de-design.gouv.fr/',
+}]
+
+const navItems = [
+  {
+    path: '/',
+    text: 'Accueil',
+  },
+  {
+    path: '/',
+    text: 'À propos',
+  },
+]
 </script>
 
 <template>
   <DsfrHeader
+      :quick-links="quickLinks"
       logo-text="NumÉcoGestes"
       service-title="Numecogestes"
       service-description="Une extension proposée par la mission interministérielle numérique écoresponsable"
-      :quick-links="quickLinks"
+      />
+      <DsfrBreadcrumb
+        :links="[{text: 'Accueil', to: '/'}, {text: 'Test fil d’Ariane'}]"
       />
   <header>
     <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <DsfrNavigation
+        :nav-items="navItems"
+      />
     </div>
   </header>
 
