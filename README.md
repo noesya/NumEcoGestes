@@ -37,3 +37,6 @@ https://addons.mozilla.org/fr/firefox/addon/%C3%A9cogestes/
 ## Sources
 
 https://github.com/dnum-mi/vue-dsfr
+
+https://github.com/dnum-mi/vue-dsfr/blob/main/src/demo-app/App.vue
+
