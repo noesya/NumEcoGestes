@@ -1,8 +1,5 @@
 export {
     RiArrowRightSLine,
-    RiCloseLine,
-    RiFlagLine,
-    RiHome2Line,
     RiHome4Line,
-    RiRefreshLine,
+    RiApps2Line
 } from 'oh-vue-icons/icons/ri/index.js'

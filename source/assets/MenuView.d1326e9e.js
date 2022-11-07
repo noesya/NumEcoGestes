@@ -1,0 +1,1 @@
+import{_ as r,r as o,o as s,c as t,a,F as c,b as e}from"./index.1d2b13ca.js";const _={},l=e("main",null,[e("h1",null,"Menu")],-1);function u(m,d){const n=o("DsfrBreadcrumb");return s(),t(c,null,[a(n,{links:[{text:"Menu"}]}),l],64)}const i=r(_,[["render",u]]);export{i as default};
