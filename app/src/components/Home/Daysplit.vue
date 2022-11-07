@@ -6,6 +6,20 @@ export default {
     }
   },
 
+  computed: {
+    orangeAlertsCount: function () {
+      return this.values.filter(function (value) {
+        value.hval === 2;
+      }).length;
+    },
+
+    redAlertsCount: function () {
+      return this.values.filter(function (value) {
+        value.hval === 3;
+      }).length;
+    },
+  },
+
   methods: {
     getClassName(hour, hval) {
       var className = "daysplit__item__square"
@@ -43,11 +57,13 @@ export default {
   <div class="fr-grid-row fr-grid-row--gutters fr-mb-1w">
     <div class="fr-col">
       <div class="fr-alert fr-alert--error">
+        <div class="fr-alert__count">{{ redAlertsCount }}</div>
         <p>Alerte(s) rouge(s) : coupures inévitables si la consommation n’est pas réduite.</p>
       </div>
     </div>
     <div class="fr-col">
       <div class="fr-alert fr-alert--warning">
+        <div class="fr-alert__count">{{ orangeAlertsCount }}</div>
         <p>Alerte(s) orange(s) : la réduction et le décalage des consommations d’énergie sont nécessaires.</p>
       </div>
     </div>
@@ -72,6 +88,27 @@ export default {
 </template>
 
 <style scoped>
+.fr-alert--error {
+  --border-plain-error: var(--red-marianne-425-625-hover);
+  --background-flat-error: var(--red-marianne-425-625-hover);
+}
+
+.fr-alert--warning {
+  --border-plain-warning: #F69051;
+  --background-flat-warning: #F69051;
+}
+
+.fr-alert__count {
+  bottom: 0;
+  color: white;
+  font-weight: bold;
+  left: 0;
+  margin: 0.5rem .5rem;
+  position: absolute;
+  text-align: center;
+  width: 1.5rem;
+  }
+
   .daysplit {
     margin: -0.05rem;
   }
@@ -81,13 +118,13 @@ export default {
   }
 
   .daysplit__item__square {
-    background: #CACAFB;
+    background: var(--blue-france-850-200);
     height: 24px;
     width: 100%;
   }
 
   .daysplit__item__square--dark {
-    background: #6A6AF4;
+    background: var(--blue-france-main-525);
   }
 
   .daysplit__item__square--orange {
@@ -95,7 +132,7 @@ export default {
   }
 
   .daysplit__item__square--red {
-    background: #F93F42;
+    background: var(--red-marianne-425-625-hover);
   }
 
   .daysplit__legend {

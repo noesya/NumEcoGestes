@@ -6,6 +6,21 @@
 npm install -g web-ext
 ```
 
+Les fichiers liés à Vue ou les assets utilisés sont à ranger dans `app/src`
+
+Les fichiers propres à l'extension, les données en JSON, ou les icônes utilisées en CSS sont à ranger dans `app/public`
+
+## Run
+
+```bash
+cd app
+yarn dev
+```
+
+Dans Chrome, allez sur `chrome://extensions`, activer le mode développeur.
+
+Cliquez sur "Charger l'extension non empaquetée" et sélectionnez le dossier "source".
+
 ## Build
 
 Pour compiler l'ensemble:
@@ -39,4 +54,3 @@ https://addons.mozilla.org/fr/firefox/addon/%C3%A9cogestes/
 https://github.com/dnum-mi/vue-dsfr
 
 https://github.com/dnum-mi/vue-dsfr/blob/main/src/demo-app/App.vue
-
