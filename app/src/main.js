@@ -1,13 +1,17 @@
+import '@gouvminint/vue-dsfr/styles'
+
 import { createApp } from 'vue'
+import VueDsfr from '@gouvminint/vue-dsfr'
+
 import App from './App.vue'
 import router from './router'
-import '@gouvminint/vue-dsfr/styles'
-import VueDsfr from '@gouvminint/vue-dsfr'
+import * as icons from './icons.js'
 
 import './assets/main.css'
 
 const app = createApp(App)
 
-app.use(router)
-app.use(VueDsfr)
-app.mount('#app')
+createApp(App)
+    .use(router)
+    .use(VueDsfr, { icons: Object.values(icons) })
+    .mount('#app')
