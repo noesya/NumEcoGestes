@@ -4,7 +4,7 @@ import { RouterLink, RouterView } from "vue-router"
 const quickLinks = [
   {
     label: 'Accueil',
-    path: '/index.html',
+    path: '/',
     icon: 'ri-home-4-line'
   },
   {
@@ -19,6 +19,7 @@ const quickLinks = [
 <template>
   <DsfrHeader
       :quick-links="quickLinks"
+      home-to="/"
       service-title="NumÉcoGestes"
       service-description="Une extension proposée par la mission interministérielle numérique écoresponsable"
       />

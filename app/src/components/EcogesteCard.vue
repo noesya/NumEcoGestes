@@ -48,7 +48,7 @@
         </div>
         <div class="fr-card__header">
           <div class="fr-card__img">
-            <p class="fr-badge fr-badge--no-icon">80 points</p>
+            <p class="fr-badge fr-badge--no-icon">{{ ecogeste.points }} points</p>
             <img class="fr-responsive-img" :src="portraitImageUrl()" :alt="ecogeste.title" />
             <p class="fr-card__img__credit">{{ ecogeste.credit }}</p>
           </div>
