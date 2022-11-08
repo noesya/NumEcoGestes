@@ -1,5 +1,8 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router"
+import state from "./services/State";
+
+state.days[0] = 'lundi';
 
 const quickLinks = [
   {

@@ -1,6 +1,7 @@
 <script>
 export default {
   data () {
+    console.log(state);
     return {
       values: []
     }

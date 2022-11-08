@@ -1,5 +1,6 @@
 <script>
 import badge1Url from '@/assets/images/badges/badge1.png' // => or relative path
+import calendar from '../../data/calendar'
 
 export default {
   data () {
@@ -16,8 +17,9 @@ export default {
   methods: {
     updateData () {
       const date = new Date()
-      const dayNames = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"]
-      const monthNames = ["janv.", "fév.", "mars", "avr.", "mai", "juin", "juil.", "août", "sep.", "oct.", "nov.", "déc."]
+      const {days, months} = calendar;
+      const dayNames = days;
+      const monthNames = months;
       const monthDataKey = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, 0)}`
       this.day = dayNames[date.getDay()]
       this.date = `${date.getDate()} ${monthNames[date.getMonth()]}`
