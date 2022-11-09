@@ -39,7 +39,7 @@ export default {
 </script>
 
 <template>
-  <p class="fr-text--sm">Mon score détaillé</p>
+  <p class="fr-text--sm fr-mt-5v fr-mb-2v">Mon score détaillé</p>
 
   <div class="fr-grid-row">
     <div class="level" v-for="badge in badges">

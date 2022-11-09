@@ -16,3 +16,8 @@
   background: url('../assets/images/logo.svg');
   margin-right: 0 !important;
 }
+
+.sep {
+  width: 1px;
+  background: var(--blue-france-925-125);
+}
