@@ -40,28 +40,28 @@ export default {
   <div class="fr-grid-row main-infos">
     <div>
       <div>
-        <p class="fr-mb-0 main-infos__label">{{ day }}</p>
+        <p class="main-infos__label fr-mb-0 fr-text--sm">{{ day }}</p>
         <p class="main-infos__value">{{ date }}</p>
       </div>
     </div>
     <div class="sep"></div>
     <div>
       <div>
-        <p class="fr-mb-0 main-infos__label">Heure</p>
+        <p class="main-infos__label fr-mb-0 fr-text--sm">Heure</p>
         <p class="main-infos__value">{{ hours }}:{{ minutes }}</p>
       </div>
     </div>
     <div class="sep"></div>
     <div>
       <div>
-        <p class="fr-mb-0 main-infos__label">Mon score</p>
+        <p class="main-infos__label fr-mb-0 fr-text--sm">Mon score</p>
         <p class="main-infos__value">{{ score }}</p>
       </div>
     </div>
     <div class="sep"></div>
     <div>
       <div>
-        <p class="fr-mb-1w">Mes badges</p>
+        <p class="fr-mb-1w fr-text--sm">Mes badges</p>
         <div>
           <img class="img-badge" :src="badge1Url" alt="Badge Novice" />
           <img class="img-badge" :src="badge1Url" alt="Badge Initié·e" />
@@ -105,8 +105,4 @@ export default {
   border-right: 0;
 }
 
-.sep {
-  width: 1px;
-  background: var(--blue-france-925-125);
-}
 </style>

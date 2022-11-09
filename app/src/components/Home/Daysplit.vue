@@ -88,7 +88,7 @@ export default {
 </script>
 
 <template>
-  <p>Alertes prévues aujourd'hui</p>
+  <p class="fr-mb-1w fr-mt-8v fr-text--sm">Alertes prévues aujourd'hui</p>
 
   <div class="fr-grid-row fr-grid-row--gutters fr-mb-1w">
     <div class="fr-col">

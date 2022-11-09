@@ -35,24 +35,34 @@ export default {
 
 <template>
   <div class="fr-grid-row main-infos">
-    <div class="fr-col">
-      <p class="fr-mb-0 main-infos__label fr-text--sm">{{ day }}</p>
+    <div class="fr-mr-4v">
+      <p class="main-infos__label fr-mb-0 fr-text--sm">{{ day }}</p>
       <p class="main-infos__value">{{ date }}</p>
     </div>
-    <div class="fr-col">
-      <p class="fr-mb-0 main-infos__label fr-text--sm">Heure</p>
+    <div class="sep"></div>
+    <div class="fr-ml-4v">
+      <p class="main-infos__label fr-mb-0 fr-text--sm">Heure</p>
       <p class="main-infos__value">{{ hours }}:{{ minutes }}</p>
     </div>
-    <div class="fr-col">
-      <p class="fr-mb-0 main-infos__label fr-text--sm">Mon score</p>
+    <div class="score">
+      <p class="main-infos__label fr-mb-0 fr-text--sm">Mon score</p>
       <p class="main-infos__value">{{ score }}</p>
     </div>
   </div>
 </template>
 
 <style scoped>
-  .main-infos__value {
-    font-size: 3rem;
-    line-height: 3.5rem;
-  }
+.main-infos__value {
+  font-size: 3rem;
+  line-height: 3.5rem;
+  margin-bottom: 0;
+}
+.main-infos {
+  justify-content: start
+}
+
+.score {
+  margin-left: auto;
+}
+
 </style>
