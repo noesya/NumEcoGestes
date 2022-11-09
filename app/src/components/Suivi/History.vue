@@ -20,7 +20,7 @@ export default {
 <template>
   <p class="fr-text--sm fr-mt-5v">Mon historique</p>
 
-  <div class="fr-card fr-card--horizontal" v-for="month in months">
+  <div class="fr-card fr-card--horizontal" v-for="month in Object.values(months).reverse()">
     <div class="fr-card__body fr-p-4v">
       <div class="fr-grid-row">
         <div class="fr-col">
@@ -42,7 +42,6 @@ export default {
             </div>
           </div>
         </div>
-
         <div class="fr-col">
           <p class="fr-text--sm fr-mb-3v">Badges obtenus</p>
           <div>

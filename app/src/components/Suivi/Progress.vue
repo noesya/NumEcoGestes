@@ -9,6 +9,12 @@ export default {
     }
   },
 
+  computed: {
+    progressValue () {
+      return Math.min(100, Math.floor(this.score / 10));
+    }
+  },
+
   methods: {
     updateData () {
       const date = new Date()
@@ -56,7 +62,7 @@ export default {
       <p>950</p>
     </div>
   </div>
-  <progress max="100" :value="score"></progress>
+  <progress max="100" :value="progressValue"></progress>
 </template>
 
 <style scoped>

@@ -1,4 +1,6 @@
 <script>
+import calendar from '../../data/calendar';
+
 export default {
   data () {
     return {
@@ -41,7 +43,7 @@ export default {
 
         data.months[monthKey] = data.months[monthKey] || {
           label: {
-            month: monthNames[now.getMonth()],
+            month: calendar.monthNames[now.getMonth()],
             year: now.getFullYear().toString()
           },
           score: 0,
