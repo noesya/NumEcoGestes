@@ -11,13 +11,13 @@ export default {
   computed: {
     orangeAlertsCount: function () {
       return this.values.filter(function (value) {
-        value.hvalue === 2;
+        return value.hvalue === 2;
       }).length;
     },
 
     redAlertsCount: function () {
       return this.values.filter(function (value) {
-        value.hvalue === 3;
+        return value.hvalue === 3;
       }).length;
     },
   },
