@@ -1,6 +1,31 @@
 <script>
 export default {
-  props: ['receiveAlerts', 'receiveDailyNotification']
+  props: ['receiveAlerts', 'receiveDailyNotification'],
+  data () {
+    return {
+      openedModal: false,
+      modalActions: [
+        { label: "Valider", onClick: this.onModalClickReset },
+        { label: "Annuler", secondary: true, onClick: this.onModalClose },
+      ]
+    }
+  },
+
+  methods: {
+    openResetModal () {
+      this.openedModal = true;
+    },
+
+    onModalClickReset () {
+      chrome.storage.local.remove("months").then(function () {
+        this.onModalClose();
+      }.bind(this));
+    },
+
+    onModalClose () {
+      this.openedModal = false;
+    }
+  }
 }
 </script>
 
@@ -27,7 +52,7 @@ export default {
 
     <p>Extension</p>
 
-    <button type="button" class="fr-btn fr-btn--secondary fr-mb-3w">Réinitialiser mon score</button>
+    <DsfrButton label="Réinitialiser mon score" :secondary="true" @click="openResetModal()" ref="modalOrigin" />
 
     <div class="fr-grid-row">
       <div class="fr-col">
@@ -46,6 +71,10 @@ export default {
         <p class="fr-logo">République<br>Française</p>
       </div>
     </div>
+
+    <DsfrModal ref="modal" :opened="openedModal" :actions="modalActions" :is-alert="isAlert" title="Réinitialiser mon score" :origin="$refs.modalOrigin" @close="onModalClose()">
+      <p>Êtes-vous sûr(e) ? Vous allez perdre toute votre progression.</p>
+    </DsfrModal>
   </main>
 </template>
 

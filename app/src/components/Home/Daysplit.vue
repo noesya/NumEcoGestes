@@ -41,7 +41,9 @@ export default {
             monthKey = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, 0)}`,
             dayKey = `${monthKey}-${now.getDate().toString().padStart(2, 0)}`;
 
-        data.months[monthKey] = data.months[monthKey] || {
+        var monthsData = data.months || {};
+
+        monthsData[monthKey] = monthsData[monthKey] || {
           label: {
             month: calendar.monthNames[now.getMonth()],
             year: now.getFullYear().toString()
@@ -51,19 +53,19 @@ export default {
           days: {}
         }
 
-        data.months[monthKey].days[dayKey] = data.months[monthKey].days[dayKey] || {
+        monthsData[monthKey].days[dayKey] = monthsData[monthKey].days[dayKey] || {
           alerts: { red: 0, orange: 0 },
           ecogestes: {},
           score: 0
         };
 
-        data.months[monthKey].days[dayKey].alerts.orange = this.orangeAlertsCount;
-        data.months[monthKey].days[dayKey].alerts.red = this.redAlertsCount;
+        monthsData[monthKey].days[dayKey].alerts.orange = this.orangeAlertsCount;
+        monthsData[monthKey].days[dayKey].alerts.red = this.redAlertsCount;
 
-        data.months[monthKey].alerts.red = Object.values(data.months[monthKey].days).reduce((a, b) => a + b.alerts.red, 0);
-        data.months[monthKey].alerts.orange = Object.values(data.months[monthKey].days).reduce((a, b) => a + b.alerts.orange, 0);
+        monthsData[monthKey].alerts.red = Object.values(monthsData[monthKey].days).reduce((a, b) => a + b.alerts.red, 0);
+        monthsData[monthKey].alerts.orange = Object.values(monthsData[monthKey].days).reduce((a, b) => a + b.alerts.orange, 0);
 
-        chrome.storage.local.set({ months: data.months });
+        chrome.storage.local.set({ months: monthsData });
       }.bind(this));
     }
   },
@@ -78,7 +80,6 @@ export default {
       });
 
       if (currentDay) {
-        console.log(currentDay);
         this.values = currentDay.values;
         this.updateStorageAlertsCount();
       }
