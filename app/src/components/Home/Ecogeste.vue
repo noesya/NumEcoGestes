@@ -34,7 +34,7 @@ export default {
       }
 
       const currentValue = currentDay.values.find(function (value) {
-        return value.pas === now.getHours();
+        return value.pas === hour;
       });
 
       switch (currentValue.hvalue) {
