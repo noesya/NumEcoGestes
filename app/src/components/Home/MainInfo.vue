@@ -1,11 +1,11 @@
 <script>
-import badge1Url from '@/assets/images/badges/badge1.png' // => or relative path
+import badges from '../../data/badges'
 import calendar from '../../data/calendar'
 
 export default {
   data () {
     return {
-      badge1Url: badge1Url,
+      badges: badges,
       day: "",
       date: "1 janv.",
       hours: "00",
@@ -23,9 +23,14 @@ export default {
       this.hours = date.getHours().toString().padStart(2, 0)
       this.minutes = date.getMinutes().toString().padStart(2, 0)
       chrome.storage.local.get("months").then(function (data) {
-        const monthData = data.months[monthDataKey] || { score: 0 }
+        const monthsData = data.months || {},
+              monthData = monthsData[monthDataKey] || { score: 0 }
         this.score = monthData.score
       }.bind(this))
+    },
+
+    getBadgeIcon(badge) {
+      return (this.score < badge.points) ? badge.icon.unchecked : badge.icon.checked;
     }
   },
 
@@ -63,11 +68,7 @@ export default {
       <div>
         <p class="fr-mb-1w">Mes badges</p>
         <div>
-          <img class="img-badge" :src="badge1Url" alt="Badge Novice" />
-          <img class="img-badge" :src="badge1Url" alt="Badge Initié·e" />
-          <img class="img-badge" :src="badge1Url" alt="Badge Confirmé·e" />
-          <img class="img-badge" :src="badge1Url" alt="Badge Expert·e" />
-          <img class="img-badge" :src="badge1Url" alt="Badge Maître" />
+          <img class="img-badge" :src="getBadgeIcon(badge)" alt="Badge {{ badge.label }}" v-for="badge in badges" />
         </div>
       </div>
     </div>

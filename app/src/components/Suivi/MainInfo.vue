@@ -21,7 +21,9 @@ export default {
       this.hours = date.getHours().toString().padStart(2, 0)
       this.minutes = date.getMinutes().toString().padStart(2, 0)
       chrome.storage.local.get("months").then(function (data) {
-        this.score = data.months[monthDataKey].score
+        const monthsData = data.months || {},
+              monthData = monthsData[monthDataKey] || { score: 0 }
+        this.score = monthData.score
       }.bind(this))
     }
   },

@@ -1,10 +1,10 @@
 <script>
-import badge1Url from '@/assets/images/badges/badge1.png' // => or relative path
+import badges from '../../data/badges'
 
 export default {
   data () {
     return {
-      badge1Url: badge1Url,
+      badges: badges,
       score: 0
     }
   },
@@ -20,8 +20,14 @@ export default {
       const date = new Date()
       const monthDataKey = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, 0)}`
       chrome.storage.local.get("months").then(function (data) {
-        this.score = data.months[monthDataKey].score
+        const monthsData = data.months || {},
+              monthData = monthsData[monthDataKey] || { score: 0 }
+        this.score = monthData.score
       }.bind(this))
+    },
+
+    getBadgeIcon (badge) {
+      return (this.score < badge.points) ? badge.icon.unchecked : badge.icon.checked;
     }
   },
 
@@ -36,30 +42,10 @@ export default {
   <p class="fr-text--sm">Mon score détaillé</p>
 
   <div class="fr-grid-row">
-    <div class="level">
-      <img :src="badge1Url" alt="Badge Novice" />
-      <p class="fr-h6"><strong>Novice</strong></p>
-      <p>200</p>
-    </div>
-    <div class="level">
-      <img :src="badge1Url" alt="Badge Initié·e" />
-      <p class="fr-h6"><strong>Initié·e</strong></p>
-      <p>400</p>
-    </div>
-    <div class="level">
-      <img :src="badge1Url" alt="Badge Confirmé·e" />
-      <p class="fr-h6"><strong>Confirmé·e</strong></p>
-      <p>600</p>
-    </div>
-    <div class="level">
-      <img :src="badge1Url" alt="Badge Expert·e" />
-      <p class="fr-h6"><strong>Expert·e</strong></p>
-      <p>800</p>
-    </div>
-    <div class="level">
-      <img :src="badge1Url" alt="Badge Maître" />
-      <p class="fr-h6"><strong>Maître</strong></p>
-      <p>950</p>
+    <div class="level" v-for="badge in badges">
+      <img :src="getBadgeIcon(badge)" alt="Badge {{ badge.label }}" />
+      <p class="fr-h6"><strong>{{ badge.label }}</strong></p>
+      <p>{{ badge.points }}</p>
     </div>
   </div>
   <progress max="100" :value="progressValue"></progress>

@@ -1,11 +1,17 @@
 <script>
-import badge1Url from '@/assets/images/badges/badge1.png' // => or relative path
+import badges from '../../data/badges'
 
 export default {
   data () {
     return {
-      badge1Url: badge1Url,
+      badges: badges,
       months: {}
+    }
+  },
+
+  methods: {
+    getBadgeIcon (badge, score) {
+      return (score < badge.points) ? badge.icon.unchecked : badge.icon.checked;
     }
   },
 
@@ -45,11 +51,7 @@ export default {
         <div class="fr-col">
           <p class="fr-text--sm fr-mb-3v">Badges obtenus</p>
           <div>
-            <img class="img-badge" :src="badge1Url" alt="Badge Novice" />
-            <img class="img-badge" :src="badge1Url" alt="Badge Initié·e" />
-            <img class="img-badge" :src="badge1Url" alt="Badge Confirmé·e" />
-            <img class="img-badge" :src="badge1Url" alt="Badge Expert·e" />
-            <img class="img-badge" :src="badge1Url" alt="Badge Maître" />
+            <img class="img-badge" :src="getBadgeIcon(badge, month.score)" alt="Badge {{ badge.label }}" v-for="badge in badges" />
           </div>
         </div>
       </div>
