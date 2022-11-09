@@ -17,7 +17,12 @@ echo "Création du fichier ZIP pour Mozilla Firefox"
 
 # Copying to random tmp directory
 uuid=$(uuidgen)
-cp -r ./source ./scripts/tmp/$uuid
+mkdir ./scripts/tmp/$uuid
+
+# Building to tmp directory
+cd app
+yarn build --outDir=../scripts/tmp/$uuid
+cd ..
 
 # Removing Manifest V3
 rm ./scripts/tmp/$uuid/manifest.json
