@@ -45,7 +45,10 @@
         <div class="fr-card__body">
           <div class="fr-card__content">
             <div class="fr-card__start fr-mb-2w">
-              <DsfrTag :label="humanizedTag()" :icon="tagIcon()" tagName="p" />
+              <p class="fr-tag">
+                <VIcon :name="tagIcon()" :label="humanizedTag()" :scale="0.9" />
+                <span v-if="!iconOnly">{{ humanizedTag() }}</span>
+              </p>
             </div>
             <h3 class="fr-card__title">{{ ecogeste.title }}</h3>
             <p class="fr-card__desc">{{ ecogeste.description }}</p>
