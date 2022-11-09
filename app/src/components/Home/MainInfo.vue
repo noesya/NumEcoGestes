@@ -50,20 +50,25 @@ export default {
       <p class="main-infos__value">{{ score }}</p>
     </div>
     <div class="fr-col">
-      <p class="fr-mb-0">Mes badges</p>
+      <p class="fr-mb-1w">Mes badges</p>
       <div>
-        <img :src="badge1Url" alt="Badge Novice" />
-        <img :src="badge1Url" alt="Badge Novice" />
-        <img :src="badge1Url" alt="Badge Novice" />
-        <img :src="badge1Url" alt="Badge Novice" />
+        <img class="img-badge" :src="badge1Url" alt="Badge Novice" />
+        <img class="img-badge" :src="badge1Url" alt="Badge Initié·e" />
+        <img class="img-badge" :src="badge1Url" alt="Badge Confirmé·e" />
+        <img class="img-badge" :src="badge1Url" alt="Badge Expert·e" />
+        <img class="img-badge" :src="badge1Url" alt="Badge Maître" />
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-  .main-infos__value {
-    font-size: 3rem;
-    line-height: 3.5rem;
-  }
+.main-infos__value {
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+
+.img-badge {
+  max-width: 20%;
+}
 </style>

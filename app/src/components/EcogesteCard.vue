@@ -67,15 +67,11 @@
             </div>
             <h3 class="fr-card__title">{{ ecogeste.thanks }}</h3>
             <div class="fr-callout fr-card__desc">
-              <h3 class="fr-callout__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libro et.</h3>
-              <p class="fr-callout__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio
-                mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos. aptent taciti sociosqu ad
-                litora torquent nostra. Class aptent taciti sociosqu ad.
-              </p>
+              <h3 class="fr-callout__title">{{ ecogeste.title }}</h3>
+              <p class="fr-callout__text">{{ ecogeste.description }}</p>
             </div>
             <div class="fr-card__end">
-              <p><a href="#" target="_blank" rel="noopener">Lien vers la source</a></p>
+              <p><a href="#" target="_blank" rel="noopener">{{ ecogeste.sources }}</a></p>
             </div>
           </div>
         </div>

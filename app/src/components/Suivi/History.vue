@@ -45,13 +45,13 @@ export default {
           </div>
 
           <div class="fr-col">
-            <p class="fr-mb-0">Badges obtenus</p>
+            <p>Badges obtenus</p>
             <div>
-              <img :src="badge1Url" alt="Badge Novice" />
-              <img :src="badge1Url" alt="Badge Initié·e" />
-              <img :src="badge1Url" alt="Badge Confirmé·e" />
-              <img :src="badge1Url" alt="Badge Expert·e" />
-              <img :src="badge1Url" alt="Badge Maître" />
+              <img class="img-badge" :src="badge1Url" alt="Badge Novice" />
+              <img class="img-badge" :src="badge1Url" alt="Badge Initié·e" />
+              <img class="img-badge" :src="badge1Url" alt="Badge Confirmé·e" />
+              <img class="img-badge" :src="badge1Url" alt="Badge Expert·e" />
+              <img class="img-badge" :src="badge1Url" alt="Badge Maître" />
             </div>
           </div>
         </div>
@@ -74,5 +74,9 @@ export default {
   margin-right: 0.5rem;
   margin-top: 0;
   padding-right: 1.25rem;
+}
+
+.img-badge {
+  max-width: 20%;
 }
 </style>
