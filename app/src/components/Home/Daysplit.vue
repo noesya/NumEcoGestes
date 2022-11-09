@@ -126,6 +126,11 @@ export default {
   --background-flat-error: var(--red-marianne-425-625-hover);
 }
 
+.fr-alert--error:before {
+  -webkit-mask-image: url(../../icons/system/alarm-warning-fill.svg);
+  mask-image: url(../../icons/system/alarm-warning-fill.svg);
+}
+
 .fr-alert--warning {
   --border-plain-warning: #F69051;
   --background-flat-warning: #F69051;
