@@ -1,7 +1,6 @@
 <script>
 export default {
   data () {
-    console.log(state);
     return {
       values: []
     }
@@ -32,6 +31,38 @@ export default {
         className += " daysplit__item__square--dark"
       }
       return className;
+    },
+
+    updateStorageAlertsCount () {
+      chrome.storage.local.get("months").then(function (data) {
+        var now = new Date(),
+            monthKey = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, 0)}`,
+            dayKey = `${monthKey}-${now.getDate().toString().padStart(2, 0)}`;
+
+        data.months[monthKey] = data.months[monthKey] || {
+          label: {
+            month: monthNames[now.getMonth()],
+            year: now.getFullYear().toString()
+          },
+          score: 0,
+          alerts: { red: 0, orange: 0 },
+          days: {}
+        }
+
+        data.months[monthKey].days[dayKey] = data.months[monthKey].days[dayKey] || {
+          alerts: { red: 0, orange: 0 },
+          ecogestes: {},
+          score: 0
+        };
+
+        data.months[monthKey].days[dayKey].alerts.orange = this.orangeAlertsCount;
+        data.months[monthKey].days[dayKey].alerts.red = this.redAlertsCount;
+
+        data.months[monthKey].alerts.red = Object.values(data.months[monthKey].days).reduce((a, b) => a + b.alerts.red, 0);
+        data.months[monthKey].alerts.orange = Object.values(data.months[monthKey].days).reduce((a, b) => a + b.alerts.orange, 0);
+
+        chrome.storage.local.set({ months: data.months });
+      }.bind(this));
     }
   },
 
@@ -46,6 +77,7 @@ export default {
 
       if (currentDay) {
         this.values = currentDay.values;
+        this.updateStorageAlertsCount();
       }
     }.bind(this));
   }

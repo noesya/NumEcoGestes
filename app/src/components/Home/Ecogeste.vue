@@ -10,6 +10,7 @@ export default {
     return {
       ecogestes: {},
       hasAnswered: false,
+      hasNextEcogeste: false,
       suggestedKeys: [],
       currentKey: null,
       currentEcogeste: null
@@ -71,6 +72,8 @@ export default {
             answeredKeys,
             availableKeys = [];
 
+        data.months[monthKey] = data.months[monthKey] || { days: {} }
+
         dayData = data.months[monthKey].days[dayKey] || {
           alerts: { red: 0, orange: 0 },
           ecogestes: {},
@@ -78,6 +81,7 @@ export default {
         }
 
         answeredKeys = Object.keys(dayData.ecogestes);
+        this.hasNextEcogeste = answeredKeys.length < this.ecogestesKeys.length - 1;
 
         for (const key of this.ecogestesKeys) {
           if (answeredKeys.indexOf(key) === -1 && this.suggestedKeys.indexOf(key) === -1 && key !== this.currentKey) {
@@ -156,7 +160,7 @@ export default {
     <p class="fr-mb-1w">Suggestion d'écogeste</p>
 
     <div class="fr-mb-4w">
-      <EcogesteCard :ecogesteKey="currentKey" :ecogeste="currentEcogeste" :buttons="true" :answered="hasAnswered" />
+      <EcogesteCard :ecogesteKey="currentKey" :ecogeste="currentEcogeste" :buttons="true" :answered="hasAnswered" :has-next="hasNextEcogeste" />
     </div>
   </div>
 </template>

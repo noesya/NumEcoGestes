@@ -1,11 +1,9 @@
 <script>
-import badge1Url from '@/assets/images/badges/badge1.png' // => or relative path
 import calendar from '../../data/calendar'
 
 export default {
   data () {
     return {
-      badge1Url: badge1Url,
       day: "",
       date: "1 janv.",
       hours: "00",
@@ -48,15 +46,6 @@ export default {
     <div class="fr-col">
       <p class="fr-mb-0 main-infos__label">Mon score</p>
       <p class="main-infos__value">{{ score }}</p>
-    </div>
-    <div class="fr-col">
-      <p class="fr-mb-0">Mes badges</p>
-      <div>
-        <img :src="badge1Url" alt="Badge Novice" />
-        <img :src="badge1Url" alt="Badge Novice" />
-        <img :src="badge1Url" alt="Badge Novice" />
-        <img :src="badge1Url" alt="Badge Novice" />
-      </div>
     </div>
   </div>
 </template>

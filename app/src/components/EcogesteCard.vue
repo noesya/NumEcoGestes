@@ -1,6 +1,6 @@
 <script>
   export default {
-    props: ['ecogesteKey', 'ecogeste', 'buttons', 'answered'],
+    props: ['ecogesteKey', 'ecogeste', 'buttons', 'answered', 'hasNext'],
 
     data () {
       return {
@@ -41,7 +41,7 @@
             <div class="fr-card__end" v-if="showButtons">
               <ul class="fr-btns-group fr-btns-group--inline-md">
                 <li><button class="fr-btn" v-on:click="$parent.answerEcogeste">Je le fais !</button></li>
-                <li><button class="fr-btn fr-btn--secondary" v-on:click="$parent.nextEcogeste">Geste suivant</button></li>
+                <li><button class="fr-btn fr-btn--secondary" v-if="hasNext" v-on:click="$parent.nextEcogeste">Geste suivant</button></li>
               </ul>
             </div>
           </div>

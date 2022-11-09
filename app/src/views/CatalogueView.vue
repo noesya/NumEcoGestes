@@ -1,21 +1,18 @@
 <script>
-  import EcogesteCard from "../components/EcogesteCard.vue"
-  export default {
+import EcogesteCard from "../components/EcogesteCard.vue"
+import state from "../services/State";
+
+export default {
     components: {
-      EcogesteCard
+        EcogesteCard
     },
 
     data () {
-      return {
-        ecogestes: []
-      }
-    },
-    mounted () {
-      fetch("data/ecogestes.json").then(result => result.json()).then(function (data) {
-        this.ecogestes = data;
-      }.bind(this))
+        return {
+          ecogestes: state.ecogestes
+        }
     }
-  }
+}
 </script>
 
 <template>
