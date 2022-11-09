@@ -30,7 +30,7 @@ export default {
     },
 
     getBadgeIcon(badge) {
-      return (this.score < badge.points) ? badge.icon.unchecked : badge.icon.checked;
+      return (this.score < badge.points) ? badge.smallIcon.unchecked : badge.smallIcon.checked;
     }
   },
 

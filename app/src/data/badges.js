@@ -1,53 +1,84 @@
-import badge1Unchecked from '@/assets/images/badges/badge1_unchecked.svg'
-import badge1Checked from '@/assets/images/badges/badge1_checked.svg'
-import badge2Unchecked from '@/assets/images/badges/badge2_unchecked.svg'
-import badge2Checked from '@/assets/images/badges/badge2_checked.svg'
-import badge3Unchecked from '@/assets/images/badges/badge3_unchecked.svg'
-import badge3Checked from '@/assets/images/badges/badge3_checked.svg'
-import badge4Unchecked from '@/assets/images/badges/badge4_unchecked.svg'
-import badge4Checked from '@/assets/images/badges/badge4_checked.svg'
-import badge5Unchecked from '@/assets/images/badges/badge5_unchecked.svg'
-import badge5Checked from '@/assets/images/badges/badge5_checked.svg'
+import badge1LargeUnchecked from '@/assets/images/badges/large/badge1_unchecked.svg'
+import badge1LargeChecked from '@/assets/images/badges/large/badge1_checked.svg'
+import badge2LargeUnchecked from '@/assets/images/badges/large/badge2_unchecked.svg'
+import badge2LargeChecked from '@/assets/images/badges/large/badge2_checked.svg'
+import badge3LargeUnchecked from '@/assets/images/badges/large/badge3_unchecked.svg'
+import badge3LargeChecked from '@/assets/images/badges/large/badge3_checked.svg'
+import badge4LargeUnchecked from '@/assets/images/badges/large/badge4_unchecked.svg'
+import badge4LargeChecked from '@/assets/images/badges/large/badge4_checked.svg'
+import badge5LargeUnchecked from '@/assets/images/badges/large/badge5_unchecked.svg'
+import badge5LargeChecked from '@/assets/images/badges/large/badge5_checked.svg'
+
+import badge1SmallUnchecked from '@/assets/images/badges/small/badge1_unchecked.svg'
+import badge1SmallChecked from '@/assets/images/badges/small/badge1_checked.svg'
+import badge2SmallUnchecked from '@/assets/images/badges/small/badge2_unchecked.svg'
+import badge2SmallChecked from '@/assets/images/badges/small/badge2_checked.svg'
+import badge3SmallUnchecked from '@/assets/images/badges/small/badge3_unchecked.svg'
+import badge3SmallChecked from '@/assets/images/badges/small/badge3_checked.svg'
+import badge4SmallUnchecked from '@/assets/images/badges/small/badge4_unchecked.svg'
+import badge4SmallChecked from '@/assets/images/badges/small/badge4_checked.svg'
+import badge5SmallUnchecked from '@/assets/images/badges/small/badge5_unchecked.svg'
+import badge5SmallChecked from '@/assets/images/badges/small/badge5_checked.svg'
 
 export default [
     {
         label: "Novice",
         points: 200,
-        icon: {
-            unchecked: badge1Unchecked,
-            checked: badge1Checked
+        smallIcon: {
+            unchecked: badge1SmallUnchecked,
+            checked: badge1SmallChecked
+        },
+        largeIcon: {
+            unchecked: badge1LargeUnchecked,
+            checked: badge1LargeChecked
         }
     },
     {
         label: "Initié·e",
         points: 400,
-        icon: {
-            unchecked: badge2Unchecked,
-            checked: badge2Checked
+        smallIcon: {
+            unchecked: badge2SmallUnchecked,
+            checked: badge2SmallChecked
+        },
+        largeIcon: {
+            unchecked: badge2LargeUnchecked,
+            checked: badge2LargeChecked
         }
     },
     {
         label: "Confirmé·e",
         points: 600,
-        icon: {
-            unchecked: badge3Unchecked,
-            checked: badge3Checked
+        smallIcon: {
+            unchecked: badge3SmallUnchecked,
+            checked: badge3SmallChecked
+        },
+        largeIcon: {
+            unchecked: badge3LargeUnchecked,
+            checked: badge3LargeChecked
         }
     },
     {
         label: "Expert·e",
         points: 800,
-        icon: {
-            unchecked: badge4Unchecked,
-            checked: badge4Checked
+        smallIcon: {
+            unchecked: badge4SmallUnchecked,
+            checked: badge4SmallChecked
+        },
+        largeIcon: {
+            unchecked: badge4LargeUnchecked,
+            checked: badge4LargeChecked
         }
     },
     {
         label: "Maître",
         points: 950,
-        icon: {
-            unchecked: badge5Unchecked,
-            checked: badge5Checked
+        smallIcon: {
+            unchecked: badge5SmallUnchecked,
+            checked: badge5SmallChecked
+        },
+        largeIcon: {
+            unchecked: badge5LargeUnchecked,
+            checked: badge5LargeChecked
         }
     },
 ]

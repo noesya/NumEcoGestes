@@ -11,7 +11,7 @@ export default {
 
   methods: {
     getBadgeIcon (badge, score) {
-      return (score < badge.points) ? badge.icon.unchecked : badge.icon.checked;
+      return (score < badge.points) ? badge.smallIcon.unchecked : badge.smallIcon.checked;
     }
   },
 
