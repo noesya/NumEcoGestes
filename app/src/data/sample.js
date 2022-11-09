@@ -39,7 +39,7 @@ export default {
                     alerts: { red: 0, orange: 6 },
                     ecogestes: {
                         teletravail: { raw: 50, multiplier: 1.5, total: 75 },
-                        telephone: { raw: 50, multiplier: 1, total: 50 }
+                        videoconf: { raw: 50, multiplier: 1, total: 50 }
                     },
                     score: 125
                 },
@@ -54,7 +54,7 @@ export default {
                 "2022-09-29": {
                     alerts: { red: 1, orange: 7 },
                     ecogestes: {
-                        telephone: { raw: 50, multiplier: 3, total: 150 },
+                        videoconf: { raw: 50, multiplier: 3, total: 150 },
                         chargement: { raw: 30, multiplier: 3, total: 90 }
                     },
                     score: 240
@@ -77,7 +77,7 @@ export default {
                     alerts: { red: 0, orange: 3 },
                     ecogestes: {
                         chauffage: { raw: 50, multiplier: 1.5, total: 75 },
-                        telephone: { raw: 50, multiplier: 1.5, total: 75 },
+                        teletravail: { raw: 50, multiplier: 1.5, total: 75 },
                         lumieres: { raw: 70, multiplier: 1.5, total: 105 }
                     },
                     score: 255
