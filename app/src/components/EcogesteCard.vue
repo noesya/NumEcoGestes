@@ -81,6 +81,11 @@
 </template>
 
 <style scoped>
+.fr-card--recto {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--grey-950-100)
+}
 .fr-card__img > .fr-badge {
   position: absolute;
   top: 0;
