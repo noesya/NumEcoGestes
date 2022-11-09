@@ -37,38 +37,75 @@ export default {
 
 <template>
   <div class="fr-grid-row main-infos">
-    <div class="fr-col">
-      <p class="fr-mb-0 main-infos__label">{{ day }}</p>
-      <p class="main-infos__value">{{ date }}</p>
-    </div>
-    <div class="fr-col">
-      <p class="fr-mb-0 main-infos__label">Heure</p>
-      <p class="main-infos__value">{{ hours }}:{{ minutes }}</p>
-    </div>
-    <div class="fr-col">
-      <p class="fr-mb-0 main-infos__label">Mon score</p>
-      <p class="main-infos__value">{{ score }}</p>
-    </div>
-    <div class="fr-col">
-      <p class="fr-mb-1w">Mes badges</p>
+    <div>
       <div>
-        <img class="img-badge" :src="badge1Url" alt="Badge Novice" />
-        <img class="img-badge" :src="badge1Url" alt="Badge Initié·e" />
-        <img class="img-badge" :src="badge1Url" alt="Badge Confirmé·e" />
-        <img class="img-badge" :src="badge1Url" alt="Badge Expert·e" />
-        <img class="img-badge" :src="badge1Url" alt="Badge Maître" />
+        <p class="fr-mb-0 main-infos__label">{{ day }}</p>
+        <p class="main-infos__value">{{ date }}</p>
+      </div>
+    </div>
+    <div class="sep"></div>
+    <div>
+      <div>
+        <p class="fr-mb-0 main-infos__label">Heure</p>
+        <p class="main-infos__value">{{ hours }}:{{ minutes }}</p>
+      </div>
+    </div>
+    <div class="sep"></div>
+    <div>
+      <div>
+        <p class="fr-mb-0 main-infos__label">Mon score</p>
+        <p class="main-infos__value">{{ score }}</p>
+      </div>
+    </div>
+    <div class="sep"></div>
+    <div>
+      <div>
+        <p class="fr-mb-1w">Mes badges</p>
+        <div>
+          <img class="img-badge" :src="badge1Url" alt="Badge Novice" />
+          <img class="img-badge" :src="badge1Url" alt="Badge Initié·e" />
+          <img class="img-badge" :src="badge1Url" alt="Badge Confirmé·e" />
+          <img class="img-badge" :src="badge1Url" alt="Badge Expert·e" />
+          <img class="img-badge" :src="badge1Url" alt="Badge Maître" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+
+.main-infos {
+  margin: var(--text-spacing);
+}
 .main-infos__value {
   font-size: 3rem;
   line-height: 3.5rem;
+  margin-bottom: 0;
 }
 
 .img-badge {
   max-width: 20%;
+}
+.fr-grid-row {
+  justify-content: space-between;
+}
+.fr-grid-row > div{
+  /* padding: 0 50px; */
+  /* border-right: 1px solid #000; */
+}
+
+.fr-grid-row > div:first-child{
+  padding-left: 0;
+}
+
+.fr-grid-row > div:last-child{
+  padding-right: 0;
+  border-right: 0;
+}
+
+.sep {
+  width: 1px;
+  background: var(--blue-france-925-125);
 }
 </style>
