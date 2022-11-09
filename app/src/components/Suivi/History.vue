@@ -18,7 +18,8 @@ export default {
 </script>
 
 <template>
-  <p>Mon historique</p>
+  <p class="fr-text--sm fr-mt-5v">Mon historique</p>
+
   <div class="fr-card fr-card--horizontal" v-for="month in Object.values(months).reverse()">
     <div class="fr-card__body">
       <div class="fr-card__content">

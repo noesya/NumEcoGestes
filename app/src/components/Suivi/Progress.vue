@@ -33,32 +33,32 @@ export default {
 </script>
 
 <template>
-  <p>Mon score détaillé</p>
+  <p class="fr-text--sm">Mon score détaillé</p>
 
   <div class="fr-grid-row">
-    <div class="fr-col">
+    <div class="level">
       <img :src="badge1Url" alt="Badge Novice" />
-      <p><strong>Novice</strong></p>
+      <p class="fr-h6"><strong>Novice</strong></p>
       <p>200</p>
     </div>
-    <div class="fr-col">
+    <div class="level">
       <img :src="badge1Url" alt="Badge Initié·e" />
-      <p><strong>Initié·e</strong></p>
+      <p class="fr-h6"><strong>Initié·e</strong></p>
       <p>400</p>
     </div>
-    <div class="fr-col">
+    <div class="level">
       <img :src="badge1Url" alt="Badge Confirmé·e" />
-      <p><strong>Confirmé·e</strong></p>
+      <p class="fr-h6"><strong>Confirmé·e</strong></p>
       <p>600</p>
     </div>
-    <div class="fr-col">
+    <div class="level">
       <img :src="badge1Url" alt="Badge Expert·e" />
-      <p><strong>Expert·e</strong></p>
+      <p class="fr-h6"><strong>Expert·e</strong></p>
       <p>800</p>
     </div>
-    <div class="fr-col">
+    <div class="level">
       <img :src="badge1Url" alt="Badge Maître" />
-      <p><strong>Maître</strong></p>
+      <p class="fr-h6"><strong>Maître</strong></p>
       <p>950</p>
     </div>
   </div>
@@ -66,12 +66,28 @@ export default {
 </template>
 
 <style scoped>
-  .fr-col {
-    text-align: center;
-  }
+.fr-grid-row {
+  justify-content: space-between;
+}
 
-  progress {
-    height: 2rem;
-    width: 100%;
-  }
+.level {
+  text-align: center;
+}
+.level p {
+  margin-bottom: 0;
+}
+
+.level::after {
+  content: '';
+  width: 1px;
+  height: 40px;
+  display: block;
+  background: var(--grey-200-850);
+  margin: 0.5rem auto;
+}
+
+progress {
+  height: 2rem;
+  width: 100%;
+}
 </style>
