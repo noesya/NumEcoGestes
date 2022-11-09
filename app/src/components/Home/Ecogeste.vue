@@ -81,6 +81,13 @@ export default {
         }
 
         answeredKeys = Object.keys(dayData.ecogestes);
+
+        if (answeredKeys.length >= 3) {
+          this.currentKey = null;
+          this.currentEcogeste = null;
+          return;
+        }
+
         this.hasNextEcogeste = answeredKeys.length < this.ecogestesKeys.length - 1;
 
         for (const key of this.ecogestesKeys) {
