@@ -11,23 +11,23 @@ export default {
   computed: {
     orangeAlertsCount: function () {
       return this.values.filter(function (value) {
-        value.hval === 2;
+        value.hvalue === 2;
       }).length;
     },
 
     redAlertsCount: function () {
       return this.values.filter(function (value) {
-        value.hval === 3;
+        value.hvalue === 3;
       }).length;
     },
   },
 
   methods: {
-    getClassName(hour, hval) {
+    getClassName(hour, hvalue) {
       var className = "daysplit__item__square"
-      if (hval === 3) {
+      if (hvalue === 3) {
         className += " daysplit__item__square--red"
-      } else if (hval === 2) {
+      } else if (hvalue === 2) {
         className += " daysplit__item__square--orange"
       } else if (8 <= hour && hour < 13 || 18 <= hour && hour < 20) {
         className += " daysplit__item__square--dark"
@@ -78,6 +78,7 @@ export default {
       });
 
       if (currentDay) {
+        console.log(currentDay);
         this.values = currentDay.values;
         this.updateStorageAlertsCount();
       }
@@ -106,7 +107,7 @@ export default {
 
   <div class="fr-grid-row daysplit">
     <div class="fr-col daysplit__item" v-for="value in values">
-      <div :class="getClassName(value.pas, value.hval)"></div>
+      <div :class="getClassName(value.pas, value.hvalue)"></div>
       <p v-if="value.pas % 2 === 0">{{ value.pas }}h</p>
     </div>
   </div>

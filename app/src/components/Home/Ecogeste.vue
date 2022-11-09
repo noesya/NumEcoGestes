@@ -37,7 +37,7 @@ export default {
         return value.pas === now.getHours();
       });
 
-      switch (currentValue.hval) {
+      switch (currentValue.hvalue) {
         case 3:
           return highConsoMultiplier * 2;
         case 2:
