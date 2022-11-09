@@ -66,9 +66,9 @@ export default {
     <div class="sep"></div>
     <div>
       <div>
-        <p class="fr-mb-1w fr-text--sm">Mes badges</p>
+        <p class="fr-mb-5v fr-text--sm">Mes badges</p>
         <div>
-          <img class="img-badge" :src="getBadgeIcon(badge)" alt="Badge {{ badge.label }}" v-for="badge in badges" />
+          <img class="img-badge fr-mr-1v" :src="getBadgeIcon(badge)" alt="Badge {{ badge.label }}" v-for="badge in badges" />
         </div>
       </div>
     </div>
@@ -88,6 +88,7 @@ export default {
 
 .img-badge {
   max-width: 20%;
+  height: 28px;
 }
 .fr-grid-row {
   justify-content: space-between;

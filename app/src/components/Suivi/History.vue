@@ -26,7 +26,7 @@ export default {
 <template>
   <p class="fr-text--sm fr-mt-5v fr-mb-2v">Mon historique</p>
 
-  <div class="fr-card fr-card--horizontal" v-for="month in Object.values(months).reverse()">
+  <div class="fr-card fr-card--horizontal fr-mb-2v" v-for="month in Object.values(months).reverse()">
     <div class="fr-card__body fr-p-4v">
       <div class="fr-grid-row">
         <div class="fr-col">
@@ -40,10 +40,10 @@ export default {
         <div class="fr-col">
           <p class="fr-text--sm fr-mb-1v">Alertes du mois</p>
           <div class="alerts">
-            <div class="fr-alert fr-alert--warning">
+            <div :class="{ 'is-inactive': month.alerts.orange === 0 }" class="fr-alert fr-alert--warning">
               <p>{{ month.alerts.orange }}</p>
             </div>
-            <div class="fr-alert fr-alert--error">
+            <div  :class="{ 'is-inactive': month.alerts.red === 0 }" class="fr-alert fr-alert--error">
               <p>{{ month.alerts.red }}</p>
             </div>
           </div>
@@ -51,7 +51,7 @@ export default {
         <div class="fr-col">
           <p class="fr-text--sm fr-mb-3v">Badges obtenus</p>
           <div>
-            <img class="img-badge" :src="getBadgeIcon(badge, month.score)" alt="Badge {{ badge.label }}" v-for="badge in badges" />
+            <img class="img-badge fr-mr-1v" :src="getBadgeIcon(badge, month.score)" alt="Badge {{ badge.label }}" v-for="badge in badges" />
           </div>
         </div>
       </div>
@@ -94,7 +94,16 @@ export default {
   --background-flat-warning: #F69051;
 }
 
+.fr-alert--warning.is-inactive {
+  --background-flat-warning: rgba(246, 144, 81, 0.15)
+}
+
+.fr-alert--error.is-inactive {
+  --background-flat-error: rgba(249, 63, 66, 0.15)
+}
+
 .img-badge {
   max-width: 20%;
+  height: 28px;
 }
 </style>
