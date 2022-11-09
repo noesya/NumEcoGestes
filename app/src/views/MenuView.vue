@@ -3,11 +3,22 @@ export default {
   props: ['receiveAlerts', 'receiveDailyNotification'],
   data () {
     return {
+      dailyNotificationEnabled: true,
+      alertNotificationEnabled: true,
       openedModal: false,
       modalActions: [
         { label: "Valider", onClick: this.onModalClickReset },
         { label: "Annuler", secondary: true, onClick: this.onModalClose },
       ]
+    }
+  },
+
+  watch: {
+    dailyNotificationEnabled: function (value) {
+      chrome.storage.local.set({ dailyNotification: { enabled: value } });
+    },
+    alertNotificationEnabled: function (value) {
+      chrome.storage.local.set({ alertNotification: { enabled: value } });
     }
   },
 
@@ -25,6 +36,15 @@ export default {
     onModalClose () {
       this.openedModal = false;
     }
+  },
+
+  mounted () {
+    chrome.storage.local.get('dailyNotification').then(function (data) {
+      this.dailyNotificationEnabled = data.dailyNotification.enabled;
+    }.bind(this));
+    chrome.storage.local.get('alertNotification').then(function (data) {
+      this.alertNotificationEnabled = data.alertNotification.enabled;
+    }.bind(this));
   }
 }
 </script>
@@ -56,8 +76,8 @@ export default {
 
     <div class="fr-grid-row">
       <div class="fr-col">
-        <DsfrToggleSwitch v-model="receiveAlerts" label="Alertes de tension réseau" hint="Les alertes de tension sur le réseau concernent des tranches horaires d’une heure." />
-        <DsfrToggleSwitch v-model="receiveDailyNotification" label="Quotidiennes" hint="Une seule notification par jour." />
+        <DsfrToggleSwitch v-model="alertNotificationEnabled" label="Alertes de tension réseau" hint="Les alertes de tension sur le réseau concernent des tranches horaires d’une heure." />
+        <DsfrToggleSwitch v-model="dailyNotificationEnabled" label="Quotidiennes" hint="Une seule notification par jour." />
       </div>
       <div class="fr-col">
         <p class="fr-mb-1w">Ressources utiles</p>

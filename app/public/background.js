@@ -72,7 +72,11 @@ chrome.alarms.onAlarm.addListener(function (alarm) {
     if (alarm.name === "ecogestes-ecowatt-data") {
         getEcowattData();
     } else if (alarm.name === "ecogestes-hourly-alert") {
-        sendAlertNotificationIfNeeded();
+        chrome.storage.local.get('alertNotification').then(function (data) {
+            if (data.alertNotification.enabled) {
+                sendAlertNotificationIfNeeded();
+            }
+        });
     }
 })
 
@@ -84,6 +88,7 @@ chrome.runtime.onInstalled.addListener(function () {
     getEcowattData();
     chrome.alarms.create("ecogestes-hourly-alert", { when: date.getTime(), periodInMinutes: 60 });
     initData();
+    chrome.storage.local.set({ dailyNotification: { enabled: true }, alertNotification: { enabled: true } });
 });
 
 (chrome.action || chrome.browserAction).onClicked.addListener(() => {
