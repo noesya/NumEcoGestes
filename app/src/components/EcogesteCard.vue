@@ -20,6 +20,17 @@
         }
       },
 
+      tagIcon() {
+        switch (this.ecogeste.tag) {
+          case "je-baisse":
+            return "ri-arrow-right-down-line";
+          case "j-eteins":
+            return "ri-shut-down-line";
+          case "je-decale":
+            return "ri-arrow-right-line";
+        }
+      },
+
       portraitImageUrl() {
         return `/assets/images/ecogestes/portrait/${this.ecogesteKey}.png`
       }
@@ -34,7 +45,7 @@
         <div class="fr-card__body">
           <div class="fr-card__content">
             <div class="fr-card__start fr-mb-2w">
-              <p class="fr-tag">{{ humanizedTag() }}</p>
+              <DsfrTag :label="humanizedTag()" :icon="tagIcon()" tagName="p" />
             </div>
             <h3 class="fr-card__title">{{ ecogeste.title }}</h3>
             <p class="fr-card__desc">{{ ecogeste.description }}</p>
