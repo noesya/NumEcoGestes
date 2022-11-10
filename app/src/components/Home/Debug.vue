@@ -52,11 +52,19 @@ export default {
 </script>
 
 <template>
-  <h2 class="fr-mt-2w fr-mb-1v">Débogage</h2>
-  <button class="fr-btn fr-btn--secondary fr-my-2w fr-mr-1w" type="button" v-on:click="setInitialData">Initialiser les données</button>
-  <button class="fr-btn fr-btn--secondary fr-my-2w fr-mr-1w" type="button" v-on:click="resetCurrentMonth">Réinitialiser le mois en cours</button>
-  <button class="fr-btn fr-btn--secondary fr-my-2w" type="button" v-on:click="setTodayAlerts">Ajouter des alertes pour aujourd'hui</button>
-  <label class="fr-label" for="delay-input">Délai (en secondes)</label>
-  <input class="fr-input fr-mb-2w" type="number" min="0" step="1" v-model="delayInSeconds">
-  <button class="fr-btn" type="button" v-on:click="sendDelayedNotification">Notification</button>
+  <div class="debug-section">
+    <h2 class="fr-mt-2w fr-mb-1v">Débogage</h2>
+    <button class="fr-btn fr-btn--secondary fr-my-2w fr-mr-1w" type="button" v-on:click="setInitialData">Initialiser les données</button>
+    <button class="fr-btn fr-btn--secondary fr-my-2w fr-mr-1w" type="button" v-on:click="resetCurrentMonth">Réinitialiser le mois en cours</button>
+    <button class="fr-btn fr-btn--secondary fr-my-2w" type="button" v-on:click="setTodayAlerts">Ajouter des alertes pour aujourd'hui</button>
+    <label class="fr-label" for="delay-input">Délai (en secondes)</label>
+    <input class="fr-input fr-mb-2w" type="number" min="0" step="1" v-model="delayInSeconds">
+    <button class="fr-btn" type="button" v-on:click="sendDelayedNotification">Notification</button>
+  </div>
 </template>
+
+<style scoped>
+.debug-section {
+  display: none;
+}
+</style>
