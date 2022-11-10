@@ -112,13 +112,13 @@ export default {
   </div>
   <div class="fr-grid-row fr-grid-row--gutters fr-mb-1w">
     <div class="fr-col">
-      <div class="fr-alert fr-alert--error">
+      <div :class="{ 'is-inactive': redAlertsCount === 0 }" class="fr-alert fr-alert--error">
         <div class="fr-alert__count">{{ redAlertsCount }}</div>
         <p>Alerte(s) rouge(s) : coupures inévitables si la consommation n’est pas réduite.</p>
       </div>
     </div>
     <div class="fr-col">
-      <div class="fr-alert fr-alert--warning">
+      <div :class="{ 'is-inactive': orangeAlertsCount === 0 }" class="fr-alert fr-alert--warning">
         <div class="fr-alert__count">{{ orangeAlertsCount }}</div>
         <p>Alerte(s) orange(s) : la réduction et le décalage des consommations d’énergie sont nécessaires.</p>
       </div>
@@ -137,21 +137,6 @@ export default {
 </template>
 
 <style scoped>
-
-.fr-alert--error {
-  --border-plain-error: var(--red-marianne-425-625-hover);
-  --background-flat-error: var(--red-marianne-425-625-hover);
-}
-
-.fr-alert--error:before {
-  -webkit-mask-image: url(../../icons/system/alarm-warning-fill.svg);
-  mask-image: url(../../icons/system/alarm-warning-fill.svg);
-}
-
-.fr-alert--warning {
-  --border-plain-warning: #F69051;
-  --background-flat-warning: #F69051;
-}
 .fr-alert__count {
   bottom: 0;
   color: white;
@@ -161,56 +146,56 @@ export default {
   position: absolute;
   text-align: center;
   width: 1.5rem;
-  }
+}
 
-  .daysplit {
-    margin: -0.05rem;
-  }
+.daysplit {
+  margin: -0.05rem;
+}
 
-  .daysplit__item {
-    padding: 0 0.05rem;
-  }
+.daysplit__item {
+  padding: 0 0.05rem;
+}
 
-  .daysplit__item__square {
-    background: var(--blue-france-850-200);
-    height: 24px;
-    width: 100%;
-  }
+.daysplit__item__square {
+  background: var(--blue-france-850-200);
+  height: 24px;
+  width: 100%;
+}
 
-  .daysplit__item__square--dark {
-    background: var(--blue-france-main-525);
-  }
+.daysplit__item__square--dark {
+  background: var(--blue-france-main-525);
+}
 
-  .daysplit__item__square--orange {
-    background: #F69051;
-  }
+.daysplit__item__square--orange {
+  background: #F69051;
+}
 
-  .daysplit__item__square--red {
-    background: var(--red-marianne-425-625-hover);
-  }
+.daysplit__item__square--red {
+  background: var(--red-marianne-425-625-hover);
+}
 
-  .daysplit__legend {
-    display: flex;
-    font-size: 0.85rem;
-    margin: 0 -1rem 1rem;
-  }
+.daysplit__legend {
+  display: flex;
+  font-size: 0.85rem;
+  margin: 0 -1rem 1rem;
+}
 
-  .daysplit__legend__item {
-    margin: 0 1rem;
-  }
+.daysplit__legend__item {
+  margin: 0 1rem;
+}
 
-  .daysplit__legend__square {
-    display: inline-block;
-    height: 1rem;
-    width: 1rem;
-    vertical-align: middle;
-  }
+.daysplit__legend__square {
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  vertical-align: middle;
+}
 
-  .daysplit__legend__square--regular {
-    background: #CACAFB;
-  }
+.daysplit__legend__square--regular {
+  background: #CACAFB;
+}
 
-  .daysplit__legend__square--high {
-    background: #6A6AF4;
-  }
+.daysplit__legend__square--high {
+  background: #6A6AF4;
+}
 </style>

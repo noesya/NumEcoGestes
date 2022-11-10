@@ -29,8 +29,12 @@ export default {
       }.bind(this))
     },
 
+    isBadgeActive(badge) {
+      return (this.score > badge.points)
+    },
+
     getBadgeIcon(badge) {
-      return (this.score < badge.points) ? badge.smallIcon.unchecked : badge.smallIcon.checked;
+      return this.isBadgeActive(badge) ? badge.smallIcon.checked : badge.smallIcon.unchecked;
     }
   },
 
@@ -68,7 +72,7 @@ export default {
       <div>
         <p class="fr-mb-5v fr-text--sm">Mes badges</p>
         <div>
-          <img class="img-badge fr-mr-1v" :src="getBadgeIcon(badge)" alt="Badge {{ badge.label }}" v-for="badge in badges" />
+          <img class="img-badge fr-mr-1v" :class="{'is-active' : isBadgeActive(badge)}" :src="getBadgeIcon(badge)" alt="Badge {{ badge.label }}" v-for="badge in badges" />
         </div>
       </div>
     </div>
