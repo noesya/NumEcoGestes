@@ -54,7 +54,7 @@ export default {
 </script>
 
 <template>
-  <div class="fr-tile fr-tile--horizontal">
+  <div class="fr-tile fr-tile--horizontal fr-mt-4w">
     <div class="fr-tile__body">
       <h4 class="fr-tile__title fr-mb-4w">Débogage</h4>
       <ul class="fr-btns-group fr-btns-group--inline-md">

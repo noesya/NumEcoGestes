@@ -46,37 +46,40 @@ export default {
 </script>
 
 <template>
-  <div class="fr-grid-row main-infos">
-    <div>
+  <router-link to="/suivi" tag="div">
+    <div class="fr-grid-row main-infos">
       <div>
-        <p class="main-infos__label fr-mb-0 fr-text--sm">{{ day }}</p>
-        <p class="main-infos__value">{{ date }}</p>
-      </div>
-    </div>
-    <div class="sep"></div>
-    <div>
-      <div>
-        <p class="main-infos__label fr-mb-0 fr-text--sm">Heure</p>
-        <p class="main-infos__value">{{ hours }}:{{ minutes }}</p>
-      </div>
-    </div>
-    <div class="sep"></div>
-    <div>
-      <div>
-        <p class="main-infos__label fr-mb-0 fr-text--sm">Mon score</p>
-        <p class="main-infos__value">{{ score }}</p>
-      </div>
-    </div>
-    <div class="sep"></div>
-    <div>
-      <div>
-        <p class="fr-mb-5v fr-text--sm">Mes badges</p>
         <div>
-          <img class="img-badge fr-mr-1v" :class="{'is-active' : isBadgeActive(badge)}" :src="getBadgeIcon(badge)" alt="Badge {{ badge.label }}" v-for="badge in badges" />
+          <p class="main-infos__label fr-mb-0 fr-text--sm">{{ day }}</p>
+          <p class="main-infos__value">{{ date }}</p>
+        </div>
+      </div>
+      <div class="sep"></div>
+      <div>
+        <div>
+          <p class="main-infos__label fr-mb-0 fr-text--sm">Heure</p>
+          <p class="main-infos__value">{{ hours }}:{{ minutes }}</p>
+        </div>
+      </div>
+      <div class="sep"></div>
+      <div>
+        <div>
+          <p class="main-infos__label fr-mb-0 fr-text--sm">Mon score</p>
+          <p class="main-infos__value">{{ score }}</p>
+        </div>
+      </div>
+      <div class="sep"></div>
+      <div>
+        <div>
+          <p class="fr-mb-5v fr-text--sm">Mes badges</p>
+          <div>
+            <img class="img-badge fr-mr-1v" :class="{'is-active' : isBadgeActive(badge)}" :src="getBadgeIcon(badge)"
+              alt="Badge {{ badge.label }}" v-for="badge in badges" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <style scoped>
