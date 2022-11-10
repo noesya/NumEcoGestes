@@ -28,6 +28,11 @@ export default {
 
     getBadgeIcon (badge) {
       return (this.score < badge.points) ? badge.largeIcon.unchecked : badge.largeIcon.checked;
+    },
+
+    getBadgeStyle (badge) {
+      const percentage = Math.floor(badge.points / 10)
+      return `left: ${percentage}%;`;
     }
   },
 
@@ -41,8 +46,8 @@ export default {
 <template>
   <p class="fr-text--sm fr-mt-5v fr-mb-2v">Mon score détaillé</p>
 
-  <div class="fr-grid-row">
-    <div class="level" v-for="badge in badges">
+  <div class="levels">
+    <div class="level" v-for="badge in badges" :style="getBadgeStyle(badge)">
       <img :src="getBadgeIcon(badge)" alt="Badge {{ badge.label }}" />
       <p class="fr-h6"><strong>{{ badge.label }}</strong></p>
       <p>{{ badge.points }}</p>
@@ -56,8 +61,16 @@ export default {
   justify-content: space-between;
 }
 
+.levels {
+  height: 250px;
+  position: relative;
+}
+
 .level {
+  bottom: 0;
+  position: absolute;
   text-align: center;
+  transform: translateX(-50%);
 }
 .level p {
   margin-bottom: 0;
