@@ -112,7 +112,7 @@ export default {
         { "pas": 14, "hvalue": 1 },
         { "pas": 15, "hvalue": 1 },
         { "pas": 16, "hvalue": 1 },
-        { "pas": 17, "hvalue": 1 },
+        { "pas": 17, "hvalue": 2 },
         { "pas": 18, "hvalue": 2 },
         { "pas": 19, "hvalue": 3 },
         { "pas": 20, "hvalue": 2 },

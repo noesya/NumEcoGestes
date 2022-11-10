@@ -21,7 +21,7 @@ export default {
     />
   <main>
     <div class="fr-mb-4w" v-for="(ecogeste, key) in ecogestes">
-      <EcogesteCard :ecogesteKey="key" :ecogeste="ecogeste" />
+      <EcogesteCard :ecogesteKey="key" :ecogeste="ecogeste" :credit="true" />
     </div>
   </main>
 </template>

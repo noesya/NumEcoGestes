@@ -1,14 +1,20 @@
 <script>
   export default {
-    props: ['ecogesteKey', 'ecogeste', 'buttons', 'answered', 'hasNext'],
+    props: ['ecogesteKey', 'ecogeste', 'buttons', 'answered', 'hasNext', 'multiplier', 'credit'],
 
     data () {
       return {
-        showButtons: this.buttons || false
+        showButtons: this.buttons || false,
+        showCredit: this.credit || false
       }
     },
 
     methods: {
+      totalPoints() {
+        const multiplier = this.multiplier || 1;
+        return Math.round(this.ecogeste.points * multiplier);
+      },
+
       humanizedTag() {
         switch (this.ecogeste.tag) {
           case "je-baisse":
@@ -62,9 +68,9 @@
         </div>
         <div class="fr-card__header">
           <div class="fr-card__img">
-            <p class="fr-badge fr-badge--no-icon">{{ ecogeste.points }} points</p>
+            <p class="fr-badge fr-badge--no-icon">{{ totalPoints() }} points</p>
             <img class="fr-responsive-img" :src="portraitImageUrl()" :alt="ecogeste.title" />
-            <p class="fr-card__img__credit">{{ ecogeste.credit }}</p>
+            <p v-if="showCredit" class="fr-card__img__credit">{{ ecogeste.credit }}</p>
           </div>
         </div>
       </div>
@@ -77,15 +83,13 @@
               Fermer
             </button>
             <div class="fr-card__start fr-mb-2w">
-              <p class="fr-badge fr-badge--no-icon">{{ ecogeste.points }} points</p>
+              <p class="fr-badge fr-badge--no-icon">{{ totalPoints() }} points</p>
             </div>
             <h3 class="fr-card__title">{{ ecogeste.thanks }}</h3>
             <div class="fr-callout fr-card__desc">
               <h3 class="fr-callout__title">{{ ecogeste.title }}</h3>
-              <p class="fr-callout__text">{{ ecogeste.description }}</p>
-            </div>
-            <div class="fr-card__end">
-              <p><a href="#" target="_blank" rel="noopener">{{ ecogeste.sources }}</a></p>
+              <p class="fr-callout__text fr-mb-2w">{{ ecogeste.description }}</p>
+              <p><a href="#" target="_blank" rel="noopener">Source(s) : {{ ecogeste.sources }}</a></p>
             </div>
           </div>
         </div>

@@ -142,7 +142,7 @@ export default {
         data.months[monthKey].days[dayKey].ecogestes[this.currentKey] = {
           raw: this.currentEcogeste.points,
           multiplier: multiplier,
-          total: this.currentEcogeste.points * multiplier
+          total: Math.round(this.currentEcogeste.points * multiplier)
         }
 
         data.months[monthKey].days[dayKey].score = Object.values(data.months[monthKey].days[dayKey].ecogestes).reduce((a, b) => a + b.total, 0);
@@ -167,7 +167,7 @@ export default {
     <p class="fr-mb-1w fr-mt-8v fr-text--sm">Suggestion d'écogeste</p>
 
     <div class="fr-mb-4w">
-      <EcogesteCard :ecogesteKey="currentKey" :ecogeste="currentEcogeste" :buttons="true" :answered="hasAnswered" :has-next="hasNextEcogeste" />
+      <EcogesteCard :ecogesteKey="currentKey" :ecogeste="currentEcogeste" :buttons="true" :answered="hasAnswered" :has-next="hasNextEcogeste" :multiplier="getMultiplier" />
     </div>
   </div>
 </template>

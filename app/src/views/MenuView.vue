@@ -92,6 +92,8 @@ export default {
       </div>
     </div>
 
+    <p>Les illustrations utilisées sont créditées et libres de droit.</p>
+
     <DsfrModal ref="modal" :opened="openedModal" :actions="modalActions" :is-alert="isAlert" title="Réinitialiser mon score" :origin="$refs.modalOrigin" @close="onModalClose()">
       <p>Êtes-vous sûr(e) ? Vous allez perdre toute votre progression.</p>
     </DsfrModal>
