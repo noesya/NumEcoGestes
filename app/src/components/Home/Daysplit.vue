@@ -124,14 +124,16 @@ export default {
   <div class="fr-grid-row fr-grid-row--gutters">
     <div class="fr-col">
       <div :class="{ 'is-inactive': redAlertsCount === 0 }" class="fr-alert fr-alert--error">
-        <div class="fr-alert__count">{{ redAlertsCount }}</div>
-        <p>Alerte(s) rouge(s) : coupures inévitables si la consommation n’est pas réduite.</p>
+        <div class="fr-alert__count" v-if="redAlertsCount > 0">{{ redAlertsCount }}</div>
+        <p v-if="redAlertsCount > 0">Alerte(s) rouge(s) : coupures inévitables si la consommation n’est pas réduite.</p>
+        <p v-if="redAlertsCount === 0">Pas d'alerte rouge prévue</p>
       </div>
     </div>
     <div class="fr-col">
       <div :class="{ 'is-inactive': orangeAlertsCount === 0 }" class="fr-alert fr-alert--warning">
-        <div class="fr-alert__count">{{ orangeAlertsCount }}</div>
-        <p>Alerte(s) orange(s) : la réduction et le décalage des consommations d’énergie sont nécessaires.</p>
+        <div class="fr-alert__count" v-if="orangeAlertsCount > 0">{{ orangeAlertsCount }}</div>
+        <p v-if="orangeAlertsCount > 0">Alerte(s) orange(s) : la réduction et le décalage des consommations d’énergie sont nécessaires.</p>
+        <p v-if="orangeAlertsCount === 0">Pas d'alerte orange prévue</p>
       </div>
     </div>
   </div>
