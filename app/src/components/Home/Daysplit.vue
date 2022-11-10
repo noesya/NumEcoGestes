@@ -35,6 +35,19 @@ export default {
       return className;
     },
 
+    getTitle(hour, hvalue) {
+      const secondHour = (hour + 1) % 24;
+      if (hvalue === 3) {
+        return `Alerte rouge entre ${hour}h et ${secondHour}h.`
+      } else if (hvalue === 2) {
+        return `Alerte orange entre ${hour}h et ${secondHour}h.`
+      } else if (8 <= hour && hour < 13 || 18 <= hour && hour < 20) {
+        return `Période de forte consommation entre ${hour}h et ${secondHour}h.`
+      } else {
+        return `Consommation normale entre ${hour}h et ${secondHour}h.`
+      }
+    },
+
     updateStorageAlertsCount () {
       chrome.storage.local.get("months").then(function (data) {
         var now = new Date(),
@@ -91,6 +104,12 @@ export default {
 <template>
   <p class="fr-mb-1w fr-mt-8v fr-text--sm">Alertes prévues aujourd'hui</p>
 
+  <div class="fr-grid-row daysplit">
+    <div class="fr-col daysplit__item" v-for="value in values">
+      <div :class="getClassName(value.pas, value.hvalue)" :title="getTitle(value.pas, value.hvalue)"></div>
+      <p v-if="value.pas % 2 === 0">{{ value.pas }}h</p>
+    </div>
+  </div>
   <div class="fr-grid-row fr-grid-row--gutters fr-mb-1w">
     <div class="fr-col">
       <div class="fr-alert fr-alert--error">
@@ -103,13 +122,6 @@ export default {
         <div class="fr-alert__count">{{ orangeAlertsCount }}</div>
         <p>Alerte(s) orange(s) : la réduction et le décalage des consommations d’énergie sont nécessaires.</p>
       </div>
-    </div>
-  </div>
-
-  <div class="fr-grid-row daysplit">
-    <div class="fr-col daysplit__item" v-for="value in values">
-      <div :class="getClassName(value.pas, value.hvalue)"></div>
-      <p v-if="value.pas % 2 === 0">{{ value.pas }}h</p>
     </div>
   </div>
   <div class="daysplit__legend">
