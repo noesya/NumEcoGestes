@@ -55,7 +55,7 @@ export default {
     />
   <main>
     <p>Pages</p>
-    <div class="fr-grid-row fr-mb-3w">
+    <div class="fr-grid-row fr-mb-5w">
       <div class="fr-col">
         <router-link to="/" class="fr-btn fr-icon-home-4-line" title="Accueil"></router-link>
         <router-link to="/" class="menu-link">Accueil</router-link>
@@ -69,10 +69,6 @@ export default {
         <router-link to="/ecogestes" class="menu-link">Liste d'écogestes</router-link>
       </div>
     </div>
-
-    <p>Extension</p>
-
-    <DsfrButton label="Réinitialiser mon score" :secondary="true" @click="openResetModal()" ref="modalOrigin" />
 
     <div class="fr-grid-row">
       <div class="fr-col">
@@ -90,6 +86,12 @@ export default {
         <p class="fr-mb-1w">Une extension proposée par</p>
         <p class="fr-logo">République<br>Française</p>
       </div>
+    </div>
+
+    <div class="extension fr-mb-2w">
+      <p>Extension</p>
+
+      <DsfrButton label="Réinitialiser mon score" :secondary="true" @click="openResetModal()" ref="modalOrigin" />
     </div>
 
     <p>Les illustrations utilisées sont créditées et libres de droit.</p>

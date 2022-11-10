@@ -104,13 +104,24 @@ export default {
 <template>
   <p class="fr-mb-1w fr-mt-8v fr-text--sm">Alertes prévues aujourd'hui</p>
 
+  <div class="daysplit__legend">
+    <div class="daysplit__legend__item">
+      <span class="daysplit__legend__square daysplit__legend__square--high"></span>
+      Forte consommation
+    </div>
+    <div class="legend__item">
+      <span class="daysplit__legend__square daysplit__legend__square--regular"></span>
+      Consommation normale
+    </div>
+  </div>
+
   <div class="fr-grid-row daysplit">
     <div class="fr-col daysplit__item" v-for="value in values">
       <div :class="getClassName(value.pas, value.hvalue)" :title="getTitle(value.pas, value.hvalue)"></div>
       <p v-if="value.pas % 2 === 0">{{ value.pas }}h</p>
     </div>
   </div>
-  <div class="fr-grid-row fr-grid-row--gutters fr-mb-1w">
+  <div class="fr-grid-row fr-grid-row--gutters">
     <div class="fr-col">
       <div :class="{ 'is-inactive': redAlertsCount === 0 }" class="fr-alert fr-alert--error">
         <div class="fr-alert__count">{{ redAlertsCount }}</div>
@@ -122,16 +133,6 @@ export default {
         <div class="fr-alert__count">{{ orangeAlertsCount }}</div>
         <p>Alerte(s) orange(s) : la réduction et le décalage des consommations d’énergie sont nécessaires.</p>
       </div>
-    </div>
-  </div>
-  <div class="daysplit__legend">
-    <div class="daysplit__legend__item">
-      <span class="daysplit__legend__square daysplit__legend__square--high"></span>
-      Forte consommation
-    </div>
-    <div class="legend__item">
-      <span class="daysplit__legend__square daysplit__legend__square--regular"></span>
-      Consommation normale
     </div>
   </div>
 </template>
@@ -177,7 +178,7 @@ export default {
 .daysplit__legend {
   display: flex;
   font-size: 0.85rem;
-  margin: 0 -1rem 1rem;
+  margin: 0 -1rem 0.5rem;
 }
 
 .daysplit__legend__item {

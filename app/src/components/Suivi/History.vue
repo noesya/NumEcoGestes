@@ -38,20 +38,20 @@ export default {
           <p class="score fr-mb-0 fr-display-xs">{{ month.score }}</p>
         </div>
         <div class="fr-col">
+          <p class="fr-text--sm fr-mb-3v">Badges obtenus</p>
+          <div>
+            <img class="img-badge fr-mr-1v" :src="getBadgeIcon(badge, month.score)" alt="Badge {{ badge.label }}" v-for="badge in badges" />
+          </div>
+        </div>
+        <div class="fr-col">
           <p class="fr-text--sm fr-mb-1v">Alertes du mois</p>
           <div class="alerts">
             <div :class="{ 'is-inactive': month.alerts.orange === 0 }" class="fr-alert fr-alert--warning">
               <p>{{ month.alerts.orange }}</p>
             </div>
-            <div  :class="{ 'is-inactive': month.alerts.red === 0 }" class="fr-alert fr-alert--error">
+            <div :class="{ 'is-inactive': month.alerts.red === 0 }" class="fr-alert fr-alert--error">
               <p>{{ month.alerts.red }}</p>
             </div>
-          </div>
-        </div>
-        <div class="fr-col">
-          <p class="fr-text--sm fr-mb-3v">Badges obtenus</p>
-          <div>
-            <img class="img-badge fr-mr-1v" :src="getBadgeIcon(badge, month.score)" alt="Badge {{ badge.label }}" v-for="badge in badges" />
           </div>
         </div>
       </div>
