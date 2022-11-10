@@ -8,7 +8,7 @@ export default {
     },
 
     resetCurrentMonth () {
-      chrome.storage.local.get("months").then(function (data) {
+      chrome.storage.local.get("months", function (data) {
         const now = new Date(),
           monthKey = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, 0)}`;
 
@@ -19,7 +19,7 @@ export default {
     },
 
     setTodayAlerts () {
-      chrome.storage.local.get("signals").then(function (data) {
+      chrome.storage.local.get("signals", function (data) {
         const now = new Date(),
           isoDate = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, 0)}-${now.getDate().toString().padStart(2, 0)}`;
 

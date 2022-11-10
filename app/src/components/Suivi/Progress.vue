@@ -19,9 +19,9 @@ export default {
     updateData () {
       const date = new Date()
       const monthDataKey = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, 0)}`
-      chrome.storage.local.get("months").then(function (data) {
+      chrome.storage.local.get("months", function (data) {
         const monthsData = data.months || {},
-              monthData = monthsData[monthDataKey] || { score: 0 }
+          monthData = monthsData[monthDataKey] || { score: 0 }
         this.score = monthData.score
       }.bind(this))
     },

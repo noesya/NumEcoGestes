@@ -39,10 +39,10 @@ export default {
   },
 
   mounted () {
-    chrome.storage.local.get('dailyNotification').then(function (data) {
+    chrome.storage.local.get('dailyNotification', function (data) {
       this.dailyNotificationEnabled = data.dailyNotification.enabled;
     }.bind(this));
-    chrome.storage.local.get('alertNotification').then(function (data) {
+    chrome.storage.local.get('alertNotification', function (data) {
       this.alertNotificationEnabled = data.alertNotification.enabled;
     }.bind(this));
   }

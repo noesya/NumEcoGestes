@@ -58,19 +58,19 @@ export default {
     },
 
     loadEcowattData: function () {
-      chrome.storage.local.get("signals").then(function (data) {
+      chrome.storage.local.get("signals", function (data) {
         this.signals = data.signals.signals;
       }.bind(this));
     },
 
     nextEcogeste: function () {
-      chrome.storage.local.get('months').then(function (data) {
+      chrome.storage.local.get('months', function (data) {
         var now = new Date(),
-            monthKey = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, 0)}`,
-            dayKey = `${monthKey}-${now.getDate().toString().padStart(2, 0)}`,
-            dayData,
-            answeredKeys,
-            availableKeys = [];
+          monthKey = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, 0)}`,
+          dayKey = `${monthKey}-${now.getDate().toString().padStart(2, 0)}`,
+          dayData,
+          answeredKeys,
+          availableKeys = [];
 
         data.months[monthKey] = data.months[monthKey] || { days: {} }
 
@@ -113,15 +113,15 @@ export default {
     },
 
     answerEcogeste: function () {
-      chrome.storage.local.get('months').then(function (data) {
+      chrome.storage.local.get('months', function (data) {
         var now = new Date(),
-            monthKey = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, 0)}`,
-            dayKey = `${monthKey}-${now.getDate().toString().padStart(2, 0)}`,
-            monthNames = [
-              "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
-              "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
-            ],
-            multiplier = this.getMultiplier;
+          monthKey = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, 0)}`,
+          dayKey = `${monthKey}-${now.getDate().toString().padStart(2, 0)}`,
+          monthNames = [
+            "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+            "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+          ],
+          multiplier = this.getMultiplier;
 
         data.months[monthKey] = data.months[monthKey] || {
           label: {

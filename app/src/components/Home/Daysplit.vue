@@ -49,10 +49,10 @@ export default {
     },
 
     updateStorageAlertsCount () {
-      chrome.storage.local.get("months").then(function (data) {
+      chrome.storage.local.get("months", function (data) {
         var now = new Date(),
-            monthKey = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, 0)}`,
-            dayKey = `${monthKey}-${now.getDate().toString().padStart(2, 0)}`;
+          monthKey = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, 0)}`,
+          dayKey = `${monthKey}-${now.getDate().toString().padStart(2, 0)}`;
 
         var monthsData = data.months || {};
 
@@ -84,9 +84,9 @@ export default {
   },
 
   mounted () {
-    chrome.storage.local.get("signals").then(function (data) {
+    chrome.storage.local.get("signals", function (data) {
       const now = new Date(),
-            isoDate = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, 0)}-${now.getDate().toString().padStart(2, 0)}`;
+        isoDate = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, 0)}-${now.getDate().toString().padStart(2, 0)}`;
 
       const currentDay = data.signals.signals.find(item => {
         return item.jour.indexOf(isoDate) !== -1;

@@ -59,7 +59,7 @@ export default {
     },
 
     mounted() {
-      chrome.storage.local.get("signals").then(function (data) {
+      chrome.storage.local.get("signals", function (data) {
         this.signals = data.signals.signals;
       }.bind(this));
     }

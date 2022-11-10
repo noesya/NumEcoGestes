@@ -16,7 +16,7 @@ export default {
   },
 
   mounted() {
-    chrome.storage.local.get("months").then(function (data) {
+    chrome.storage.local.get("months", function (data) {
       this.months = data.months;
     }.bind(this))
   }

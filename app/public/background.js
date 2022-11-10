@@ -81,13 +81,13 @@ chrome.alarms.onAlarm.addListener(function (alarm) {
     if (alarm.name === "ecogestes-ecowatt-data") {
         getEcowattData();
     } else if (alarm.name === "ecogestes-hourly-alert") {
-        chrome.storage.local.get('alertNotification').then(function (data) {
+        chrome.storage.local.get('alertNotification', function (data) {
             if (data.alertNotification.enabled) {
                 sendAlertNotificationIfNeeded();
             }
         });
     } else if (alarm.name === "ecogestes-daily-alert") {
-        chrome.storage.local.get('dailyNotification').then(function (data) {
+        chrome.storage.local.get('dailyNotification', function (data) {
             if (data.dailyNotification.enabled) {
                 sendDailyNotification();
             }
