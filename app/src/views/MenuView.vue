@@ -65,8 +65,8 @@ export default {
         <router-link to="/suivi" class="menu-link">Suivi d'activité</router-link>
       </div>
       <div class="fr-col">
-        <router-link to="/catalogue" class="fr-btn fr-icon-list-unordered" title="Catalogue d'écogestes"></router-link>
-        <router-link to="/catalogue" class="menu-link">Catalogue d'écogestes</router-link>
+        <router-link to="/ecogestes" class="fr-btn fr-icon-list-unordered" title="Liste d'écogestes"></router-link>
+        <router-link to="/ecogestes" class="menu-link">Liste d'écogestes</router-link>
       </div>
     </div>
 
@@ -84,7 +84,7 @@ export default {
         <p class="fr-mb-2w"><a href="https://ecoresponsable.numerique.gouv.fr/" target="_blank">Site de la MiNumEco</a></p>
         <p class="fr-mb-2w"><a href="#" target="_blank">Diffuser l'extension</a></p>
         <p class="fr-mb-2w"><a href="https://github.com/noesya/numecogestes" target="_blank">Code source</a></p>
-        <p class="fr-mb-2w"><a href="hthttps://www.monecowatt.fr/" target="_blank">MonEcowatt.fr</a></p>
+        <p class="fr-mb-2w"><a href="https://www.monecowatt.fr/" target="_blank">MonEcowatt.fr</a></p>
       </div>
       <div class="fr-col">
         <p class="fr-mb-1w">Une extension proposée par</p>

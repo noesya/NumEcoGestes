@@ -17,7 +17,7 @@ export default {
 
 <template>
   <DsfrBreadcrumb
-    :links="[{text: 'Menu', to: '/menu'}, { text: 'Catalogue d\'écogestes' }]"
+    :links="[{text: 'Menu', to: '/menu'}, { text: 'Liste d\'écogestes' }]"
     />
   <main>
     <div class="fr-mb-4w" v-for="(ecogeste, key) in ecogestes">

@@ -23,9 +23,9 @@ const router = createRouter({
         component: () => import('../views/SuiviView.vue')
     },
     {
-        path: "/catalogue",
-        name: "catalogue",
-        component: () => import('../views/CatalogueView.vue')
+        path: "/ecogestes",
+        name: "ecogestes",
+        component: () => import('../views/EcogestesView.vue')
     }
   ]
 })

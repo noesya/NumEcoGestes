@@ -6,6 +6,15 @@ const getEcowattData = function () {
     });
 };
 
+const sendDailyNotification = function () {
+    chrome.notifications.create('ECOGESTES_DAILY_NOTIF', {
+        title: "NumEcoGestes",
+        message: "Pensez à effectuer vos écogestes du jour !",
+        iconUrl: '/icon.png',
+        type: 'basic'
+    });
+};
+
 const sendAlertNotification = function (hourValue) {
     const title = hourValue === 2 ? "Alerte orange - NumEcoGestes" : "Alerte rouge - NumEcoGestes",
         message = hourValue === 2 ? "La réduction et le décalage des consommations d’énergie sont nécessaires." : "Coupures inévitables si la consommation n’est pas réduite.";
@@ -77,18 +86,31 @@ chrome.alarms.onAlarm.addListener(function (alarm) {
                 sendAlertNotificationIfNeeded();
             }
         });
+    } else if (alarm.name === "ecogestes-daily-alert") {
+        chrome.storage.local.get('dailyNotification').then(function (data) {
+            if (data.dailyNotification.enabled) {
+                sendDailyNotification();
+            }
+        });
     }
 })
 
 chrome.runtime.onInstalled.addListener(function () {
-    let date = new Date();
+    let date = new Date(),
+        tomorrowDate = new Date();
     date.setHours(date.getHours() + 1);
     date.setMinutes(0, 0, 0);
+    tomorrowDate.setDate(date.getDate() + 1)
+    tomorrowDate.setHours(10, 0, 0, 0);
+
     chrome.alarms.create("ecogestes-ecowatt-data", { periodInMinutes: 60 });
     getEcowattData();
-    chrome.alarms.create("ecogestes-hourly-alert", { when: date.getTime(), periodInMinutes: 60 });
-    initData();
+
     chrome.storage.local.set({ dailyNotification: { enabled: true }, alertNotification: { enabled: true } });
+    chrome.alarms.create("ecogestes-hourly-alert", { when: date.getTime(), periodInMinutes: 60 });
+    chrome.alarms.create("ecogestes-daily-alert", { when: tomorrowDate.getTime(), periodInMinutes: 1440 });
+
+    initData();
 });
 
 (chrome.action || chrome.browserAction).onClicked.addListener(() => {
@@ -96,16 +118,20 @@ chrome.runtime.onInstalled.addListener(function () {
 });
 
 chrome.notifications.onClicked.addListener(function (notificationId) {
-    if (notificationId === "ECOGESTES_ALERT_NOTIF") {
+    if (notificationId === "ECOGESTES_ALERT_NOTIF" || notificationId === "ECOGESTES_DAILY_NOTIF") {
         chrome.notifications.clear(notificationId);
         chrome.tabs.create({ url: "index.html" });
     }
 });
 
 chrome.runtime.onMessage.addListener(data => {
-    if (data.type === 'ecogestes-debug-notification') {
+    if (data.type === 'ecogestes-debug-alert-notification') {
         setTimeout(function () {
             sendAlertNotification(3);
+        }, 1000 * data.delayInSeconds);
+    } else if (data.type === 'ecogestes-debug-daily-notification') {
+        setTimeout(function () {
+            sendDailyNotification();
         }, 1000 * data.delayInSeconds);
     }
 });

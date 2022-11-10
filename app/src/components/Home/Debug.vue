@@ -2,16 +2,11 @@
 import sample from "../../data/sample"
 
 export default {
-  data () {
-    return {
-      delayInSeconds: 0
-    }
-  },
-
   methods: {
     setInitialData () {
       chrome.storage.local.set({ months: sample.initialData });
     },
+
     resetCurrentMonth () {
       chrome.storage.local.get("months").then(function (data) {
         const now = new Date(),
@@ -41,10 +36,17 @@ export default {
       });
     },
 
-    sendDelayedNotification () {
+    sendDelayedAlertNotification () {
       chrome.runtime.sendMessage('', {
-        type: 'ecogestes-debug-notification',
-        delayInSeconds: this.delayInSeconds
+        type: 'ecogestes-debug-alert-notification',
+        delayInSeconds: 3
+      });
+    },
+
+    sendDelayedDailyNotification () {
+      chrome.runtime.sendMessage('', {
+        type: 'ecogestes-debug-daily-notification',
+        delayInSeconds: 3
       });
     }
   }
@@ -52,19 +54,25 @@ export default {
 </script>
 
 <template>
-  <div class="debug-section">
-    <h2 class="fr-mt-2w fr-mb-1v">Débogage</h2>
-    <button class="fr-btn fr-btn--secondary fr-my-2w fr-mr-1w" type="button" v-on:click="setInitialData">Initialiser les données</button>
-    <button class="fr-btn fr-btn--secondary fr-my-2w fr-mr-1w" type="button" v-on:click="resetCurrentMonth">Réinitialiser le mois en cours</button>
-    <button class="fr-btn fr-btn--secondary fr-my-2w" type="button" v-on:click="setTodayAlerts">Ajouter des alertes pour aujourd'hui</button>
-    <label class="fr-label" for="delay-input">Délai (en secondes)</label>
-    <input class="fr-input fr-mb-2w" type="number" min="0" step="1" v-model="delayInSeconds">
-    <button class="fr-btn" type="button" v-on:click="sendDelayedNotification">Notification</button>
+  <div class="fr-tile fr-tile--horizontal">
+    <div class="fr-tile__body">
+      <h4 class="fr-tile__title fr-mb-4w">Débogage</h4>
+      <ul class="fr-btns-group fr-btns-group--inline-md">
+        <li><button class="fr-btn" type="button" v-on:click="setInitialData">Initialiser les données</button></li>
+        <li><button class="fr-btn" type="button" v-on:click="resetCurrentMonth">Réinitialiser le mois en cours</button></li>
+        <li><button class="fr-btn" type="button" v-on:click="setTodayAlerts">Ajouter des alertes pour aujourd'hui</button></li>
+      </ul>
+      <ul class="fr-btns-group fr-btns-group--inline-md">
+        <li><button class="fr-btn" type="button" v-on:click="sendDelayedAlertNotification">Notification d'alerte dans 3 secondes</button></li>
+        <li><button class="fr-btn" type="button" v-on:click="sendDelayedDailyNotification">Notification quotidienne dans 3 secondes</button></li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.debug-section {
-  display: none;
+.fr-tile {
+  background: var(--yellow-tournesol-975-75);
+  box-shadow: inset 0 0 0 1px var(--border-default-grey), inset 0-.25rem 0 0 var(--border-plain-yellow-tournesol);
 }
 </style>
