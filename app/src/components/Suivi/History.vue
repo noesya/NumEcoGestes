@@ -79,29 +79,6 @@ export default {
   padding-right: 1.25rem;
 }
 
-.fr-alert--error:before {
-  -webkit-mask-image: url(../../icons/system/alarm-warning-fill.svg);
-  mask-image: url(../../icons/system/alarm-warning-fill.svg);
-}
-
-.fr-alert--error {
-  --border-plain-error: var(--red-marianne-425-625-hover);
-  --background-flat-error: var(--red-marianne-425-625-hover);
-}
-
-.fr-alert--warning {
-  --border-plain-warning: #F69051;
-  --background-flat-warning: #F69051;
-}
-
-.fr-alert--warning.is-inactive {
-  --background-flat-warning: rgba(246, 144, 81, 0.15)
-}
-
-.fr-alert--error.is-inactive {
-  --background-flat-error: rgba(249, 63, 66, 0.15)
-}
-
 .img-badge {
   max-width: 20%;
   height: 28px;
