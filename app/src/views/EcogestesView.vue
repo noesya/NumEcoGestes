@@ -41,11 +41,24 @@ export default {
     data () {
         return {
           ecogestes: state.ecogestes,
-          signals: []
+          signals: [],
+          currentFilter: "",
+          filters: [
+            { label: "Tous", value: "" },
+            { label: "Je baisse", value: "je-baisse", icon: "ri-arrow-right-down-line" },
+            { label: "J'éteins", value: "j-eteins", icon: "ri-shut-down-line" },
+            { label: "Je décale", value: "je-decale", icon: "ri-arrow-right-line" },
+          ]
         }
     },
 
-  mounted() {
+    methods: {
+      selectFilter (filter) {
+        this.currentFilter = filter.value;
+      }
+    },
+
+    mounted() {
       chrome.storage.local.get("signals").then(function (data) {
         this.signals = data.signals.signals;
       }.bind(this));
@@ -58,8 +71,19 @@ export default {
     :links="[{text: 'Menu', to: '/menu'}, { text: 'Liste d\'écogestes' }]"
     />
   <main>
-    <div class="fr-mb-4w" v-for="(ecogeste, key) in ecogestes">
-      <EcogesteCard :ecogesteKey="key" :ecogeste="ecogeste" :credit="true" :multiplier="getMultiplier" />
+    <ul class="fr-tags-group fr-mb-2w">
+      <li v-for="filter in filters">
+        <button class="fr-tag" :aria-pressed="currentFilter === filter.value" v-on:click="selectFilter(filter)">
+          <VIcon v-if="filter.icon" :name="filter.icon" :label="filter.label" :scale="0.8" />
+          {{ filter.label }}
+        </button>
+      </li>
+    </ul>
+
+    <div v-for="(ecogeste, key) in ecogestes">
+      <div class="fr-mb-4w" v-if="currentFilter === '' || currentFilter === ecogeste.tag">
+        <EcogesteCard :ecogesteKey="key" :ecogeste="ecogeste" :credit="true" :multiplier="getMultiplier" />
+      </div>
     </div>
   </main>
 </template>
