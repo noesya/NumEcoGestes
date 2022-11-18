@@ -6,8 +6,18 @@ const getEcowattData = function () {
     });
 };
 
+const randomHexString = function () {
+    const length = 8;
+    const hex = '0123456789ABCDEF';
+    let output = '';
+    for (let i = 0; i < length; ++i) {
+        output += hex.charAt(Math.floor(Math.random() * hex.length));
+    }
+    return output;
+}
+
 const sendDailyNotification = function () {
-    chrome.notifications.create('ECOGESTES_DAILY_NOTIF', {
+    chrome.notifications.create(`ECOGESTES_DAILY_NOTIF-${randomHexString()}`, {
         title: "NumEcoGestes",
         message: "Pensez à effectuer vos écogestes du jour !",
         iconUrl: '/icon.png',
@@ -15,11 +25,12 @@ const sendDailyNotification = function () {
     });
 };
 
-const sendAlertNotification = function (hourValue) {
-    const title = hourValue === 2 ? "Alerte orange - NumEcoGestes" : "Alerte rouge - NumEcoGestes",
+const sendAlertNotification = function (hour, hourValue) {
+    const nextHour = hour + 1 % 24;
+    const title = hourValue === 2 ? `Alerte orange de ${hour}h à ${nextHour}h - NumEcoGestes` : `Alerte rouge de ${hour}h à ${nextHour}h - NumEcoGestes`,
         message = hourValue === 2 ? "La réduction et le décalage des consommations d’énergie sont nécessaires." : "Coupures inévitables si la consommation n’est pas réduite.";
 
-    chrome.notifications.create('ECOGESTES_ALERT_NOTIF', {
+    chrome.notifications.create(`ECOGESTES_ALERT_NOTIF-${randomHexString()}`, {
         title: title,
         message: message,
         iconUrl: '/icon.png',
@@ -29,24 +40,26 @@ const sendAlertNotification = function (hourValue) {
 
 const sendAlertNotificationIfNeeded = function () {
     const now = new Date(),
-        hour = now.getHours(),
+        hour = now.getHours() + 1,
         isoDate = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, 0)}-${now.getDate().toString().padStart(2, 0)}`;
 
-    const currentDay = this.signals.find(item => {
-        return item.jour.indexOf(isoDate) !== -1;
-    });
+    chrome.storage.local.get("signals", function (data) {
+        const currentDay = data.signals.signals.find(item => {
+            return item.jour.indexOf(isoDate) !== -1;
+        });
 
-    if (!currentDay) {
-        return;
-    }
+        if (!currentDay) {
+            return;
+        }
 
-    const currentValue = currentDay.values.find(function (value) {
-        return value.pas === hour;
-    });
+        const currentValue = currentDay.values.find(function (value) {
+            return value.pas === hour;
+        });
 
-    if (currentValue.hvalue > 1) {
-        sendAlertNotification(currentValue.hvalue);
-    }
+        if (currentValue.hvalue > 1) {
+            sendAlertNotification(hour, currentValue.hvalue);
+        }
+    }.bind(this));
 };
 
 const initData = function () {
@@ -96,19 +109,27 @@ chrome.alarms.onAlarm.addListener(function (alarm) {
 })
 
 chrome.runtime.onInstalled.addListener(function () {
-    let date = new Date(),
-        tomorrowDate = new Date();
-    date.setHours(date.getHours() + 1);
-    date.setMinutes(0, 0, 0);
-    tomorrowDate.setDate(date.getDate() + 1)
-    tomorrowDate.setHours(10, 0, 0, 0);
+    let nextHourlyDate = new Date(),
+        nextDailyDate = new Date();
+
+    if (nextHourlyDate.getMinutes() >= 50) {
+        // If 9:50, next hourly is at 10:55 instead of 9:55
+        nextHourlyDate.setHours(nextHourlyDate.getHours() + 1);
+    }
+    nextHourlyDate.setMinutes(55, 0, 0);
+
+    if (nextDailyDate.getHours() === 9 && nextDailyDate.getMinutes() >= 50 || nextDailyDate.getHours() > 9) {
+        // Set alert for tomorrow if current time is 9:50 or later
+        nextDailyDate.setDate(nextDailyDate.getDate() + 1)
+    }
+    nextDailyDate.setHours(10, 0, 0, 0);
 
     chrome.alarms.create("ecogestes-ecowatt-data", { periodInMinutes: 60 });
     getEcowattData();
 
     chrome.storage.local.set({ dailyNotification: { enabled: true }, alertNotification: { enabled: true } });
-    chrome.alarms.create("ecogestes-hourly-alert", { when: date.getTime(), periodInMinutes: 60 });
-    chrome.alarms.create("ecogestes-daily-alert", { when: tomorrowDate.getTime(), periodInMinutes: 1440 });
+    chrome.alarms.create("ecogestes-hourly-alert", { when: nextHourlyDate.getTime(), periodInMinutes: 60 });
+    chrome.alarms.create("ecogestes-daily-alert", { when: nextDailyDate.getTime(), periodInMinutes: 1440 });
 
     initData();
 });
@@ -118,7 +139,7 @@ chrome.runtime.onInstalled.addListener(function () {
 });
 
 chrome.notifications.onClicked.addListener(function (notificationId) {
-    if (notificationId === "ECOGESTES_ALERT_NOTIF" || notificationId === "ECOGESTES_DAILY_NOTIF") {
+    if (notificationId.indexOf("ECOGESTES_") !== -1) {
         chrome.notifications.clear(notificationId);
         chrome.tabs.create({ url: "index.html" });
     }
@@ -126,8 +147,9 @@ chrome.notifications.onClicked.addListener(function (notificationId) {
 
 chrome.runtime.onMessage.addListener(data => {
     if (data.type === 'ecogestes-debug-alert-notification') {
+        const hour = new Date().getHours() + 1;
         setTimeout(function () {
-            sendAlertNotification(3);
+            sendAlertNotification(hour, 3);
         }, 1000 * data.delayInSeconds);
     } else if (data.type === 'ecogestes-debug-daily-notification') {
         setTimeout(function () {

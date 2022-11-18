@@ -36,7 +36,7 @@ export default {
     onModalClose () {
       this.openedModal = false;
     }
-  },
+   },
 
   mounted () {
     chrome.storage.local.get('dailyNotification', function (data) {
@@ -54,7 +54,6 @@ export default {
     :links="[{text: 'Menu'}]"
     />
   <main>
-    <p>Pages</p>
     <div class="fr-grid-row fr-mb-5w">
       <div class="fr-col">
         <router-link to="/" class="fr-btn fr-icon-home-4-line" title="Accueil"></router-link>
@@ -70,36 +69,46 @@ export default {
       </div>
     </div>
 
+    <div class="fr-grid-row fr-grid-row--gutters fr-mb-5w">
+      <div class="fr-col">
+        <div class="fr-toggle fr-toggle--label-left">
+          <input type="checkbox" id="alert-notification" v-model="alertNotificationEnabled" class="fr-toggle__input" aria-describedby="alert-notif-hint-text">
+          <label class="fr-toggle__label" for="alert-notification">Alertes de tensions oranges et rouges</label>
+          <p id="alert-notif-hint-text" class="fr-hint-text">Ces alertes surviennent 5 minutes avant une tension orange ou rouge prévue sur le réseau électrique. Une alerte correspond à une tranche horaire d’une heure.</p>
+        </div>
+      </div>
+      <div class="fr-col">
+        <div class="fr-toggle fr-toggle--label-left">
+          <input type="checkbox" id="daily-notification" v-model="dailyNotificationEnabled" class="fr-toggle__input" aria-describedby="daily-notif-hint-text">
+          <label class="fr-toggle__label" for="daily-notification">Alertes quotidiennes</label>
+          <p id="daily-notif-hint-text" class="fr-hint-text">Une notification est envoyée chaque jour afin de vous permettre de consulter les écogestes proposés et d’augmenter votre score.</p>
+        </div>
+      </div>
+      <div class="fr-col">
+        <DsfrButton label="Réinitialiser mon score" @click="openResetModal()" ref="modalOrigin" />
+      </div>
+    </div>
     <div class="fr-grid-row">
-      <div class="fr-col">
-        <DsfrToggleSwitch v-model="alertNotificationEnabled" label="Alertes de tension réseau" hint="Les alertes de tension sur le réseau concernent des tranches horaires d’une heure." />
-        <DsfrToggleSwitch v-model="dailyNotificationEnabled" label="Quotidiennes" hint="Une seule notification par jour." />
-      </div>
-      <div class="fr-col">
-        <p class="fr-mb-1w">Ressources utiles</p>
-        <p class="fr-mb-2w"><a href="https://ecoresponsable.numerique.gouv.fr/" target="_blank">Site de la MiNumEco</a></p>
-        <p class="fr-mb-2w"><a href="#" target="_blank">Diffuser l'extension</a></p>
-        <p class="fr-mb-2w"><a href="https://github.com/noesya/numecogestes" target="_blank">Code source</a></p>
-        <p class="fr-mb-2w"><a href="https://www.monecowatt.fr/" target="_blank">MonEcowatt.fr</a></p>
-      </div>
       <div class="fr-col">
         <p class="fr-mb-1w">Une extension proposée par</p>
         <p class="fr-logo">République<br>Française</p>
       </div>
+      <div class="fr-col">
+        <p class="fr-mb-1w">Ressources utiles</p>
+        <p class="fr-mb-2w"><a href="https://ecoresponsable.numerique.gouv.fr/" target="_blank">Diffuser l'extension</a></p>
+        <p class="fr-mb-2w"><a href="https://github.com/noesya/numecogestes" target="_blank">Code source</a></p>
+        <p class="fr-mb-2w"><a href="https://www.monecowatt.fr/" target="_blank">MonEcowatt.fr</a></p>
+      </div>
+      <div class="fr-col">
+        <p class="fr-mb-1w">Illustrations des écogestes</p>
+        <p class="fr-hint-text">Toutes les images utilisées pour illustrer les écogestes sont libres de droit et ont été compressées afin de limiter au maximum le poids de l’extension.</p>
+      </div>
     </div>
-
-    <div class="extension fr-mb-2w">
-      <p>Extension</p>
-
-      <DsfrButton label="Réinitialiser mon score" :secondary="true" @click="openResetModal()" ref="modalOrigin" />
-    </div>
-
-    <p>Les illustrations utilisées sont créditées et libres de droit.</p>
-
-    <DsfrModal ref="modal" :opened="openedModal" :actions="modalActions" :is-alert="isAlert" title="Réinitialiser mon score" :origin="$refs.modalOrigin" @close="onModalClose()">
-      <p>Êtes-vous sûr(e) ? Vous allez perdre toute votre progression.</p>
-    </DsfrModal>
   </main>
+
+  <DsfrModal ref="modal" :opened="openedModal" :actions="modalActions" :is-alert="isAlert" title="Réinitialiser mon score" :origin="$refs.modalOrigin" @close="onModalClose()">
+    <p>Êtes-vous sûr(e) ? Vous allez perdre toute votre progression.</p>
+  </DsfrModal>
 </template>
 
 <style scoped>
@@ -112,11 +121,4 @@ export default {
   margin-left: 1rem;
 }
 
-.fr-toggle {
-  /* flex-direction: row-reverse; */
-}
-
-.fr-toggle__label:before {
-  display: none;
-}
 </style>
