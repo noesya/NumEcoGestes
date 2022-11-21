@@ -7,7 +7,7 @@ export default {
       alertNotificationEnabled: true,
       openedModal: false,
       modalActions: [
-        { label: "Valider", onClick: this.onModalClickReset },
+        { label: "Réinitialiser mon score", onClick: this.onModalClickReset },
         { label: "Annuler", secondary: true, onClick: this.onModalClose },
       ]
     }
@@ -95,7 +95,7 @@ export default {
       </div>
       <div class="fr-col">
         <p class="fr-mb-1w">Ressources utiles</p>
-        <p class="fr-mb-2w"><a href="https://ecoresponsable.numerique.gouv.fr/" target="_blank">Diffuser l'extension</a></p>
+        <p class="fr-mb-2w"><a href="https://ecoresponsable.numerique.gouv.fr/publications/numecogestes/" target="_blank">Diffuser l'extension</a></p>
         <p class="fr-mb-2w"><a href="https://github.com/noesya/numecogestes" target="_blank">Code source</a></p>
         <p class="fr-mb-2w"><a href="https://www.monecowatt.fr/" target="_blank">MonEcowatt.fr</a></p>
       </div>
@@ -106,8 +106,8 @@ export default {
     </div>
   </main>
 
-  <DsfrModal ref="modal" :opened="openedModal" :actions="modalActions" :is-alert="isAlert" title="Réinitialiser mon score" :origin="$refs.modalOrigin" @close="onModalClose()">
-    <p>Êtes-vous sûr(e) ? Vous allez perdre toute votre progression.</p>
+  <DsfrModal ref="modal" :opened="openedModal" :actions="modalActions" :is-alert="isAlert" title="Vous êtes sur le point de réinitialiser votre score d’activité." :origin="$refs.modalOrigin" @close="onModalClose()">
+    <p>Si vous continuez, tous les points que vous avez gagnés depuis l'installation de l'extension et les badges associés seront remis à zéro. Vous pourrez quand même gagner des points et des badges en déclarant à nouveau des écogestes.</p>
   </DsfrModal>
 </template>
 

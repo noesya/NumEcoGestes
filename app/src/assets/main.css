@@ -86,3 +86,7 @@
   animation: pop 1.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
 }
+
+.fr-modal .fr-btns-group .fr-btn:not(.fr-btn--secondary) {
+  background-color: var(--background-flat-error);
+}

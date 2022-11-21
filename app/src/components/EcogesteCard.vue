@@ -58,6 +58,9 @@
             </div>
             <h3 class="fr-card__title">{{ ecogeste.title }}</h3>
             <p class="fr-card__desc">{{ ecogeste.description }}</p>
+            <div class="fr-card__end" v-if="!showButtons">
+              <p class="fr-hint-text">Source : {{ ecogeste.sources }}</p>
+            </div>
             <div class="fr-card__end" v-if="showButtons">
               <ul class="fr-btns-group fr-btns-group--inline-md">
                 <li><button class="fr-btn" v-on:click="$parent.answerEcogeste">Je le fais !</button></li>
@@ -89,7 +92,7 @@
             <div class="fr-callout fr-card__desc">
               <h3 class="fr-callout__title">{{ ecogeste.title }}</h3>
               <p class="fr-callout__text fr-mb-2w">{{ ecogeste.description }}</p>
-              <p><a href="#" target="_blank" rel="noopener">Source(s) : {{ ecogeste.sources }}</a></p>
+              <p>Source : {{ ecogeste.sources }}</p>
             </div>
           </div>
         </div>
