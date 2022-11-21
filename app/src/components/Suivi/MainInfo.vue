@@ -14,7 +14,7 @@ export default {
       modalShareText: '',
       openedModal: false,
       modalActions: [
-        { label: "Partager", onClick: this.onModalClickShare },
+        { label: "Partager", onClick: this.onModalClickShare, icon: "ri-share-box-line", iconRight: true },
         { label: "Annuler", secondary: true, onClick: this.onModalClose }
       ]
     }
