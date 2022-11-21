@@ -18,7 +18,7 @@ const randomHexString = function () {
 
 const sendDailyNotification = function () {
     chrome.notifications.create(`ECOGESTES_DAILY_NOTIF-${randomHexString()}`, {
-        title: "NumEcoGestes",
+        title: "NumÉcoGestes",
         message: "Pensez à effectuer vos écogestes du jour !",
         iconUrl: '/icon.png',
         type: 'basic'
@@ -27,7 +27,7 @@ const sendDailyNotification = function () {
 
 const sendAlertNotification = function (hour, hourValue) {
     const nextHour = hour + 1 % 24;
-    const title = hourValue === 2 ? `Alerte orange de ${hour}h à ${nextHour}h - NumEcoGestes` : `Alerte rouge de ${hour}h à ${nextHour}h - NumEcoGestes`,
+    const title = hourValue === 2 ? `Alerte orange de ${hour}h à ${nextHour}h - NumÉcoGestes` : `Alerte rouge de ${hour}h à ${nextHour}h - NumÉcoGestes`,
         message = hourValue === 2 ? "La réduction et le décalage des consommations d’énergie sont nécessaires." : "Coupures inévitables si la consommation n’est pas réduite.";
 
     chrome.notifications.create(`ECOGESTES_ALERT_NOTIF-${randomHexString()}`, {
@@ -132,6 +132,7 @@ chrome.runtime.onInstalled.addListener(function () {
     chrome.alarms.create("ecogestes-daily-alert", { when: nextDailyDate.getTime(), periodInMinutes: 1440 });
 
     initData();
+    chrome.tabs.create({ url: "index.html" });
 });
 
 (chrome.action || chrome.browserAction).onClicked.addListener(() => {

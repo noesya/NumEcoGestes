@@ -1,20 +1,41 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from "vue-router"
+import OnboardingSetup from "./components/OnboardingSetup.vue"
 
-import state from "./services/State";
+export default {
+  components: { RouterLink, RouterView, OnboardingSetup },
 
-const quickLinks = [
-  {
-    label: 'Accueil',
-    path: '/',
-    icon: 'ri-home-4-line'
+  computed: {
+    quickLinks () {
+      return this.onboarded ? [
+        {
+          label: 'Accueil',
+          path: '/',
+          icon: 'ri-home-4-line'
+        },
+        {
+          label: 'Menu',
+          path: '/menu',
+          icon: 'ri-apps-2-line'
+        }
+      ] : [];
+    }
   },
-  {
-    label: 'Menu',
-    path: '/menu',
-    icon: 'ri-apps-2-line'
+
+  data() {
+    return {
+      onboardStatusLoaded: false,
+      onboarded: false
+    }
+  },
+
+  mounted() {
+    chrome.storage.local.get('onboarding', function (data) {
+      this.onboarded = data.onboarding && data.onboarding.success;
+      this.onboardStatusLoaded = true;
+    }.bind(this));
   }
-]
+}
 
 </script>
 
@@ -25,10 +46,12 @@ const quickLinks = [
       service-title="NumÉcoGestes"
       service-description="Une extension proposée par la mission interministérielle numérique écoresponsable"
       />
-  <div class="fr-container">
-    <RouterView />
+  <div v-if="onboardStatusLoaded" class="fr-container">
+    <div v-if="!onboarded">
+      <OnboardingSetup />
+    </div>
+    <div v-if="onboarded">
+      <RouterView />
+    </div>
   </div>
 </template>
-
-<style scoped>
-</style>

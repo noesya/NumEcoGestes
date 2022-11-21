@@ -23,7 +23,7 @@ export default {
     },
 
     shareText () {
-      return `J'ai un score de ${this.score} points sur NumEcoGestes ! Téléchargez l'extension !`;
+      return `J'ai un score de ${this.score} points sur NumÉcoGestes ! Téléchargez l'extension !`;
     },
 
     facebookUrl () {
