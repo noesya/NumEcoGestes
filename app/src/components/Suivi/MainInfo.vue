@@ -8,7 +8,34 @@ export default {
       date: "1 janv.",
       hours: "00",
       minutes: "00",
-      score: 0
+      score: 0,
+      websiteUrl: "https://ecoresponsable.numerique.gouv.fr/publications/numecogestes/"
+    }
+  },
+
+  computed: {
+    networks () {
+      return [
+        { name: "facebook", label: "Partager sur Facebook", url: this.facebookUrl },
+        { name: "twitter", label: "Partager sur Twitter", url: this.twitterUrl },
+        { name: "linkedin", label: "Partager sur LinkedIn", url: this.linkedinUrl }
+      ]
+    },
+
+    shareText () {
+      return `J'ai un score de ${this.score} points sur NumEcoGestes ! Téléchargez l'extension !`;
+    },
+
+    facebookUrl () {
+      return `https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(this.websiteUrl)}`;
+    },
+
+    twitterUrl () {
+      return `https://twitter.com/intent/tweet?url=${encodeURIComponent(this.websiteUrl)}&text=${encodeURIComponent(this.shareText)}`;
+    },
+
+    linkedinUrl () {
+      return `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(this.websiteUrl)}`;
     }
   },
 
@@ -29,6 +56,7 @@ export default {
   },
 
   mounted() {
+    this.window = window;
     this.updateData();
     setInterval(this.updateData.bind(this), 1000);
   }
@@ -37,18 +65,23 @@ export default {
 
 <template>
   <div class="fr-grid-row main-infos">
-    <div class="fr-mr-4v">
-      <p class="main-infos__label fr-mb-0 fr-text--sm">{{ day }}</p>
-      <p class="main-infos__value">{{ date }}</p>
-    </div>
-    <div class="sep"></div>
-    <div class="fr-ml-4v">
-      <p class="main-infos__label fr-mb-0 fr-text--sm">Heure</p>
-      <p class="main-infos__value">{{ hours }}:{{ minutes }}</p>
-    </div>
     <div class="score">
       <p class="main-infos__label fr-mb-0 fr-text--sm">Mon score</p>
       <p class="main-infos__value">{{ score }}</p>
+    </div>
+    <div class="actions">
+      <div class="fr-share">
+        <p class="fr-share__title">Partager mon score</p>
+        <ul class="fr-btns-group">
+          <li v-for="network in networks">
+            <a  :class="`fr-btn fr-btn--${network.name}`" :title="`${network.label} - nouvelle fenêtre`" :href="network.url"
+                target="_blank" rel="noopener noreferrer"
+                @click.prevent="window.open(network.url, network.label, 'toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=450')">
+              {{ network.label }}
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -63,7 +96,7 @@ export default {
   justify-content: start
 }
 
-.score {
+.actions {
   margin-left: auto;
 }
 
