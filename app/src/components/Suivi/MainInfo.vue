@@ -9,16 +9,23 @@ export default {
       hours: "00",
       minutes: "00",
       score: 0,
-      websiteUrl: "https://ecoresponsable.numerique.gouv.fr/publications/numecogestes/"
+      websiteUrl: "https://ecoresponsable.numerique.gouv.fr/publications/numecogestes/",
+      modalNetwork: null,
+      modalShareText: '',
+      openedModal: false,
+      modalActions: [
+        { label: "Partager", onClick: this.onModalClickShare },
+        { label: "Annuler", secondary: true, onClick: this.onModalClose }
+      ]
     }
   },
 
   computed: {
     networks () {
       return [
-        { name: "facebook", label: "Partager sur Facebook", url: this.facebookUrl },
-        { name: "twitter", label: "Partager sur Twitter", url: this.twitterUrl },
-        { name: "linkedin", label: "Partager sur LinkedIn", url: this.linkedinUrl }
+        { name: "facebook", label: "Partager sur Facebook", url: this.facebookUrl, onClick: this.openNetworkModal },
+        { name: "twitter", label: "Partager sur Twitter", url: this.twitterUrl, onClick: this.openNetworkWindow },
+        { name: "linkedin", label: "Partager sur LinkedIn", url: this.linkedinUrl, onClick: this.openNetworkModal }
       ]
     },
 
@@ -52,6 +59,29 @@ export default {
           monthData = monthsData[monthDataKey] || { score: 0 }
         this.score = monthData.score
       }.bind(this))
+    },
+
+    openNetworkModal (network) {
+      this.modalNetwork = network;
+      this.modalShareText = this.shareText;
+      this.openedModal = true;
+    },
+
+    onModalClickShare() {
+      this.openNetworkWindow(this.modalNetwork);
+    },
+
+    onModalClose() {
+      this.openedModal = false;
+    },
+
+    openNetworkWindow (network) {
+      window.open(network.url, network.label, 'toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=450')
+    },
+
+    copyModalShareText () {
+      document.querySelector("textarea#modalShareText").select();
+      document.execCommand('copy');
     }
   },
 
@@ -76,13 +106,21 @@ export default {
           <li v-for="network in networks">
             <a  :class="`fr-btn fr-btn--${network.name}`" :title="`${network.label} - nouvelle fenêtre`" :href="network.url"
                 target="_blank" rel="noopener noreferrer"
-                @click.prevent="window.open(network.url, network.label, 'toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=450')">
+                @click.prevent="network.onClick(network)">
               {{ network.label }}
             </a>
           </li>
         </ul>
       </div>
     </div>
+
+    <DsfrModal ref="modal" :opened="openedModal" :actions="modalActions"
+      :title="modalNetwork && modalNetwork.label" :origin="$refs.modalOrigin"
+      @close="onModalClose()">
+      <label class="fr-label" for="modalShareText">Texte de partage</label>
+      <textarea id="modalShareText" class="fr-input fr-mb-2w" v-model="modalShareText"></textarea>
+      <DsfrButton label="Copier" :tertiary="true" @click="copyModalShareText()" icon="ri-clipboard-line" />
+    </DsfrModal>
   </div>
 </template>
 

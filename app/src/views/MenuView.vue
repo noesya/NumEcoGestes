@@ -106,9 +106,11 @@ export default {
     </div>
   </main>
 
-  <DsfrModal ref="modal" :opened="openedModal" :actions="modalActions" :is-alert="isAlert" title="Vous êtes sur le point de réinitialiser votre score d’activité." :origin="$refs.modalOrigin" @close="onModalClose()">
-    <p>Si vous continuez, tous les points que vous avez gagnés depuis l'installation de l'extension et les badges associés seront remis à zéro. Vous pourrez quand même gagner des points et des badges en déclarant à nouveau des écogestes.</p>
-  </DsfrModal>
+  <div class="reset-modal-container">
+    <DsfrModal ref="modal" :opened="openedModal" :actions="modalActions" title="Vous êtes sur le point de réinitialiser votre score d’activité." :origin="$refs.modalOrigin" @close="onModalClose()">
+      <p>Si vous continuez, tous les points que vous avez gagnés depuis l'installation de l'extension et les badges associés seront remis à zéro. Vous pourrez quand même gagner des points et des badges en déclarant à nouveau des écogestes.</p>
+    </DsfrModal>
+  </div>
 </template>
 
 <style scoped>

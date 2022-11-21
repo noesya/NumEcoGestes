@@ -87,6 +87,6 @@
   transform: translate3d(0, 0, 0);
 }
 
-.fr-modal .fr-btns-group .fr-btn:not(.fr-btn--secondary) {
+.reset-modal-container .fr-modal .fr-btns-group .fr-btn:not(.fr-btn--secondary) {
   background-color: var(--background-flat-error);
 }
