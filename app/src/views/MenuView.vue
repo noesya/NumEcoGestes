@@ -96,7 +96,7 @@ export default {
       <div class="fr-col">
         <p class="fr-mb-1w">Ressources utiles</p>
         <p class="fr-mb-2w"><a href="https://ecoresponsable.numerique.gouv.fr/publications/numecogestes/" target="_blank">Diffuser l'extension</a></p>
-        <p class="fr-mb-2w"><a href="https://github.com/noesya/numecogestes" target="_blank">Code source</a></p>
+        <p class="fr-mb-2w"><a href="https://github.com/DISIC/numecogestes" target="_blank">Code source</a></p>
         <p class="fr-mb-2w"><a href="https://www.monecowatt.fr/" target="_blank">MonEcowatt.fr</a></p>
       </div>
       <div class="fr-col">
