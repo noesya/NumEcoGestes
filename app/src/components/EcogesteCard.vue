@@ -57,7 +57,7 @@
               </p>
             </div>
             <h3 class="fr-card__title">{{ ecogeste.title }}</h3>
-            <p class="fr-card__desc">{{ ecogeste.description }}</p>
+            <p class="fr-card__desc fr-text--md">{{ ecogeste.description }}</p>
             <div class="fr-card__end" v-if="!showButtons">
               <p class="fr-hint-text">{{ ecogeste.sources }}</p>
             </div>

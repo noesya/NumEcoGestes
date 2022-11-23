@@ -105,7 +105,8 @@
 .fr-header__service-tagline {
   font-size: 0.875rem;
 }
-
-.fr-header__body-row {
-  padding: 0.625rem 0 !important;
-}
+/* 
+.fr-header__body-row, .fr-header__service {
+  padding-top: 0.625rem !important;
+  padding-bottom: 0.625rem !important;
+} */
