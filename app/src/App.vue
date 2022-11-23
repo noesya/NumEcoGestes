@@ -31,11 +31,26 @@ export default {
     }
   },
 
+  methods: {
+    updateState () {
+      const date = new Date(),
+            monthDataKey = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, 0)}`
+      chrome.storage.local.get("months", function (data) {
+        const monthsData = data.months || {},
+        monthData = monthsData[monthDataKey] || { score: 0 }
+        this.state.score = monthData.score
+      }.bind(this));
+    }
+  },
+
   mounted() {
     chrome.storage.local.get('onboarding', function (data) {
       this.onboarded = data.onboarding && data.onboarding.success;
       this.onboardStatusLoaded = true;
     }.bind(this));
+
+    this.updateState();
+    setInterval(this.updateState.bind(this), 1000);
   }
 }
 

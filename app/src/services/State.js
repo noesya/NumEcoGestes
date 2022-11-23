@@ -3,6 +3,7 @@ import Ecogeste from "../models/Ecogeste";
 class State {
     constructor () {
         this.ecogestes = {};
+        this.score = 0;
         fetch("data/ecogestes.json")
             .then(response => response.json())
             .then(this.loadEcogestes.bind(this));
