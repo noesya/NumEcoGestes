@@ -93,3 +93,11 @@
 .reset-modal-container .fr-modal .fr-btns-group .fr-btn:not(.fr-btn--secondary) {
   background-color: var(--background-flat-error);
 }
+
+.fr-header {
+  border-radius: 6px;
+}
+
+.fr-breadcrumb {
+  margin-bottom: 16px !important;
+}

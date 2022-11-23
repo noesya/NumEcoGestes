@@ -81,6 +81,6 @@ export default {
 
 .img-badge {
   max-width: 20%;
-  height: 28px;
+  height: 32px;
 }
 </style>

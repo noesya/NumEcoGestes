@@ -95,7 +95,7 @@ export default {
 
 .img-badge {
   max-width: 20%;
-  height: 28px;
+  height: 32px;
 }
 .fr-grid-row {
   justify-content: space-between;

@@ -57,7 +57,7 @@ export default {
     :links="[{text: 'Menu'}]"
     />
   <main>
-    <div class="fr-grid-row fr-mb-5w">
+    <div class="fr-grid-row fr-grid-row--gutters fr-mb-5w">
       <div class="fr-col">
         <router-link to="/" class="fr-btn fr-icon-home-4-line" title="Accueil"></router-link>
         <router-link to="/" class="menu-link">Accueil</router-link>
@@ -72,7 +72,7 @@ export default {
       </div>
     </div>
 
-    <p>Réglages</p>
+    <p class="fr-text--sm fr-mb-1w">Réglages</p>
 
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-5w">
       <div class="fr-col">
@@ -96,33 +96,29 @@ export default {
         <p class="fr-hint-text">En cliquant sur ce bouton, vous supprimerez toutes les données locales de l’extension : votre score, vos badges et votre historique.</p>
       </div>
     </div>
-    <div class="fr-grid-row">
-      <div class="fr-col">
-        <p class="fr-mb-1w">Une extension proposée par</p>
+    <div class="fr-grid-row fr-mb-6w">
+      <div class="fr-col-5">
+        <p class="fr-mb-1w fr-text--sm">Une extension proposée par</p>
         <div class="fr-grid-row">
-          <div class="fr-col">
-            <p class="fr-logo">République<br>Française</p>
-          </div>
-          <div class="fr-col">
-            <img class="logo-minumeco" :src="minumecoLogo" alt="MiNumEco" />
-          </div>
+          <p class="fr-logo fr-mr-3w">République<br>Française</p>
+          <img class="logo-minumeco" :src="minumecoLogo" alt="MiNumEco" />
         </div>
       </div>
       <div class="fr-col">
-        <p class="fr-mb-1w">Ressources utiles</p>
+        <p class="fr-mb-1w fr-text--sm">Ressources utiles</p>
         <p class="fr-mb-2w"><a href="https://ecoresponsable.numerique.gouv.fr/publications/numecogestes/" target="_blank">Diffuser l'extension</a></p>
         <p class="fr-mb-2w"><a href="https://github.com/DISIC/numecogestes" target="_blank">Code source</a></p>
         <p class="fr-mb-2w"><a href="https://www.monecowatt.fr/" target="_blank">MonEcowatt.fr</a></p>
       </div>
     </div>
-    <div class="fr-grid-row">
-      <div class="fr-col">
-        <p class="fr-mb-1w">Illustrations des écogestes</p>
+    <div class="fr-grid-row fr-grid-row--gutters">
+      <div class="fr-col-9">
+        <p class="fr-mb-1w fr-text--sm">Illustrations des écogestes</p>
         <p class="fr-hint-text fr-mb-2w">Toutes les images utilisées pour illustrer les écogestes sont libres de droit et ont été compressées afin de limiter au maximum le poids de l’extension.</p>
         <p class="fr-hint-text">Photographes : Bernard Hermant, John Smit, Isabella and Zsa Fischer, Christin Hume, rawpixel.com, Chuttersnap, Compare Fibre, Isaac Li Shung Tan.</p>
       </div>
       <div class="fr-col">
-        <p class="fr-mb-1w">Conception</p>
+        <p class="fr-mb-1w fr-text--sm">Conception</p>
         <p class="fr-hint-text">Extension conçue et développée avec Ctrl S et Noesya.</p>
       </div>
     </div>
