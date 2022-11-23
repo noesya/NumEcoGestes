@@ -74,7 +74,7 @@ export default {
     <ul class="fr-tags-group fr-mb-2w">
       <li v-for="filter in filters">
         <button class="fr-tag" :aria-pressed="currentFilter === filter.value" v-on:click="selectFilter(filter)">
-          <VIcon v-if="filter.icon" :name="filter.icon" :label="filter.label" :scale="0.8" />
+          <VIcon class="fr-mr-1v" v-if="filter.icon" :name="filter.icon" :label="filter.label" :scale="0.8" />
           {{ filter.label }}
         </button>
       </li>

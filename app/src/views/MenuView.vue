@@ -79,14 +79,14 @@ export default {
         <div class="fr-toggle fr-toggle--label-left">
           <input type="checkbox" id="alert-notification" v-model="alertNotificationEnabled" class="fr-toggle__input" aria-describedby="alert-notif-hint-text">
           <label class="fr-toggle__label" for="alert-notification">Alertes de tensions</label>
-          <p id="alert-notif-hint-text" class="fr-hint-text">Ces alertes surviennent 5 minutes avant une tension <u>orange</u> ou <u>rouge</u> prévue sur le réseau électrique. Une alerte correspond à une tranche horaire d’une heure.</p>
+          <p id="alert-notif-hint-text" class="fr-hint-text fr-mt-1w">Ces alertes surviennent 5 minutes avant une tension <u>orange</u> ou <u>rouge</u> prévue sur le réseau électrique. Une alerte correspond à une tranche horaire d’une heure.</p>
         </div>
       </div>
       <div class="fr-col">
         <div class="fr-toggle fr-toggle--label-left">
           <input type="checkbox" id="daily-notification" v-model="dailyNotificationEnabled" class="fr-toggle__input" aria-describedby="daily-notif-hint-text">
           <label class="fr-toggle__label" for="daily-notification">Alertes quotidiennes</label>
-          <p id="daily-notif-hint-text" class="fr-hint-text">Une notification est envoyée chaque jour afin de vous permettre de consulter les écogestes proposés et d’augmenter votre score.</p>
+          <p id="daily-notif-hint-text" class="fr-hint-text fr-mt-1w">Une notification est envoyée chaque jour afin de vous permettre de consulter les écogestes proposés et d’augmenter votre score.</p>
         </div>
       </div>
       <div class="fr-col">
