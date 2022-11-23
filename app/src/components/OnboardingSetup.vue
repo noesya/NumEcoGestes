@@ -1,11 +1,5 @@
 <script>
 export default {
-  data () {
-    return {
-      notificationSent: false
-    }
-  },
-
   methods: {
     sendTestNotification () {
       chrome.notifications.create(null, {
@@ -14,7 +8,6 @@ export default {
         iconUrl: '/icon.png',
         type: 'basic'
       });
-      this.notificationSent = true;
     },
 
     onboard() {
@@ -27,21 +20,22 @@ export default {
 </script>
 
 <template>
-  <DsfrBreadcrumb :links="[{ text: 'Bienvenue dans NumÉcoGestes' }]" />
+  <DsfrBreadcrumb :links="[{ text: 'Information' }]" />
 
   <main>
-    <h1>Bienvenue dans NumÉcoGestes</h1>
+    <h1>Bienvenue sur l’extension NumÉcoGestes !</h1>
 
-    <p>NumÉcoGestes est un outil, extension de navigateur, proposée par la MiNumEco, permettant de savoir quand et quoi faire en cas de pic de consommation d’énergie.</p>
+    <h2>Étape 1</h2>
 
-    <p>Cet outil envoie des notifications pour vous rappeler d'effectuer vos écogestes et vous alerter lors de périodes de forte consommation. Cliquez sur le bouton ci-dessous pour tester l'envoi de notification.</p>
+    <p>Cet outil proposé par la MiNumEco vous permet de savoir quoi faire en cas de tension sur le réseau électrique due à un pic de consommation. Elle vous accompagne également au quotidien dans l’adoption des écogestes.</p>
+    <p>Pour vous informer, l’extension vous envoie des notifications en cas d’alerte de tension ainsi qu’une notification quotidienne hors alerte. Vous pouvez vérifier que les notifications fonctionnent en cliquant ci-dessous. Celles-ci seront désactivables dans les réglages de l’extension.</p>
 
     <button type="button" class="fr-btn fr-mb-4w" v-on:click="sendTestNotification">Recevoir une notification</button>
 
-    <div v-if="notificationSent">
-      <p>Elle sera affichée à l’écran. Si vous ne la voyez pas, vérifiez que les notifications sont activées au niveau de votre système.</p>
+    <h2>Étape 2</h2>
 
-      <button type="button" class="fr-btn" @click.prevent="onboard">Je l'ai bien reçue !</button>
-    </div>
+    <p>Si vous l’avez reçue, vous pouvez cliquer sur le bouton ci-dessous pour accéder aux fonctionnalités de l’extension. Sinon, vérifiez que les notifications sont activées sur votre navigateur ou votre système d’exploitation.</p>
+
+    <button type="button" class="fr-btn fr-btn--secondary" @click.prevent="onboard">Commencer à utiliser l’extension</button>
   </main>
 </template>

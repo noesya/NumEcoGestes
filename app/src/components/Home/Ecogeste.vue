@@ -164,7 +164,7 @@ export default {
 
 <template>
   <div v-if="currentEcogeste">
-    <p class="fr-mb-1w fr-mt-8v fr-text--sm">Suggestion d'écogeste</p>
+    <p class="fr-mb-1w fr-mt-8v fr-text--sm">Je baisse, j’éteins, je décale</p>
 
     <div class="fr-mb-4w">
       <EcogesteCard :ecogesteKey="currentKey" :ecogeste="currentEcogeste" :buttons="true" :answered="hasAnswered" :has-next="hasNextEcogeste" :multiplier="getMultiplier" />

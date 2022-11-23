@@ -23,14 +23,10 @@ export default {
   computed: {
     networks () {
       return [
-        { name: "facebook", label: "Partager sur Facebook", url: this.facebookUrl, onClick: this.openNetworkModal },
-        { name: "twitter", label: "Partager sur Twitter", url: this.twitterUrl, onClick: this.openNetworkWindow },
-        { name: "linkedin", label: "Partager sur LinkedIn", url: this.linkedinUrl, onClick: this.openNetworkModal }
+        { name: "facebook", icon: "facebook-circle-fill", label: "Partager sur Facebook", url: this.facebookUrl, onClick: this.openNetworkModal },
+        { name: "twitter", icon: "twitter-fill", label: "Partager sur Twitter", url: this.twitterUrl, onClick: this.openNetworkWindow },
+        { name: "linkedin", icon: "linkedin-box-fill", label: "Partager sur LinkedIn", url: this.linkedinUrl, onClick: this.openNetworkModal }
       ]
-    },
-
-    shareText () {
-      return `J'ai un score de ${this.score} points sur NumÉcoGestes ! Téléchargez l'extension !`;
     },
 
     facebookUrl () {
@@ -38,7 +34,8 @@ export default {
     },
 
     twitterUrl () {
-      return `https://twitter.com/intent/tweet?url=${encodeURIComponent(this.websiteUrl)}&text=${encodeURIComponent(this.shareText)}`;
+      const shareText = `Agir pour réduire sa consommation énergétique c'est simple avec #NumEcoGestes de la @Mi_NumEco_Gouv. Ce mois-ci j'ai cumulé ${this.score} points, et toi ?`;
+      return `https://twitter.com/intent/tweet?url=${encodeURIComponent(this.websiteUrl)}&text=${encodeURIComponent(shareText)}`;
     },
 
     linkedinUrl () {
@@ -63,7 +60,7 @@ export default {
 
     openNetworkModal (network) {
       this.modalNetwork = network;
-      this.modalShareText = this.shareText;
+      this.modalShareText = `Agir pour réduire sa consommation énergétique c'est simple avec #NumEcoGestes. Ce mois-ci j'ai cumulé ${this.score} points, et toi ?`;
       this.openedModal = true;
     },
 
@@ -101,7 +98,7 @@ export default {
     </div>
     <div class="actions">
       <div class="fr-share">
-        <p class="fr-share__title">Partager mon score</p>
+        <p class="fr-share__title">Éclairez vos amis !</p>
         <ul class="fr-btns-group">
           <li v-for="network in networks">
             <a  :class="`fr-btn fr-btn--${network.name}`" :title="`${network.label} - nouvelle fenêtre`" :href="network.url"
@@ -114,10 +111,13 @@ export default {
       </div>
     </div>
 
-    <DsfrModal ref="modal" :opened="openedModal" :actions="modalActions"
-      :title="modalNetwork && modalNetwork.label" :origin="$refs.modalOrigin"
+    <DsfrModal ref="modal" :opened="openedModal" :actions="modalActions" :origin="$refs.modalOrigin"
       @close="onModalClose()">
-      <label class="fr-label" for="modalShareText">Texte de partage</label>
+      <h1 class="fr-modal__title">
+        <span :class="`fr-fi-${modalNetwork && modalNetwork.icon} fr-fi--lg`"></span>
+        {{ modalNetwork && modalNetwork.label }}
+      </h1>
+      <label class="fr-label" for="modalShareText">Vous pouvez copier-coller ce texte pour partager votre score</label>
       <textarea id="modalShareText" class="fr-input fr-mb-2w" v-model="modalShareText"></textarea>
       <DsfrButton label="Copier" :tertiary="true" @click="copyModalShareText()" icon="ri-clipboard-line" />
     </DsfrModal>
@@ -138,4 +138,32 @@ export default {
   margin-left: auto;
 }
 
+.fr-share .fr-btn--facebook::before {
+  -webkit-mask-image: url("../../icons/logo/facebook-circle-fill.svg");
+  mask-image: url("../../icons/logo/facebook-circle-fill.svg");
+}
+
+.fr-share .fr-btn--twitter::before {
+  -webkit-mask-image: url("../../icons/logo/twitter-fill.svg");
+  mask-image: url("../../icons/logo/twitter-fill.svg");
+}
+
+.fr-share .fr-btn--linkedin::before {
+  -webkit-mask-image: url("../../icons/logo/linkedin-box-fill.svg");
+  mask-image: url("../../icons/logo/linkedin-box-fill.svg");
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .fr-share .fr-btn--facebook::before {
+    background-image: url("../../icons/logo/facebook-circle-fill.svg");
+  }
+
+  .fr-share .fr-btn--twitter::before {
+    background-image: url("../../icons/logo/twitter-fill.svg");
+  }
+
+  .fr-share .fr-btn--linkedin::before {
+    background-image: url("../../icons/logo/linkedin-box-fill.svg");
+  }
+}
 </style>

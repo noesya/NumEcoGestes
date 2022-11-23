@@ -69,12 +69,14 @@ export default {
       </div>
     </div>
 
+    <p>Réglages</p>
+
     <div class="fr-grid-row fr-grid-row--gutters fr-mb-5w">
       <div class="fr-col">
         <div class="fr-toggle fr-toggle--label-left">
           <input type="checkbox" id="alert-notification" v-model="alertNotificationEnabled" class="fr-toggle__input" aria-describedby="alert-notif-hint-text">
-          <label class="fr-toggle__label" for="alert-notification">Alertes de tensions oranges et rouges</label>
-          <p id="alert-notif-hint-text" class="fr-hint-text">Ces alertes surviennent 5 minutes avant une tension orange ou rouge prévue sur le réseau électrique. Une alerte correspond à une tranche horaire d’une heure.</p>
+          <label class="fr-toggle__label" for="alert-notification">Alertes de tensions</label>
+          <p id="alert-notif-hint-text" class="fr-hint-text">Ces alertes surviennent 5 minutes avant une tension <u>orange</u> ou <u>rouge</u> prévue sur le réseau électrique. Une alerte correspond à une tranche horaire d’une heure.</p>
         </div>
       </div>
       <div class="fr-col">
@@ -85,13 +87,23 @@ export default {
         </div>
       </div>
       <div class="fr-col">
-        <DsfrButton label="Réinitialiser mon score" @click="openResetModal()" ref="modalOrigin" />
+        <div class="fr-mb-1w">
+          <DsfrButton label="Supprimer toutes les données" :secondary="true" @click="openResetModal()" ref="modalOrigin" />
+        </div>
+        <p class="fr-hint-text">En cliquant sur ce bouton, vous supprimerez toutes les données locales de l’extension : votre score, vos badges et votre historique.</p>
       </div>
     </div>
     <div class="fr-grid-row">
       <div class="fr-col">
         <p class="fr-mb-1w">Une extension proposée par</p>
-        <p class="fr-logo">République<br>Française</p>
+        <div class="fr-grid-row">
+          <div class="fr-col">
+            <p class="fr-logo">République<br>Française</p>
+          </div>
+          <div class="fr-col">
+            <p>TODO : Logo MiNumEco</p>
+          </div>
+        </div>
       </div>
       <div class="fr-col">
         <p class="fr-mb-1w">Ressources utiles</p>
@@ -99,9 +111,16 @@ export default {
         <p class="fr-mb-2w"><a href="https://github.com/DISIC/numecogestes" target="_blank">Code source</a></p>
         <p class="fr-mb-2w"><a href="https://www.monecowatt.fr/" target="_blank">MonEcowatt.fr</a></p>
       </div>
+    </div>
+    <div class="fr-grid-row">
       <div class="fr-col">
         <p class="fr-mb-1w">Illustrations des écogestes</p>
-        <p class="fr-hint-text">Toutes les images utilisées pour illustrer les écogestes sont libres de droit et ont été compressées afin de limiter au maximum le poids de l’extension.</p>
+        <p class="fr-hint-text fr-mb-2w">Toutes les images utilisées pour illustrer les écogestes sont libres de droit et ont été compressées afin de limiter au maximum le poids de l’extension.</p>
+        <p class="fr-hint-text">Photographes : Bernard Hermant, John Smit, Isabella and Zsa Fischer, Christin Hume, rawpixel.com, Chuttersnap, Compare Fibre, Isaac Li Shung Tan.</p>
+      </div>
+      <div class="fr-col">
+        <p class="fr-mb-1w">Conception</p>
+        <p class="fr-hint-text">Extension conçue et développée avec Ctrl S et Noesya.</p>
       </div>
     </div>
   </main>
@@ -121,6 +140,14 @@ export default {
 .menu-link {
   font-size: 1.25rem;
   margin-left: 1rem;
+}
+
+.fr-toggle {
+  padding-top: 0;
+}
+
+.fr-toggle label:after {
+  top: 0;
 }
 
 </style>

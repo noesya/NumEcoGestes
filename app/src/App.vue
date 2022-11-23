@@ -1,6 +1,7 @@
 <script>
 import { RouterLink, RouterView } from "vue-router"
 import OnboardingSetup from "./components/OnboardingSetup.vue"
+import state from "./services/State";
 
 export default {
   components: { RouterLink, RouterView, OnboardingSetup },
@@ -25,7 +26,8 @@ export default {
   data() {
     return {
       onboardStatusLoaded: false,
-      onboarded: false
+      onboarded: false,
+      state: state
     }
   },
 
