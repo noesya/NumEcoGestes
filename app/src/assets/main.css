@@ -101,3 +101,11 @@
 .fr-breadcrumb {
   margin-bottom: 16px !important;
 }
+
+.fr-header__service-tagline {
+  font-size: 0.875rem;
+}
+
+.fr-header__body-row {
+  padding: 0.625rem 0 !important;
+}
