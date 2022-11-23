@@ -16,17 +16,25 @@ export default {
 </script>
 
 <template>
-  <div class="fr-grid-row">
-    <div class="fr-col">
+  <div class="fr-grid-row top-nav fr-my-2w">
+    <div>
       <DsfrBreadcrumb :links="[{ text: 'Menu', to: '/menu' }, { text: 'Suivi d\'activité' }]" />
     </div>
-    <div class="fr-col fr-pt-2w">
+    <div>
       <ShareWidget :score="state.score" />
     </div>
   </div>
+
   <main>
     <MainInfo />
     <Progress />
     <History />
   </main>
 </template>
+
+<style>
+.top-nav {
+  align-items: center;
+  justify-content: space-between;
+}
+</style>

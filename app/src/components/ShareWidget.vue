@@ -66,21 +66,17 @@ export default {
 </script>
 
 <template>
-  <div class="fr-share fr-grid-row">
-    <div class="fr-col">
-      <p class="fr-share__title">Éclairez vos amis !</p>
-    </div>
-    <div class="fr-col">
-      <ul class="fr-btns-group">
-        <li v-for="network in networks">
-          <a  :class="`fr-btn fr-btn--${network.name}`" :title="`${network.label} - nouvelle fenêtre`" :href="network.url"
-              target="_blank" rel="noopener noreferrer"
-              @click.prevent="network.onClick(network)">
-            {{ network.label }}
-          </a>
-        </li>
-      </ul>
-    </div>
+  <div class="fr-share">
+    <p class="fr-share__title fr-mr-3v fr-mb-0">Éclairez vos amis !</p>
+    <ul class="fr-btns-group">
+      <li v-for="network in networks">
+        <a  :class="`fr-btn fr-btn--${network.name} fr-m-0 fr-mr-2v`" :title="`${network.label} - nouvelle fenêtre`" :href="network.url"
+            target="_blank" rel="noopener noreferrer"
+            @click.prevent="network.onClick(network)">
+          {{ network.label }}
+        </a>
+      </li>
+    </ul>
   </div>
 
   <DsfrModal ref="modal" :opened="openedModal" :actions="modalActions" :origin="$refs.modalOrigin"
