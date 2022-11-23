@@ -119,7 +119,7 @@ export default {
       </div>
       <div class="fr-col">
         <p class="fr-mb-1w fr-text--sm">Conception</p>
-        <p class="fr-hint-text">Extension conçue et développée avec Ctrl S et Noesya.</p>
+        <p class="fr-hint-text">Extension conçue et développée avec Ctrl S et Noesya.</p>
       </div>
     </div>
   </main>
