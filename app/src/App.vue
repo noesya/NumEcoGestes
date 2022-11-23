@@ -46,7 +46,7 @@ export default {
       :quick-links="quickLinks"
       home-to="/"
       service-title="NumÉcoGestes"
-      service-description="Une extension proposée par la mission interministérielle numérique écoresponsable"
+      service-description="Outil pour la sobriété énergétique proposé par la MiNumEco, la mission interministérielle numérique écoresponsable"
       />
   <div v-if="onboardStatusLoaded" class="fr-container">
     <div v-if="!onboarded">

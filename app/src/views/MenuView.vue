@@ -1,8 +1,11 @@
 <script>
+import minumecoLogo from '@/assets/images/logo-minumeco.svg'
+
 export default {
   props: ['receiveAlerts', 'receiveDailyNotification'],
   data () {
     return {
+      minumecoLogo: minumecoLogo,
       dailyNotificationEnabled: true,
       alertNotificationEnabled: true,
       openedModal: false,
@@ -101,7 +104,7 @@ export default {
             <p class="fr-logo">République<br>Française</p>
           </div>
           <div class="fr-col">
-            <p>TODO : Logo MiNumEco</p>
+            <img class="logo-minumeco" :src="minumecoLogo" alt="MiNumEco" />
           </div>
         </div>
       </div>
@@ -150,4 +153,7 @@ export default {
   top: 0;
 }
 
+.logo-minumeco {
+  height: 100px;
+}
 </style>
