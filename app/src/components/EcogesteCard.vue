@@ -52,8 +52,8 @@
           <div class="fr-card__content">
             <div class="fr-card__start fr-mb-2w">
               <p class="fr-tag">
-                <VIcon :name="tagIcon()" :label="humanizedTag()" :scale="0.8" />
-                <span v-if="!iconOnly">{{ humanizedTag() }}</span>
+                <VIcon class="fr-mr-1v  " :name="tagIcon()" :label="humanizedTag()" :scale="0.8" />
+                <span class="fr-text--sm" v-if="!iconOnly">{{ humanizedTag() }}</span>
               </p>
             </div>
             <h3 class="fr-card__title">{{ ecogeste.title }}</h3>

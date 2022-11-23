@@ -105,11 +105,11 @@ export default {
   <p class="fr-mb-1w fr-mt-8v fr-text--sm">Alertes prévues aujourd'hui</p>
 
   <div class="daysplit__legend">
-    <div class="daysplit__legend__item">
+    <div class="daysplit__legend__item fr-text--xs fr-mb-1w">
       <span class="daysplit__legend__square daysplit__legend__square--high"></span>
       Forte consommation
     </div>
-    <div class="legend__item">
+    <div class="legend__item fr-text--xs fr-mb-1w">
       <span class="daysplit__legend__square daysplit__legend__square--regular"></span>
       Consommation normale
     </div>
@@ -118,22 +118,22 @@ export default {
   <div class="fr-grid-row daysplit">
     <div class="fr-col daysplit__item" v-for="value in values">
       <div :class="getClassName(value.pas, value.hvalue)" :title="getTitle(value.pas, value.hvalue)"></div>
-      <p v-if="value.pas % 2 === 0">{{ value.pas }}h</p>
+      <p class="fr-text--xs" v-if="value.pas % 2 === 0">{{ value.pas }}h</p>
     </div>
   </div>
   <div class="fr-grid-row fr-grid-row--gutters">
     <div class="fr-col">
       <div :class="{ 'is-inactive': redAlertsCount === 0 }" class="fr-alert fr-alert--error">
         <div class="fr-alert__count" v-if="redAlertsCount > 0">{{ redAlertsCount }}</div>
-        <p v-if="redAlertsCount > 0">Alerte(s) rouge(s) : coupures inévitables si la consommation n’est pas réduite.</p>
-        <p v-if="redAlertsCount === 0">Pas d'alerte rouge prévue</p>
+        <p class="fr-text--sm fr-mb-0" v-if="redAlertsCount > 0">Alerte(s) rouge(s) : coupures inévitables si la consommation n’est pas réduite.</p>
+        <p class="fr-text--sm fr-mb-0" v-if="redAlertsCount === 0">Pas d'alerte rouge prévue</p>
       </div>
     </div>
     <div class="fr-col">
       <div :class="{ 'is-inactive': orangeAlertsCount === 0 }" class="fr-alert fr-alert--warning">
         <div class="fr-alert__count" v-if="orangeAlertsCount > 0">{{ orangeAlertsCount }}</div>
-        <p v-if="orangeAlertsCount > 0">Alerte(s) orange(s) : la réduction et le décalage des consommations d’énergie sont nécessaires.</p>
-        <p v-if="orangeAlertsCount === 0">Pas d'alerte orange prévue</p>
+        <p class="fr-text--sm fr-mb-0" v-if="orangeAlertsCount > 0">Alerte(s) orange(s) : la réduction et le décalage des consommations d’énergie sont nécessaires.</p>
+        <p class="fr-text--sm fr-mb-0" v-if="orangeAlertsCount === 0">Pas d'alerte orange prévue</p>
       </div>
     </div>
   </div>
