@@ -22,7 +22,7 @@ import badge5SmallChecked from '@/assets/images/badges/small/badge5_checked.svg'
 
 export default [
     {
-        label: "Novice",
+        label: "Étincelle",
         points: 200,
         smallIcon: {
             unchecked: badge1SmallUnchecked,
@@ -34,7 +34,7 @@ export default [
         }
     },
     {
-        label: "Initié·e",
+        label: "Scintillement",
         points: 400,
         smallIcon: {
             unchecked: badge2SmallUnchecked,
@@ -46,7 +46,7 @@ export default [
         }
     },
     {
-        label: "Confirmé·e",
+        label: "Lumière",
         points: 600,
         smallIcon: {
             unchecked: badge3SmallUnchecked,
@@ -58,7 +58,7 @@ export default [
         }
     },
     {
-        label: "Expert·e",
+        label: "Foudre",
         points: 800,
         smallIcon: {
             unchecked: badge4SmallUnchecked,
@@ -70,7 +70,7 @@ export default [
         }
     },
     {
-        label: "Maître",
+        label: "Éclair de génie",
         points: 950,
         smallIcon: {
             unchecked: badge5SmallUnchecked,
