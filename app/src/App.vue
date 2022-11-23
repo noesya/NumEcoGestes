@@ -34,12 +34,49 @@ export default {
   methods: {
     updateState () {
       const date = new Date(),
-            monthDataKey = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, 0)}`
+            monthDataKey = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, 0)}`,
+            isoDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, 0)}-${date.getDate().toString().padStart(2, 0)}`;
+
       chrome.storage.local.get("months", function (data) {
         const monthsData = data.months || {},
         monthData = monthsData[monthDataKey] || { score: 0 }
         this.state.score = monthData.score
       }.bind(this));
+
+      chrome.storage.local.get("signals", function (data) {
+        const currentDay = data.signals.signals.find(item => {
+          return item.jour.indexOf(isoDate) !== -1;
+        });
+
+        if (!currentDay) {
+          this.state.currentHValue = 1;
+          return;
+        }
+
+        const currentValue = currentDay.values.find(function (value) {
+          return value.pas === date.getHours();
+        });
+
+        this.state.currentHValue = currentValue.hvalue;
+      }.bind(this));
+    }
+  },
+
+  watch: {
+    "state.currentHValue": function (value) {
+      let iconPath;
+      switch (value) {
+        case 3:
+          iconPath = "/icon-red.png";
+          break;
+        case 2:
+          iconPath = "/icon-orange.png";
+          break;
+        default:
+          iconPath = "/icon.png";
+          break;
+      }
+      document.querySelector('link[rel="icon"]').href = iconPath;
     }
   },
 

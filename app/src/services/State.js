@@ -4,6 +4,7 @@ class State {
     constructor () {
         this.ecogestes = {};
         this.score = 0;
+        this.currentHValue = 1;
         fetch("data/ecogestes.json")
             .then(response => response.json())
             .then(this.loadEcogestes.bind(this));
