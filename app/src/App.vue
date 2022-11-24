@@ -12,12 +12,22 @@ export default {
         {
           label: 'Accueil',
           path: '/',
-          icon: 'ri-home-4-line'
+          icon: 'ri-home-4-line',
+          onClick: () => {
+            if (this.$refs.header.modalOpened) {
+              this.$refs.header.hideModal();
+            }
+          }
         },
         {
           label: 'Menu',
           path: '/menu',
-          icon: 'ri-apps-2-line'
+          icon: 'ri-apps-2-line',
+          onClick: () => {
+            if (this.$refs.header.modalOpened) {
+              this.$refs.header.hideModal();
+            }
+          }
         }
       ] : [];
     }
@@ -99,6 +109,7 @@ export default {
       home-to="/"
       service-title="NumÉcoGestes"
       service-description="Outil pour la sobriété énergétique proposé par la MiNumEco, la mission interministérielle numérique écoresponsable"
+      ref="header"
       />
   <div v-if="onboardStatusLoaded" class="fr-container">
     <div v-if="!onboarded">

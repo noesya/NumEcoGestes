@@ -118,7 +118,7 @@ export default {
   <div class="fr-grid-row daysplit">
     <div class="fr-col daysplit__item" v-for="value in values">
       <div :class="getClassName(value.pas, value.hvalue)" :title="getTitle(value.pas, value.hvalue)"></div>
-      <p class="fr-text--xs" v-if="value.pas % 2 === 0">{{ value.pas }}h</p>
+      <p class="fr-text--xs fr-mb-1w" v-if="value.pas % 2 === 0">{{ value.pas }}h</p>
     </div>
   </div>
   <div class="fr-grid-row fr-grid-row--gutters">
