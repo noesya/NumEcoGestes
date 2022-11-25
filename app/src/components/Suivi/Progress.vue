@@ -83,6 +83,9 @@ export default {
   margin-bottom: 0;
 }
 
+.level strong {
+  white-space: nowrap;
+}
 .level--unchecked p {
   color: var(--text-disabled-grey);
 }

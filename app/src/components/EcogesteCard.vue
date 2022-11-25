@@ -47,7 +47,7 @@
 <template>
   <div v-if="ecogeste">
     <div class="fr-card--recto" v-if="!answered">
-      <div class="fr-card fr-card--horizontal fr-card--horizontal-half">
+      <div class="fr-card fr-card--horizontal">
         <div class="fr-card__body">
           <div class="fr-card__content">
             <div class="fr-card__start fr-mb-2w">
