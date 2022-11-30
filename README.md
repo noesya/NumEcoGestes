@@ -1,4 +1,4 @@
-# Ecogestes
+# NumEcoGestes
 
 ## Setup
 
