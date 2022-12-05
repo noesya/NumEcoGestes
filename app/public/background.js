@@ -33,7 +33,7 @@ const sendAlertNotification = function (hour, hourValue) {
     chrome.notifications.create(`ECOGESTES_ALERT_NOTIF-${randomHexString()}`, {
         title: title,
         message: message,
-        iconUrl: '/icon.png',
+        iconUrl: (hourValue === 2 ? '/icon-orange.png' : '/icon-red.png'),
         type: 'basic'
     });
 };

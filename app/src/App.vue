@@ -87,6 +87,9 @@ export default {
           break;
       }
       document.querySelector('link[rel="icon"]').href = iconPath;
+      (chrome.action || chrome.browserAction).setIcon({
+        path: iconPath
+      });
     }
   },
 
