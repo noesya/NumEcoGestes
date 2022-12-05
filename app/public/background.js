@@ -90,6 +90,45 @@ const initData = function () {
     chrome.storage.local.set({ months: monthsData });
 };
 
+const checkIcon = function () {
+    const date = new Date(),
+          isoDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, 0)}-${date.getDate().toString().padStart(2, 0)}`;
+
+    let hValue,
+        iconPath;
+
+    chrome.storage.local.get("signals", function (data) {
+        const currentDay = data.signals.signals.find(item => {
+            return item.jour.indexOf(isoDate) !== -1;
+        });
+
+        if (currentDay) {
+            const currentValue = currentDay.values.find(function (value) {
+                return value.pas === date.getHours();
+            });
+            hValue = currentValue.hvalue;
+        } else {
+            hValue = 1;
+        }
+
+        switch (hValue) {
+            case 3:
+                iconPath = "/icon-red.png";
+                break;
+            case 2:
+                iconPath = "/icon-orange.png";
+                break;
+            default:
+                iconPath = "/icon.png";
+                break;
+        }
+
+        (chrome.action || chrome.browserAction).setIcon({
+            path: iconPath
+        });
+    }.bind(this));
+};
+
 chrome.alarms.onAlarm.addListener(function (alarm) {
     if (alarm.name === "ecogestes-ecowatt-data") {
         getEcowattData();
@@ -105,6 +144,8 @@ chrome.alarms.onAlarm.addListener(function (alarm) {
                 sendDailyNotification();
             }
         });
+    } else if (alarm.name === "ecogestes-icon-check") {
+        checkIcon();
     }
 })
 
@@ -130,6 +171,7 @@ chrome.runtime.onInstalled.addListener(function () {
     chrome.storage.local.set({ dailyNotification: { enabled: true }, alertNotification: { enabled: true } });
     chrome.alarms.create("ecogestes-hourly-alert", { when: nextHourlyDate.getTime(), periodInMinutes: 60 });
     chrome.alarms.create("ecogestes-daily-alert", { when: nextDailyDate.getTime(), periodInMinutes: 1440 });
+    chrome.alarms.create('ecogestes-icon-check', { when: Date.now() + 60 * 1000, periodInMinutes: 1 });
 
     initData();
     chrome.tabs.create({ url: "index.html" });
@@ -137,6 +179,10 @@ chrome.runtime.onInstalled.addListener(function () {
 
 (chrome.action || chrome.browserAction).onClicked.addListener(() => {
     chrome.tabs.create({ url: "index.html" });
+});
+
+chrome.runtime.onStartup.addListener(function () {
+    checkIcon();
 });
 
 chrome.notifications.onClicked.addListener(function (notificationId) {
