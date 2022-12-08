@@ -20,10 +20,5 @@
   },
   "icons": {
     "128": "icon.png"
-  },
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "{50e1cbb4-563d-457c-8041-0e8e238607ea}"
-    }
   }
 }
