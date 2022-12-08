@@ -1,0 +1,113 @@
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  font-weight: normal;
+}
+
+.fr-header .fr-logo {
+  display: none !important;
+}
+
+.fr-header__logo {
+  width: 80px;
+  height: 80px;
+  background: url('../assets/images/logo.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  margin-right: 0 !important;
+}
+
+.sep {
+  width: 1px;
+  background: var(--blue-france-925-125);
+}
+
+
+.fr-alert--error {
+  --border-plain-error: var(--red-marianne-425-625-hover);
+  --background-flat-error: var(--red-marianne-425-625-hover);
+}
+
+.fr-alert--error:before {
+  -webkit-mask-image: url('../assets/images/alarm-warning-fill.svg') !important;
+  mask-image: url('../assets/images/alarm-warning-fill.svg') !important;
+}
+
+.fr-alert--warning {
+  --border-plain-warning: #F69051;
+  --background-flat-warning: #F69051;
+}
+
+
+.fr-alert--warning.is-inactive {
+  --background-flat-warning: rgba(246, 144, 81, 0.15)
+}
+
+.fr-alert--error.is-inactive {
+  --background-flat-error: rgba(249, 63, 66, 0.15)
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes pop {
+  10% {
+    transform: scale(0.96);
+  }
+  70%, 85% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.img-badge.is-active {
+  animation: pop 1.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+}
+
+.reset-modal-container .fr-modal .fr-btns-group .fr-btn:not(.fr-btn--secondary) {
+  background-color: var(--background-flat-error);
+}
+
+.fr-header {
+  border-radius: 6px;
+}
+
+.fr-breadcrumb {
+  margin-bottom: 8px !important;
+}
+
+.fr-header__service-tagline {
+  font-size: 0.875rem;
+}
+
+/*
+.fr-header__body-row, .fr-header__service {
+  padding-top: 0.625rem !important;
+  padding-bottom: 0.625rem !important;
+} */
