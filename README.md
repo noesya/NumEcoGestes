@@ -38,16 +38,10 @@ Pour compiler l'extension pour Firefox:
 scripts/build-firefox.sh
 ```
 
-## Chrome
+## Installation
 
-https://chrome.google.com/webstore/devconsole/98444501-20ce-4092-847e-357539a15913/cimommdledolehahiohkpjdeoglafpgk/edit?hl=FR
-
-## Edge
-
-## Firefox
-
-https://addons.mozilla.org/fr/firefox/addon/%C3%A9cogestes/
-
+* [Edge](https://addons.mozilla.org/fr/firefox/addon/%C3%A9cogestes/)
+* [Chrome, Chromium et Edge](https://chrome.google.com/webstore/devconsole/98444501-20ce-4092-847e-357539a15913/cimommdledolehahiohkpjdeoglafpgk/edit?hl=FR)
 
 ## Sources
 
