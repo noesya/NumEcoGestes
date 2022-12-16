@@ -129,6 +129,32 @@ const checkIcon = function () {
     }.bind(this));
 };
 
+const checkAlarms = function () {
+    chrome.alarms.getAll(function (alarms) {
+        if (alarms.length === 0) {
+            let nextHourlyDate = new Date(),
+                nextDailyDate = new Date();
+
+            if (nextHourlyDate.getMinutes() >= 50) {
+                // If 9:50, next hourly is at 10:55 instead of 9:55
+                nextHourlyDate.setHours(nextHourlyDate.getHours() + 1);
+            }
+            nextHourlyDate.setMinutes(55, 0, 0);
+
+            if (nextDailyDate.getHours() === 9 && nextDailyDate.getMinutes() >= 50 || nextDailyDate.getHours() > 9) {
+                // Set alert for tomorrow if current time is 9:50 or later
+                nextDailyDate.setDate(nextDailyDate.getDate() + 1)
+            }
+            nextDailyDate.setHours(10, 0, 0, 0);
+
+            chrome.alarms.create("ecogestes-ecowatt-data", { periodInMinutes: 60 });
+            chrome.alarms.create("ecogestes-hourly-alert", { when: nextHourlyDate.getTime(), periodInMinutes: 60 });
+            chrome.alarms.create("ecogestes-daily-alert", { when: nextDailyDate.getTime(), periodInMinutes: 1440 });
+            chrome.alarms.create('ecogestes-icon-check', { when: Date.now() + 60 * 1000, periodInMinutes: 1 });
+        }
+    });
+}
+
 chrome.alarms.onAlarm.addListener(function (alarm) {
     if (alarm.name === "ecogestes-ecowatt-data") {
         getEcowattData();
@@ -150,30 +176,10 @@ chrome.alarms.onAlarm.addListener(function (alarm) {
 })
 
 chrome.runtime.onInstalled.addListener(function () {
-    let nextHourlyDate = new Date(),
-        nextDailyDate = new Date();
-
-    if (nextHourlyDate.getMinutes() >= 50) {
-        // If 9:50, next hourly is at 10:55 instead of 9:55
-        nextHourlyDate.setHours(nextHourlyDate.getHours() + 1);
-    }
-    nextHourlyDate.setMinutes(55, 0, 0);
-
-    if (nextDailyDate.getHours() === 9 && nextDailyDate.getMinutes() >= 50 || nextDailyDate.getHours() > 9) {
-        // Set alert for tomorrow if current time is 9:50 or later
-        nextDailyDate.setDate(nextDailyDate.getDate() + 1)
-    }
-    nextDailyDate.setHours(10, 0, 0, 0);
-
-    chrome.alarms.create("ecogestes-ecowatt-data", { periodInMinutes: 60 });
-    getEcowattData();
-
     chrome.storage.local.set({ dailyNotification: { enabled: true }, alertNotification: { enabled: true } });
-    chrome.alarms.create("ecogestes-hourly-alert", { when: nextHourlyDate.getTime(), periodInMinutes: 60 });
-    chrome.alarms.create("ecogestes-daily-alert", { when: nextDailyDate.getTime(), periodInMinutes: 1440 });
-    chrome.alarms.create('ecogestes-icon-check', { when: Date.now() + 60 * 1000, periodInMinutes: 1 });
-
+    checkAlarms();
     initData();
+    getEcowattData();
     chrome.tabs.create({ url: "index.html" });
 });
 
@@ -182,7 +188,9 @@ chrome.runtime.onInstalled.addListener(function () {
 });
 
 chrome.runtime.onStartup.addListener(function () {
+    getEcowattData();
     checkIcon();
+    checkAlarms();
 });
 
 chrome.notifications.onClicked.addListener(function (notificationId) {
