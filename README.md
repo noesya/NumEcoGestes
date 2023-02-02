@@ -40,7 +40,7 @@ scripts/build-firefox.sh
 
 ## Installation
 
-* [Edge](https://addons.mozilla.org/fr/firefox/addon/%C3%A9cogestes/)
+* [Firefox](https://addons.mozilla.org/fr/firefox/addon/numecogestes/)
 * [Chrome, Chromium et Edge](https://chrome.google.com/webstore/devconsole/98444501-20ce-4092-847e-357539a15913/cimommdledolehahiohkpjdeoglafpgk/edit?hl=FR)
 
 ## Sources
