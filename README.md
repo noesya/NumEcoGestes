@@ -1,5 +1,7 @@
 # NumEcoGestes
 
+Dans un contexte de sobriété énergétique et d'abord dans une logique de sensibilisation des agents publics, NumEcoGestes est un outil de sensibilis’action, développé par la [MiNumEco](https://ecoresponsable.numerique.gouv.fr/).
+
 ## Setup
 
 ```bash
