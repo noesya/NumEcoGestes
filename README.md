@@ -1,5 +1,12 @@
 # NumEcoGestes
 
+Dans un contexte de sobriété énergétique, NumEcoGestes est un outil de sensibilis’action, développé par la [MiNumEco](https://ecoresponsable.numerique.gouv.fr/).
+
+## Installation
+
+* [Firefox](https://addons.mozilla.org/fr/firefox/addon/numecogestes/)
+* [Chrome, Chromium et Edge](https://chrome.google.com/webstore/devconsole/98444501-20ce-4092-847e-357539a15913/cimommdledolehahiohkpjdeoglafpgk/edit?hl=FR)
+
 ## Setup
 
 ```bash
@@ -38,13 +45,7 @@ Pour compiler l'extension pour Firefox:
 scripts/build-firefox.sh
 ```
 
-## Installation
-
-* [Edge](https://addons.mozilla.org/fr/firefox/addon/%C3%A9cogestes/)
-* [Chrome, Chromium et Edge](https://chrome.google.com/webstore/devconsole/98444501-20ce-4092-847e-357539a15913/cimommdledolehahiohkpjdeoglafpgk/edit?hl=FR)
-
 ## Sources
 
-https://github.com/dnum-mi/vue-dsfr
-
-https://github.com/dnum-mi/vue-dsfr/blob/main/src/demo-app/App.vue
+* [VueDsfr](https://github.com/dnum-mi/vue-dsfr)
+* [VueDsfr / Demo / App.vue](https://github.com/dnum-mi/vue-dsfr/blob/main/src/demo-app/App.vue)
