@@ -8,8 +8,14 @@ export default {
 
   computed: {
     quickLinks () {
-      return this.onboarded ? [
-        {
+      var links = []
+
+      if (!this.onboarded) {
+        return links;
+      }
+
+      if (this.$route.name !== 'home') {
+        links.push({
           label: 'Accueil',
           path: '/',
           icon: 'ri-home-4-line',
@@ -18,8 +24,11 @@ export default {
               this.$refs.header.hideModal();
             }
           }
-        },
-        {
+        });
+      }
+
+      if (this.$route.name !== 'menu') {
+        links.push({
           label: 'Menu',
           path: '/menu',
           icon: 'ri-apps-2-line',
@@ -28,8 +37,10 @@ export default {
               this.$refs.header.hideModal();
             }
           }
-        }
-      ] : [];
+        });
+      }
+
+      return links;
     }
   },
 
