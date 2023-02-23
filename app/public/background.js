@@ -140,13 +140,16 @@ const initHourlyAlarm = function () {
 };
 
 const initDailyAlarm = function () {
-    let nextDailyDate = new Date();
-    if (nextDailyDate.getHours() === 9 && nextDailyDate.getMinutes() >= 50 || nextDailyDate.getHours() > 9) {
-        // Set alert for tomorrow if current time is 9:50 or later
-        nextDailyDate.setDate(nextDailyDate.getDate() + 1)
-    }
-    nextDailyDate.setHours(10, 0, 0, 0);
-    chrome.alarms.create("ecogestes-daily-alert", { when: nextDailyDate.getTime(), periodInMinutes: 1440 });
+    let nextDailyDate = new Date(),
+        possibleHours = [8, 9, 10, 11, 14, 15, 16, 17, 18],
+        randomHourIndex = Math.floor(Math.random() * possibleHours.length),
+        randomHour = possibleHours[randomHourIndex],
+        randomMinute = Math.floor(Math.random() * 60);
+    // Set alert for tomorrow
+    nextDailyDate.setDate(nextDailyDate.getDate() + 1);
+    // Set random time between 8:00-12:00 & 14:00-19:00
+    nextDailyDate.setHours(randomHour, randomMinute, 0, 0);
+    chrome.alarms.create("ecogestes-daily-alert", { when: nextDailyDate.getTime() });
 };
 
 const checkAlarms = function () {
@@ -174,6 +177,8 @@ chrome.alarms.onAlarm.addListener(function (alarm) {
             if (data.dailyNotification.enabled) {
                 sendDailyNotification();
             }
+            // We re-create the alarm manually for a random time the next day
+            initDailyAlarm();
         });
     } else if (alarm.name === "ecogestes-icon-check") {
         checkIcon();
