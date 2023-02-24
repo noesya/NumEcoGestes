@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "NumÉcoGestes",
-  "description": "",
+  "description": "NumÉcoGestes permet de sensibiliser, en jouant, sur les bonnes pratiques à adopter pour réduire les consommations d’électricité.",
   "version": "1.10",
   "permissions": [
     "background",

@@ -89,9 +89,8 @@ export default {
 
     openMonthEndModalIfNeeded () {
       const date = new Date(),
-            daysForModal = 3,
-            monthDataKey = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, 0)}`,
-            that = this;
+            daysForModal = 5,
+            monthDataKey = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, 0)}`;
 
       var nextMonth,
           daysUntilNextMonth;
@@ -118,10 +117,9 @@ export default {
         if (!data.months[monthDataKey].monthEndModalSent) {
           data.months[monthDataKey]['monthEndModalSent'] = daysUntilNextMonth <= daysForModal;
           chrome.storage.local.set({ months: data.months });
-          that.monthEndModalOpened = daysUntilNextMonth <= daysForModal;
+          this.monthEndModalOpened = daysUntilNextMonth <= daysForModal;
         }
       }.bind(this));
-
     },
 
     onMonthEndModalClose () {

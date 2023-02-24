@@ -48,6 +48,13 @@ export default {
         type: 'ecogestes-debug-daily-notification',
         delayInSeconds: 3
       });
+    },
+
+    sendDelayedEndMonthNotification () {
+      chrome.runtime.sendMessage('', {
+        type: 'ecogestes-debug-end-month-notification',
+        delayInSeconds: 3
+      });
     }
   }
 }
@@ -65,6 +72,7 @@ export default {
       <ul class="fr-btns-group fr-btns-group--inline-md">
         <li><button class="fr-btn" type="button" v-on:click="sendDelayedAlertNotification">Notification d'alerte dans 3 secondes</button></li>
         <li><button class="fr-btn" type="button" v-on:click="sendDelayedDailyNotification">Notification quotidienne dans 3 secondes</button></li>
+        <li><button class="fr-btn" type="button" v-on:click="sendDelayedEndMonthNotification">Notification de fin de mois dans 3 secondes</button></li>
       </ul>
     </div>
   </div>
