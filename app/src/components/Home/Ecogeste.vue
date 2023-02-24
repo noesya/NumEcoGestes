@@ -112,6 +112,11 @@ export default {
       }.bind(this));
     },
 
+    unaffectEcogeste: function () {
+      // TODO
+      this.nextEcogeste();
+    },
+
     answerEcogeste: function () {
       chrome.storage.local.get('months', function (data) {
         var now = new Date(),

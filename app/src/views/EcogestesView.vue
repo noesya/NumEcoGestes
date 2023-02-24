@@ -82,7 +82,7 @@ export default {
 
     <div v-for="(ecogeste, key) in ecogestes">
       <div class="fr-mb-4w" v-if="currentFilter === '' || currentFilter === ecogeste.tag">
-        <EcogesteCard :ecogesteKey="key" :ecogeste="ecogeste" :multiplier="getMultiplier" />
+        <EcogesteCard :ecogesteKey="key" :ecogeste="ecogeste" :multiplier="getMultiplier" :affectionToggle="true" />
       </div>
     </div>
   </main>

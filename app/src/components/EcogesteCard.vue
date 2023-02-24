@@ -1,11 +1,13 @@
 <script>
   export default {
-    props: ['ecogesteKey', 'ecogeste', 'buttons', 'answered', 'hasNext', 'multiplier', 'credit'],
+    props: ['ecogesteKey', 'ecogeste', 'buttons', 'answered', 'hasNext', 'multiplier', 'credit', 'affectionToggle'],
 
     data () {
       return {
         showButtons: this.buttons || false,
-        showCredit: this.credit || false
+        showCredit: this.credit || false,
+        showAffectionToggle: this.affectionToggle || false,
+        affected: false
       }
     },
 
@@ -51,6 +53,12 @@
         <div class="fr-card__body">
           <div class="fr-card__content">
             <div class="fr-card__start fr-mb-2w">
+              <div class="fr-toggle fr-toggle--label-left affection-toggle" v-if="showAffectionToggle">
+                <input type="checkbox" v-model="affected" :id="`affection-toggle-${ecogesteKey}`" class="fr-toggle__input" aria-describedby="alert-notif-hint-text">
+                <label class="fr-toggle__label" :for="`affection-toggle-${ecogesteKey}`">
+                  {{ affected ? "Cet écogeste me concerne" : "Cet écogeste ne me concerne pas" }}
+                </label>
+              </div>
               <p class="fr-tag">
                 <VIcon class="fr-mr-1v" :name="tagIcon()" :label="humanizedTag()" :scale="0.8" />
                 <span class="fr-text--sm" v-if="!iconOnly">{{ humanizedTag() }}</span>
@@ -65,6 +73,7 @@
               <ul class="fr-btns-group fr-btns-group--inline-md">
                 <li><button class="fr-btn" v-on:click="$parent.answerEcogeste">Je le fais !</button></li>
                 <li><button class="fr-btn fr-btn--secondary" v-if="hasNext" v-on:click="$parent.nextEcogeste">Geste suivant</button></li>
+                <li><button class="fr-btn fr-btn--secondary" v-on:click="$parent.unaffectEcogeste">Pas concerné(e)</button></li>
               </ul>
             </div>
           </div>
@@ -147,4 +156,20 @@
   top: 1rem;
   right: 2rem;
 }
+
+.affection-toggle {
+  justify-content: flex-end;
+  padding-top: 0;
+}
+.affection-toggle .fr-toggle__label {
+  flex-basis: initial;
+  font-size: smaller;
+  margin-right: 1rem;
+  width: initial;
+}
+
+.affection-toggle .fr-toggle__label:after {
+  top: 0;
+}
+
 </style>
