@@ -226,15 +226,31 @@ const initEndMonthAlarm = function () {
     chrome.alarms.create("ecogestes-end-month-alert", { when: alertDay.getTime() });
 }
 
+const initEcowattAlarm = function () {
+    chrome.alarms.create("ecogestes-ecowatt-data", { periodInMinutes: 60 });
+};
+
+const initIconAlarm = function () {
+    chrome.alarms.create('ecogestes-icon-check', { when: Date.now() + 60 * 1000, periodInMinutes: 1 });
+};
+
+const findOrInitAlarm = function (alarms, alarmName, initMethod) {
+    const alarmIndex = alarms.findIndex(function (alarm) {
+        return alarm.name === alarmName;
+    });
+
+    if (alarmIndex === -1) {
+        initMethod();
+    }
+};
+
 const checkAlarms = function () {
     chrome.alarms.getAll(function (alarms) {
-        if (alarms.length === 0) {
-            initHourlyAlarm();
-            initDailyAlarm();
-            initEndMonthAlarm();
-            chrome.alarms.create("ecogestes-ecowatt-data", { periodInMinutes: 60 });
-            chrome.alarms.create('ecogestes-icon-check', { when: Date.now() + 60 * 1000, periodInMinutes: 1 });
-        }
+        findOrInitAlarm(alarms, "ecogestes-hourly-alert", initHourlyAlarm);
+        findOrInitAlarm(alarms, "ecogestes-daily-alert", initDailyAlarm);
+        findOrInitAlarm(alarms, "ecogestes-end-month-alert", initEndMonthAlarm);
+        findOrInitAlarm(alarms, "ecogestes-ecowatt-data", initEcowattAlarm);
+        findOrInitAlarm(alarms, "ecogestes-icon-check", initIconAlarm);
     });
 };
 
