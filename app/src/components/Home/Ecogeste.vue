@@ -8,6 +8,7 @@ export default {
 
   data () {
     return {
+      unaffectedEcogestes: [],
       ecogestes: {},
       hasAnswered: false,
       hasNextEcogeste: false,
@@ -53,7 +54,10 @@ export default {
       fetch("data/ecogestes.json").then(result => result.json()).then(function (data) {
         this.ecogestes = data;
         this.ecogestesKeys = Object.keys(this.ecogestes);
-        this.nextEcogeste();
+        chrome.storage.local.get("unaffectedEcogestes", function (data) {
+          this.unaffectedEcogestes = Object.values(data.unaffectedEcogestes) || [];
+          this.nextEcogeste();
+        }.bind(this));
       }.bind(this))
     },
 
@@ -88,10 +92,13 @@ export default {
           return;
         }
 
-        this.hasNextEcogeste = answeredKeys.length < this.ecogestesKeys.length - 1;
+        this.hasNextEcogeste = answeredKeys.length < this.ecogestesKeys.length - this.unaffectedEcogestes.length - 1;
 
         for (const key of this.ecogestesKeys) {
-          if (answeredKeys.indexOf(key) === -1 && this.suggestedKeys.indexOf(key) === -1 && key !== this.currentKey) {
+          if (answeredKeys.indexOf(key) === -1 &&
+            this.suggestedKeys.indexOf(key) === -1 &&
+            key !== this.currentKey &&
+            this.unaffectedEcogestes.indexOf(key) === -1) {
             availableKeys.push(key);
           }
         }
@@ -113,7 +120,15 @@ export default {
     },
 
     unaffectEcogeste: function () {
-      // TODO
+      chrome.storage.local.get("unaffectedEcogestes", function (data) {
+        var ecogesteIndex;
+        this.unaffectedEcogestes = Object.values(data.unaffectedEcogestes) || [];
+        ecogesteIndex = this.unaffectedEcogestes.indexOf(this.currentKey);
+        if (ecogesteIndex === -1) {
+          this.unaffectedEcogestes.push(this.currentKey);
+        }
+        chrome.storage.local.set({ unaffectedEcogestes: this.unaffectedEcogestes });
+      }.bind(this));
       this.nextEcogeste();
     },
 

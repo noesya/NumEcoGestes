@@ -7,5 +7,6 @@ export default class Ecogeste {
         this.tag = tag;
         this.points = points;
         this.credit = credit;
+        this.affected = true;
     }
 }

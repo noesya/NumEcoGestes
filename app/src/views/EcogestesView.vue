@@ -41,6 +41,7 @@ export default {
     data () {
         return {
           ecogestes: state.ecogestes,
+          unaffectedEcogestes: [],
           signals: [],
           currentFilter: "",
           filters: [
@@ -55,6 +56,24 @@ export default {
     methods: {
       selectFilter (filter) {
         this.currentFilter = filter.value;
+      },
+
+      isAffected (ecogesteKey) {
+        return this.unaffectedEcogestes.indexOf(ecogesteKey) === -1;
+      },
+
+      onAffectChange (ecogesteKey, isAffected) {
+        chrome.storage.local.get("unaffectedEcogestes", function (data) {
+          var ecogesteIndex;
+          this.unaffectedEcogestes = Object.values(data.unaffectedEcogestes) || [];
+          ecogesteIndex = this.unaffectedEcogestes.indexOf(ecogesteKey);
+          if (!isAffected && ecogesteIndex === -1) {
+            this.unaffectedEcogestes.push(ecogesteKey);
+          } else if (isAffected && ecogesteIndex !== -1) {
+            this.unaffectedEcogestes.splice(ecogesteIndex, 1);
+          }
+          chrome.storage.local.set({ unaffectedEcogestes: this.unaffectedEcogestes });
+        }.bind(this));
       }
     },
 
@@ -62,6 +81,9 @@ export default {
       chrome.storage.local.get("signals", function (data) {
         this.signals = data.signals.signals;
       }.bind(this));
+      chrome.storage.local.get("unaffectedEcogestes", function (data) {
+        this.unaffectedEcogestes = data.unaffectedEcogestes || [];
+      })
     }
 }
 </script>

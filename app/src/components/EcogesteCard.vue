@@ -7,7 +7,15 @@
         showButtons: this.buttons || false,
         showCredit: this.credit || false,
         showAffectionToggle: this.affectionToggle || false,
-        affected: false
+        ecogesteMetadata: { affected: true }
+      }
+    },
+
+    watch: {
+      "ecogesteMetadata.affected": function (value) {
+        if (typeof this.$parent.onAffectChange !== 'undefined') {
+          this.$parent.onAffectChange(this.ecogesteKey, value);
+        }
       }
     },
 
@@ -42,6 +50,13 @@
       portraitImageUrl() {
         return `/assets/images/ecogestes/portrait/${this.ecogesteKey}.png`
       }
+    },
+
+    mounted () {
+      chrome.storage.local.get("unaffectedEcogestes", function (data) {
+        const unaffectedEcogestes = Object.values(data.unaffectedEcogestes) || [];
+        this.ecogesteMetadata = { affected: unaffectedEcogestes.indexOf(this.ecogesteKey) === -1 };
+      }.bind(this));
     }
   }
 </script>
@@ -54,9 +69,9 @@
           <div class="fr-card__content">
             <div class="fr-card__start fr-mb-2w">
               <div class="fr-toggle fr-toggle--label-left affection-toggle" v-if="showAffectionToggle">
-                <input type="checkbox" v-model="affected" :id="`affection-toggle-${ecogesteKey}`" class="fr-toggle__input" aria-describedby="alert-notif-hint-text">
+                <input type="checkbox" v-model="ecogesteMetadata.affected" :id="`affection-toggle-${ecogesteKey}`" class="fr-toggle__input" aria-describedby="alert-notif-hint-text">
                 <label class="fr-toggle__label" :for="`affection-toggle-${ecogesteKey}`">
-                  {{ affected ? "Cet écogeste me concerne" : "Cet écogeste ne me concerne pas" }}
+                  {{ ecogesteMetadata.affected ? "Cet écogeste me concerne" : "Cet écogeste ne me concerne pas" }}
                 </label>
               </div>
               <p class="fr-tag">
