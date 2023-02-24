@@ -64,6 +64,8 @@ const sendAlertNotificationIfNeeded = function () {
 
 const initData = function () {
     var currentDate = new Date(),
+        nextMonth,
+        daysUntilNextMonth,
         monthKey = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, 0)}`,
         dayKey = `${monthKey}-${currentDate.getDate().toString().padStart(2, 0)}`,
         monthsData = {},
@@ -72,6 +74,14 @@ const initData = function () {
             "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
         ];
 
+    if (currentDate.getMonth() == 11) {
+        nextMonth = new Date(currentDate.getFullYear() + 1, 0, 1);
+    } else {
+        nextMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
+    }
+
+    daysUntilNextMonth = Math.ceil((nextMonth.getTime() - currentDate.getTime()) / (1000 * 3600 * 24));
+
     monthsData[monthKey] = {
         label: {
             month: monthNames[currentDate.getMonth()],
@@ -79,7 +89,8 @@ const initData = function () {
         },
         score: 0,
         alerts: { red: 0, orange: 0 },
-        days: {}
+        days: {},
+        monthEndModalSent: daysUntilNextMonth <= 3
     };
     monthsData[monthKey]["days"][dayKey] = {
         alerts: { red: 0, orange: 0 },
@@ -87,7 +98,9 @@ const initData = function () {
         score: 0
     }
 
-    chrome.storage.local.set({ months: monthsData });
+    chrome.storage.local.set({ months: monthsData }, function () {
+        chrome.tabs.create({ url: "index.html" });
+    });
 };
 
 const checkIcon = function () {
@@ -188,9 +201,8 @@ chrome.alarms.onAlarm.addListener(function (alarm) {
 chrome.runtime.onInstalled.addListener(function () {
     chrome.storage.local.set({ dailyNotification: { enabled: true }, alertNotification: { enabled: true } });
     checkAlarms();
-    initData();
     getEcowattData();
-    chrome.tabs.create({ url: "index.html" });
+    initData();
 });
 
 (chrome.action || chrome.browserAction).onClicked.addListener(() => {

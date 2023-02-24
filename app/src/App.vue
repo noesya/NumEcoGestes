@@ -46,6 +46,11 @@ export default {
 
   data() {
     return {
+      monthEndModalOpened: false,
+      monthEndModalActions: [
+        { label: "J'ai compris", onClick: this.onMonthEndModalClose, iconRight: true },
+        { label: "Suivre mon activité", secondary: true, onClick: this.onMonthEndModalActivity }
+      ],
       onboardStatusLoaded: false,
       onboarded: false,
       state: state
@@ -80,6 +85,52 @@ export default {
 
         this.state.currentHValue = currentValue.hvalue;
       }.bind(this));
+    },
+
+    openMonthEndModalIfNeeded () {
+      const date = new Date(),
+            daysForModal = 3,
+            monthDataKey = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, 0)}`,
+            that = this;
+
+      var nextMonth,
+          daysUntilNextMonth;
+
+      if (date.getMonth() == 11) {
+        nextMonth = new Date(date.getFullYear() + 1, 0, 1);
+      } else {
+        nextMonth = new Date(date.getFullYear(), date.getMonth() + 1, 1);
+      }
+
+      daysUntilNextMonth = Math.ceil((nextMonth.getTime() - date.getTime()) / (1000 * 3600 * 24));
+
+      chrome.storage.local.get("months", function (data) {
+        data.months[monthDataKey] = data.months[monthDataKey] || {
+          label: {
+            month: calendar.monthNames[now.getMonth()],
+            year: now.getFullYear().toString()
+          },
+          score: 0,
+          alerts: { red: 0, orange: 0 },
+          days: {}
+        };
+
+        if (!data.months[monthDataKey].monthEndModalSent) {
+          data.months[monthDataKey]['monthEndModalSent'] = daysUntilNextMonth <= daysForModal;
+          chrome.storage.local.set({ months: data.months });
+          that.monthEndModalOpened = daysUntilNextMonth <= daysForModal;
+        }
+      }.bind(this));
+
+    },
+
+    onMonthEndModalClose () {
+      this.monthEndModalOpened = false;
+    },
+
+    onMonthEndModalActivity () {
+      this.onMonthEndModalClose();
+      this.$router.push('/suivi');
     }
   },
 
@@ -110,6 +161,8 @@ export default {
       this.onboardStatusLoaded = true;
     }.bind(this));
 
+    this.openMonthEndModalIfNeeded();
+
     this.updateState();
     setInterval(this.updateState.bind(this), 1000);
   }
@@ -131,6 +184,13 @@ export default {
     </div>
     <div v-if="onboarded">
       <RouterView />
+
+      <DsfrModal ref="modal" :opened="monthEndModalOpened" :actions="monthEndModalActions" :origin="$refs.modalOrigin"
+        @close="onMonthEndModalClose()">
+        <h1 class="fr-modal__title">Score et badges</h1>
+        <p>Le mois est bientôt terminé, ce qui signifie que votre score et les badges obtenus seront remis à zéro (le 1er du mois à venir).</p>
+        <p>Pas d’inquiétude ! Vos scores et les badges obtenus chaque mois sont sauvegardés et consultables sur la page “Suivi d’activité”, accessible depuis le menu de l’extension ou via le bouton ci-dessous.</p>
+      </DsfrModal>
     </div>
   </div>
 </template>
