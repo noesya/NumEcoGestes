@@ -185,7 +185,10 @@ export default {
 
       <DsfrModal ref="modal" :opened="monthEndModalOpened" :actions="monthEndModalActions" :origin="$refs.modalOrigin"
         @close="onMonthEndModalClose()">
-        <h1 class="fr-modal__title">Score et badges</h1>
+        <h1 class="fr-modal__title">
+          <span class="fr-fi-information-fill fr-fi--lg"></span>
+          Score et badges
+        </h1>
         <p>Le mois est bientôt terminé, ce qui signifie que votre score et les badges obtenus seront remis à zéro (le 1er du mois à venir).</p>
         <p>Pas d’inquiétude ! Vos scores et les badges obtenus chaque mois sont sauvegardés et consultables sur la page “Suivi d’activité”, accessible depuis le menu de l’extension ou via le bouton ci-dessous.</p>
       </DsfrModal>
