@@ -1,6 +1,8 @@
 <script>
-import { RouterLink, RouterView } from "vue-router"
-import OnboardingSetup from "./components/OnboardingSetup.vue"
+import { RouterLink, RouterView } from "vue-router";
+import OnboardingSetup from "./components/OnboardingSetup.vue";
+import calendar from './data/calendar';
+import badges from './data/badges';
 import state from "./services/State";
 
 export default {
@@ -46,6 +48,11 @@ export default {
 
   data() {
     return {
+      obtainedBadge: null,
+      badgeModalOpened: false,
+      badgeModalActions: [
+        { label: "J'ai compris", onClick: this.onBadgeModalClose, iconRight: true }
+      ],
       monthEndModalOpened: false,
       monthEndModalActions: [
         { label: "J'ai compris", onClick: this.onMonthEndModalClose, iconRight: true },
@@ -66,7 +73,8 @@ export default {
       chrome.storage.local.get("months", function (data) {
         const monthsData = data.months || {},
         monthData = monthsData[monthDataKey] || { score: 0 }
-        this.state.score = monthData.score
+        this.badgeModalOpened = this.badgeModalOpened || this.shouldDisplayBadgeModal(this.state.score, monthData.score);
+        this.state.score = monthData.score;
       }.bind(this));
 
       chrome.storage.local.get("signals", function (data) {
@@ -85,6 +93,22 @@ export default {
 
         this.state.currentHValue = currentValue.hvalue;
       }.bind(this));
+    },
+
+    shouldDisplayBadgeModal (oldScore, newScore) {
+      if (oldScore === 0 || oldScore >= newScore) {
+        return false;
+      }
+
+      const obtainedBadgeIndex = badges.findIndex(function (badge) {
+        return oldScore < badge.points && badge.points <= newScore;
+      });
+
+      if (obtainedBadgeIndex !== -1) {
+        this.obtainedBadge = badges[obtainedBadgeIndex];
+        return true;
+      }
+      return false;
     },
 
     openMonthEndModalIfNeeded () {
@@ -124,6 +148,10 @@ export default {
 
     onMonthEndModalClose () {
       this.monthEndModalOpened = false;
+    },
+
+    onBadgeModalClose () {
+      this.badgeModalOpened = false;
     },
 
     onMonthEndModalActivity () {
@@ -182,6 +210,12 @@ export default {
     </div>
     <div v-if="onboarded">
       <RouterView />
+
+      <DsfrModal ref="modal" :opened="badgeModalOpened" :actions="badgeModalActions" :origin="$refs.modalOrigin"
+        @close="onBadgeModalClose()">
+        <h1 class="fr-modal__title">Nouveau badge !</h1>
+        <p>Bravo ! En atteignant les {{ obtainedBadge.points }} points, tu viens d'obtenir le badge « {{ obtainedBadge.label }} » !</p>
+      </DsfrModal>
 
       <DsfrModal ref="modal" :opened="monthEndModalOpened" :actions="monthEndModalActions" :origin="$refs.modalOrigin"
         @close="onMonthEndModalClose()">
