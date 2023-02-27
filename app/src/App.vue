@@ -213,8 +213,14 @@ export default {
 
       <DsfrModal ref="modal" :opened="badgeModalOpened" :actions="badgeModalActions" :origin="$refs.modalOrigin"
         @close="onBadgeModalClose()">
-        <h1 class="fr-modal__title">Nouveau badge !</h1>
-        <p>Bravo ! En atteignant les {{ obtainedBadge.points }} points, tu viens d'obtenir le badge « {{ obtainedBadge.label }} » !</p>
+        <div class="fr-modal-badge-header">
+          <img :src="obtainedBadge.largeCroppedIcon.checked" alt="Badge {{ obtainedBadge.label }}" />
+          <p class="fr-h6"><strong>{{ obtainedBadge.label }}</strong></p>
+          <h1 class="fr-modal__title">🎉 Nouveau badge obtenu !</h1>
+        </div>
+
+        <p>Félicitations, vous avez débloqué le badge <strong>{{ obtainedBadge.label }}</strong> en atteignant {{ obtainedBadge.points }} points !</p>
+        <p>Merci pour vos contributions, chaque geste compte.</p>
       </DsfrModal>
 
       <DsfrModal ref="modal" :opened="monthEndModalOpened" :actions="monthEndModalActions" :origin="$refs.modalOrigin"
@@ -229,3 +235,9 @@ export default {
     </div>
   </div>
 </template>
+
+<style scoped>
+.fr-modal-badge-header {
+  text-align: center;
+}
+</style>

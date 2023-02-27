@@ -9,6 +9,17 @@ import badge4LargeChecked from '@/assets/images/badges/large/badge4_checked.svg'
 import badge5LargeUnchecked from '@/assets/images/badges/large/badge5_unchecked.svg'
 import badge5LargeChecked from '@/assets/images/badges/large/badge5_checked.svg'
 
+import badge1LargeCroppedUnchecked from '@/assets/images/badges/large-cropped/badge1_unchecked.svg'
+import badge1LargeCroppedChecked from '@/assets/images/badges/large-cropped/badge1_checked.svg'
+import badge2LargeCroppedUnchecked from '@/assets/images/badges/large-cropped/badge2_unchecked.svg'
+import badge2LargeCroppedChecked from '@/assets/images/badges/large-cropped/badge2_checked.svg'
+import badge3LargeCroppedUnchecked from '@/assets/images/badges/large-cropped/badge3_unchecked.svg'
+import badge3LargeCroppedChecked from '@/assets/images/badges/large-cropped/badge3_checked.svg'
+import badge4LargeCroppedUnchecked from '@/assets/images/badges/large-cropped/badge4_unchecked.svg'
+import badge4LargeCroppedChecked from '@/assets/images/badges/large-cropped/badge4_checked.svg'
+import badge5LargeCroppedUnchecked from '@/assets/images/badges/large-cropped/badge5_unchecked.svg'
+import badge5LargeCroppedChecked from '@/assets/images/badges/large-cropped/badge5_checked.svg'
+
 import badge1SmallUnchecked from '@/assets/images/badges/small/badge1_unchecked.svg'
 import badge1SmallChecked from '@/assets/images/badges/small/badge1_checked.svg'
 import badge2SmallUnchecked from '@/assets/images/badges/small/badge2_unchecked.svg'
@@ -31,6 +42,10 @@ export default [
         largeIcon: {
             unchecked: badge1LargeUnchecked,
             checked: badge1LargeChecked
+        },
+        largeCroppedIcon: {
+            unchecked: badge1LargeCroppedUnchecked,
+            checked: badge1LargeCroppedChecked
         }
     },
     {
@@ -43,6 +58,10 @@ export default [
         largeIcon: {
             unchecked: badge2LargeUnchecked,
             checked: badge2LargeChecked
+        },
+        largeCroppedIcon: {
+            unchecked: badge2LargeCroppedUnchecked,
+            checked: badge2LargeCroppedChecked
         }
     },
     {
@@ -55,6 +74,10 @@ export default [
         largeIcon: {
             unchecked: badge3LargeUnchecked,
             checked: badge3LargeChecked
+        },
+        largeCroppedIcon: {
+            unchecked: badge3LargeCroppedUnchecked,
+            checked: badge3LargeCroppedChecked
         }
     },
     {
@@ -67,6 +90,10 @@ export default [
         largeIcon: {
             unchecked: badge4LargeUnchecked,
             checked: badge4LargeChecked
+        },
+        largeCroppedIcon: {
+            unchecked: badge4LargeCroppedUnchecked,
+            checked: badge4LargeCroppedChecked
         }
     },
     {
@@ -79,6 +106,10 @@ export default [
         largeIcon: {
             unchecked: badge5LargeUnchecked,
             checked: badge5LargeChecked
+        },
+        largeCroppedIcon: {
+            unchecked: badge5LargeCroppedUnchecked,
+            checked: badge5LargeCroppedChecked
         }
     },
 ]
