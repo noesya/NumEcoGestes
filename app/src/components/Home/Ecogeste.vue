@@ -55,7 +55,7 @@ export default {
         this.ecogestes = data;
         this.ecogestesKeys = Object.keys(this.ecogestes);
         chrome.storage.local.get("unaffectedEcogestes", function (data) {
-          this.unaffectedEcogestes = Object.values(data.unaffectedEcogestes) || [];
+          this.unaffectedEcogestes = Object.values(data.unaffectedEcogestes || {});
           this.nextEcogeste();
         }.bind(this));
       }.bind(this))
@@ -122,7 +122,7 @@ export default {
     unaffectEcogeste: function () {
       chrome.storage.local.get("unaffectedEcogestes", function (data) {
         var ecogesteIndex;
-        this.unaffectedEcogestes = Object.values(data.unaffectedEcogestes) || [];
+        this.unaffectedEcogestes = Object.values(data.unaffectedEcogestes || {});
         ecogesteIndex = this.unaffectedEcogestes.indexOf(this.currentKey);
         if (ecogesteIndex === -1) {
           this.unaffectedEcogestes.push(this.currentKey);

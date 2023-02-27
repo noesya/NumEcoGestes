@@ -54,7 +54,7 @@
 
     mounted () {
       chrome.storage.local.get("unaffectedEcogestes", function (data) {
-        const unaffectedEcogestes = Object.values(data.unaffectedEcogestes) || [];
+        const unaffectedEcogestes = Object.values(data.unaffectedEcogestes || {});
         this.ecogesteMetadata = { affected: unaffectedEcogestes.indexOf(this.ecogesteKey) === -1 };
       }.bind(this));
     }

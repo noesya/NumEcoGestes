@@ -65,7 +65,7 @@ export default {
       onAffectChange (ecogesteKey, isAffected) {
         chrome.storage.local.get("unaffectedEcogestes", function (data) {
           var ecogesteIndex;
-          this.unaffectedEcogestes = Object.values(data.unaffectedEcogestes) || [];
+          this.unaffectedEcogestes = Object.values(data.unaffectedEcogestes || {});
           ecogesteIndex = this.unaffectedEcogestes.indexOf(ecogesteKey);
           if (!isAffected && ecogesteIndex === -1) {
             this.unaffectedEcogestes.push(ecogesteKey);

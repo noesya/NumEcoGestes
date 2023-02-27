@@ -9,7 +9,7 @@ class State {
             .then(response => response.json())
             .then(this.loadEcogestes.bind(this));
         chrome.storage.local.get("unaffectedEcogestes", function (data) {
-            this.unaffectedEcogestes = Object.values(data.unaffectedEcogestes) || [];
+            this.unaffectedEcogestes = Object.values(data.unaffectedEcogestes || {});
             for (let key in this.ecogestes) {
                 this.ecogestes[key].affected = this.unaffectedEcogestes.indexOf(key) === -1;
             }
