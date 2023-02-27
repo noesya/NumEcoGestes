@@ -286,7 +286,7 @@ chrome.alarms.onAlarm.addListener(function (alarm) {
 
 chrome.runtime.onInstalled.addListener(function () {
     chrome.storage.local.set({ dailyNotification: { enabled: true }, alertNotification: { enabled: true } });
-    checkAlarms();
+    chrome.alarms.clearAll(checkAlarms);
     getEcowattData();
     initData();
 });
