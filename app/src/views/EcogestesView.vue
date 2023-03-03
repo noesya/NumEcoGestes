@@ -75,16 +75,26 @@ export default {
           // Firefox needs to recreate an Array from Proxy because it can't do it automatically like Chrome
           chrome.storage.local.set({ unaffectedEcogestes: [...this.unaffectedEcogestes] });
         }.bind(this));
+      },
+
+      getEcogestes () {
+        this.ecogestes = state.ecogestes;
+        if (Object.keys(this.ecogestes).length === 0) {
+          setTimeout(this.getEcogestes.bind(this), 100);
+        } else {
+          this.$forceUpdate();
+        }
       }
     },
 
     mounted() {
+      this.getEcogestes();
       chrome.storage.local.get("signals", function (data) {
         this.signals = data.signals.signals;
       }.bind(this));
       chrome.storage.local.get("unaffectedEcogestes", function (data) {
         this.unaffectedEcogestes = Object.values(data.unaffectedEcogestes || {});
-      })
+      });
     }
 }
 </script>
