@@ -130,8 +130,8 @@ export default {
       chrome.storage.local.get("months", function (data) {
         data.months[monthDataKey] = data.months[monthDataKey] || {
           label: {
-            month: calendar.monthNames[now.getMonth()],
-            year: now.getFullYear().toString()
+            month: calendar.monthNames[date.getMonth()],
+            year: date.getFullYear().toString()
           },
           score: 0,
           alerts: { red: 0, orange: 0 },
@@ -211,17 +211,19 @@ export default {
     <div v-if="onboarded">
       <RouterView />
 
-      <DsfrModal ref="modal" :opened="badgeModalOpened" :actions="badgeModalActions" :origin="$refs.modalOrigin"
-        @close="onBadgeModalClose()">
-        <div class="fr-modal-badge-header">
-          <img :src="obtainedBadge.largeCroppedIcon.checked" alt="Badge {{ obtainedBadge.label }}" />
-          <p class="fr-h6"><strong>{{ obtainedBadge.label }}</strong></p>
-          <h1 class="fr-modal__title">🎉 Nouveau badge obtenu !</h1>
-        </div>
+      <div class="fr-modal-badge-container">
+        <DsfrModal ref="modal" :opened="badgeModalOpened" :actions="badgeModalActions" :origin="$refs.modalOrigin"
+          @close="onBadgeModalClose()">
+          <div class="fr-modal-badge-header">
+            <img :src="obtainedBadge.largeCroppedIcon.checked" alt="Badge {{ obtainedBadge.label }}" />
+            <p class="fr-h6"><strong>{{ obtainedBadge.label }}</strong></p>
+          </div>
 
-        <p>Félicitations, vous avez débloqué le badge <strong>{{ obtainedBadge.label }}</strong> en atteignant {{ obtainedBadge.points }} points !</p>
-        <p>Merci pour vos contributions, chaque geste compte.</p>
-      </DsfrModal>
+          <h1 class="fr-modal__title">🎉 Nouveau badge obtenu !</h1>
+          <p>Félicitations, vous avez débloqué le badge <strong>{{ obtainedBadge.label }}</strong> en atteignant {{ obtainedBadge.points }} points !</p>
+          <p>Merci pour vos contributions, chaque geste compte.</p>
+        </DsfrModal>
+      </div>
 
       <DsfrModal ref="modal" :opened="monthEndModalOpened" :actions="monthEndModalActions" :origin="$refs.modalOrigin"
         @close="onMonthEndModalClose()">
@@ -236,7 +238,13 @@ export default {
   </div>
 </template>
 
-<style scoped>
+<style>
+
+.fr-modal-badge-container .fr-modal__body {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
 .fr-modal-badge-header {
   text-align: center;
 }

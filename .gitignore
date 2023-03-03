@@ -4,4 +4,7 @@
 node_modules
 /source/*
 !/source/.keep
-/build/NumEcoGestes-v*
+/build/*
+!/build/chrome.zip
+!/build/edge.zip
+!/build/firefox.zip

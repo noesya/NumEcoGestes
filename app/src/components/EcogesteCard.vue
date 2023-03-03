@@ -64,7 +64,7 @@
 <template>
   <div v-if="ecogeste">
     <div class="fr-card--recto" v-if="!answered">
-      <div class="fr-card fr-card--horizontal">
+      <div class="fr-card fr-card--horizontal" :class="{ 'fr-card--unaffected': !ecogesteMetadata.affected }">
         <div class="fr-card__body">
           <div class="fr-card__content">
             <div class="fr-card__start fr-mb-2w">
@@ -88,7 +88,7 @@
               <ul class="fr-btns-group fr-btns-group--inline-md">
                 <li><button class="fr-btn" v-on:click="$parent.answerEcogeste">Je le fais !</button></li>
                 <li><button class="fr-btn fr-btn--secondary" v-if="hasNext" v-on:click="$parent.nextEcogeste">Geste suivant</button></li>
-                <li><button class="fr-btn fr-btn--secondary" v-on:click="$parent.unaffectEcogeste">Pas concerné(e)</button></li>
+                <li><button class="fr-btn fr-btn--tertiary" v-on:click="$parent.unaffectEcogeste">Pas concerné(e)</button></li>
               </ul>
             </div>
           </div>
@@ -131,6 +131,11 @@
   overflow: hidden;
   border: 1px solid var(--grey-900-175)
 }
+
+.fr-card--unaffected {
+  background-color: #F6F6F6;
+}
+
 .fr-card__img > .fr-badge {
   position: absolute;
   top: 0;
