@@ -72,7 +72,8 @@ export default {
           } else if (isAffected && ecogesteIndex !== -1) {
             this.unaffectedEcogestes.splice(ecogesteIndex, 1);
           }
-          chrome.storage.local.set({ unaffectedEcogestes: this.unaffectedEcogestes });
+          // Firefox needs to recreate an Array from Proxy because it can't do it automatically like Chrome
+          chrome.storage.local.set({ unaffectedEcogestes: [...this.unaffectedEcogestes] });
         }.bind(this));
       }
     },

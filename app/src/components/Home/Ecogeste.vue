@@ -127,9 +127,9 @@ export default {
         if (ecogesteIndex === -1) {
           this.unaffectedEcogestes.push(this.currentKey);
         }
-        chrome.storage.local.set({ unaffectedEcogestes: this.unaffectedEcogestes });
+        // Firefox needs to recreate an Array from Proxy because it can't do it automatically like Chrome
+        chrome.storage.local.set({ unaffectedEcogestes: [...this.unaffectedEcogestes] }, this.nextEcogeste.bind(this));
       }.bind(this));
-      this.nextEcogeste();
     },
 
     answerEcogeste: function () {
