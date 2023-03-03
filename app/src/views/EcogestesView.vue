@@ -83,7 +83,7 @@ export default {
         this.signals = data.signals.signals;
       }.bind(this));
       chrome.storage.local.get("unaffectedEcogestes", function (data) {
-        this.unaffectedEcogestes = data.unaffectedEcogestes || [];
+        this.unaffectedEcogestes = Object.values(data.unaffectedEcogestes || {});
       })
     }
 }
