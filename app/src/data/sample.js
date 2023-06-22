@@ -1,11 +1,11 @@
 export default {
     initialData: {
-        "2023-01": {
-            label: { month: "Janvier", year: "2023" },
+        "2023-03": {
+            label: { month: "Mars", year: "2023" },
             score: 250,
             alerts: { red: 0, orange: 0 },
             days: {
-                "2023-01-30": {
+                "2023-03-27": {
                     alerts: { red: 0, orange: 0 },
                     ecogestes: {
                         chauffage: { raw: 50, multiplier: 1.5, total: 75 },
@@ -13,7 +13,7 @@ export default {
                     },
                     score: 180
                 },
-                "2023-01-31": {
+                "2023-03-28": {
                     alerts: { red: 0, orange: 0 },
                     ecogestes: {
                         ecrans: { raw: 70, multiplier: 1, total: 70 }
@@ -22,12 +22,12 @@ export default {
                 }
             }
         },
-        "2023-02": {
-            label: { month: "Février", year: "2023" },
+        "2023-04": {
+            label: { month: "Avril", year: "2023" },
             score: 850,
             alerts: { red: 3, orange: 31 },
             days: {
-                "2023-02-24": {
+                "2023-04-24": {
                     alerts: { red: 0, orange: 8 },
                     ecogestes: {
                         videoconf: { raw: 50, multiplier: 1.5, total: 75 },
@@ -35,7 +35,7 @@ export default {
                     },
                     score: 120
                 },
-                "2023-02-25": {
+                "2023-04-25": {
                     alerts: { red: 0, orange: 6 },
                     ecogestes: {
                         teletravail: { raw: 50, multiplier: 1.5, total: 75 },
@@ -43,7 +43,7 @@ export default {
                     },
                     score: 125
                 },
-                "2023-02-26": {
+                "2023-04-26": {
                     alerts: { red: 0, orange: 4 },
                     ecogestes: {
                         chauffage: { raw: 50, multiplier: 1, total: 50 },
@@ -51,7 +51,7 @@ export default {
                     },
                     score: 155
                 },
-                "2023-02-27": {
+                "2023-04-27": {
                     alerts: { red: 1, orange: 7 },
                     ecogestes: {
                         videoconf: { raw: 50, multiplier: 3, total: 150 },
@@ -59,7 +59,7 @@ export default {
                     },
                     score: 240
                 },
-                "2023-02-28": {
+                "2023-04-28": {
                     alerts: { red: 2, orange: 6 },
                     ecogestes: {
                         veille: { raw: 70, multiplier: 3, total: 210 }
@@ -68,12 +68,12 @@ export default {
                 }
             }
         },
-        "2023-03": {
-            label: { month: "Mars", year: "2023" },
+        "2023-06": {
+            label: { month: "Juin", year: "2023" },
             score: 385,
             alerts: { red: 0, orange: 4 },
             days: {
-                "2023-03-01": {
+                "2023-06-01": {
                     alerts: { red: 0, orange: 3 },
                     ecogestes: {
                         chauffage: { raw: 50, multiplier: 1.5, total: 75 },
@@ -81,7 +81,7 @@ export default {
                     },
                     score: 175
                 },
-                "2023-03-02": {
+                "2023-06-02": {
                     alerts: { red: 0, orange: 1 },
                     ecogestes: {
                         teletravail: { raw: 50, multiplier: 1.5, total: 75 },
