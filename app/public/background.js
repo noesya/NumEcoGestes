@@ -17,9 +17,18 @@ const randomHexString = function () {
 }
 
 const sendDailyNotification = function () {
+    var messages = [
+            "Pensez à effectuer vos écogestes du jour !",
+            "Les écogestes du jour sont disponibles !",
+            "Gagnez des points avec vos écogestes quotidiens !",
+            "Découvrez les astuces pour réduire votre impact environnemental au quotidien !",
+            "Vous pouvez consulter les écogestes du jour !"
+        ],
+        randomIndex = Math.floor(Math.random() * messages.length),
+        randomMessage = messages[randomIndex];
     chrome.notifications.create(`ECOGESTES_DAILY_NOTIF-${randomHexString()}`, {
         title: "NumÉcoGestes",
-        message: "Pensez à effectuer vos écogestes du jour !",
+        message: randomMessage,
         iconUrl: '/icon.png',
         type: 'basic'
     });
