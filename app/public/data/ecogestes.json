@@ -1,92 +1,135 @@
 {
   "chauffage": {
-    "title": "Réduire autant que possible la température du chauffage",
-    "thanks": "Merci pour votre contribution, chaque geste compte !",
-    "description": "1 °C en moins, c’est 7 % de consommation d’énergie économisée. Dans l'idéal : 19 °C pour les pièces occupées sinon 16°C, et 8 °C si les lieux sont inoccupés plus de deux jours.",
-    "sources": "Données : Gouvernement, association négaWatt, Ville de Paris",
+    "titles": [
+      "Réduire autant que possible la température du chauffage",
+      "Baisser le chauffage au maximum",
+      "Diminuer la température du chauffage autant que possible",
+      "Réduire la température du chauffage à son minimum"
+    ],
+    "thanks": "Merci pour votre engagement en faveur de l’économie d’énergie !",
+    "description": "1 °C en moins, c’est 7 % de consommation d’énergie économisée. Dans l'idéal : 19 °C pour les pièces occupées sinon 16 °C, et 8 °C si les lieux sont inoccupés plus de deux jours.",
+    "sources": "Données : Gouvernement, association négaWatt, Ville de Paris",
     "tag": "je-baisse",
     "points": 12,
-    "credit": "Image : Bernard Hermant",
-    "collectiveEffort": "Si 80% des foyers français appliquaient cette mesure, cela permettrait d'économiser environ 23.5TWh soit 1,7 fois la consommation électrique annuelle de Paris en 2018."
+    "credit": "Image : energuide.be",
+    "collectiveEffort": "Si 80 % des foyers français appliquaient cette mesure, cela permettrait d'économiser environ 23.5 TWh soit 1,7 fois la consommation électrique annuelle de Paris en 2018."
   },
   "ecrans": {
-    "title": "Eteindre tous les écrans (TV, moniteur secondaire) non-indispensables",
-    "thanks": "Merci pour votre contribution, chaque geste compte !",
-    "description": "La consommation moyenne d'une TV oscille entre 100kWh/an (TV LED haute définition) et plus de 400kWh/an (TV plasma). La définition joue également sur la consommation : selon les estimations, une TV 4K consomme 30% à 50% en plus qu'une TV HD.",
-    "sources": "Données : ADEME, HelloWatt, ARCOM, INSEE",
+    "titles": [
+      "Éteindre tous les écrans (TV, moniteur secondaire) non-indispensables",
+      "Éteindre tous les écrans inutiles (téléviseurs, moniteurs secondaires)",
+      "Éteindre les écrans non nécessaires (téléviseurs, moniteurs secondaires)",
+      "Éteindre tous les écrans qui ne sont pas essentiels (téléviseurs, moniteurs secondaires)"
+    ],
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "La consommation moyenne d'une TV oscille entre 100 kWh/an (TV LED haute définition) et plus de 400 kWh/an (TV plasma). La définition joue également sur la consommation : selon les estimations, une TV 4K consomme 30 % à 50 % en plus qu'une TV HD.",
+    "sources": "Données : ADEME, HelloWatt, ARCOM, INSEE",
     "tag": "j-eteins",
     "points": 12,
-    "credit": "Image : John Smit",
-    "collectiveEffort": "Si l'ensemble des foyers français divisait par deux l'usage des écrans (hors smartphone et tablette), cela permettrait d'économiser environ 8TWh d'électricité, soit un peu plus de 10 fois la consommation annuelle d'électricité de Toulon en 2021."
+    "credit": "Image : John Smit",
+    "hasPicture": true,
+    "collectiveEffort": "Si l'ensemble des foyers français divisait par deux l'usage des écrans (hors smartphone et tablette), cela permettrait d'économiser environ 8 TWh d'électricité, soit un peu plus de 10 fois la consommation annuelle d'électricité de Toulon en 2021."
   },
   "lumieres": {
-    "title": "Eteindre les lumières non-indispensables",
-    "thanks": "Merci pour votre contribution, chaque geste compte !",
-    "description": "C'est pas Versailles ici ! Plutôt que d’installer un éclairage unique de forte intensité, privilégiez les petites sources d’éclairage bien ciblées et qui consomment moins. Privilégiez des lampes qui consomment peu d’électricité et durent longtemps comme les LED (jusqu'à 40000h) ou les fluocompactes (LFC, jusqu'à 8000h). ",
-    "sources": "Données : Déclics, AFE, agence ORE",
+    "titles": [
+      "Éteindre les lumières non-indispensables",
+      "Éteindre les lumières inutiles",
+      "Éteindre les lumières qui ne sont pas nécessaires",
+      "Éteindre toutes les lumières non essentielles"
+    ],
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "C'est pas Versailles ici ! Plutôt que d’installer un éclairage unique de forte intensité, privilégiez les petites sources d’éclairage bien ciblées et qui consomment moins. Privilégiez des lampes qui consomment peu d’électricité et durent longtemps comme les LED (jusqu'à 40000 h) ou les fluocompactes (LFC, jusqu'à 8000 h).",
+    "sources": "Données : Déclics, AFE, agence ORE",
     "tag": "j-eteins",
     "points": 8,
-    "credit": "Image : Isabella and Zsa Fischer",
-    "collectiveEffort": "Si l'ensemble des foyers francais réduisait d'un quart l'utilisation de son éclairage, cela permettrait d'économiser environ 2.9TWh d'électricité soit un peu plus que la consommation annuelle d'électricité de Lyon en 2021."
+    "collectiveEffort": "Si l'ensemble des foyers français réduisait d'un quart l'utilisation de son éclairage, cela permettrait d'économiser environ 2.9 TWh d'électricité soit un peu plus que la consommation annuelle d'électricité de Lyon en 2021."
   },
   "videoconf": {
-    "title": "Couper la vidéo lors des conférences à distance",
-    "thanks": "Merci pour votre contribution, chaque geste compte !",
-    "description": "Désactiver la vidéo lors d'une visioconférence permet de consommer 12 fois moins de données et d'économiser en moyenne 53% d'énergie, par minute d'utilisation (la réduction peut varier en fonction de l'outil utilisé).",
-    "sources": "Données : Greenspector",
+    "titles": [
+      "Couper la vidéo lors des conférences à distance",
+      "Désactiver la vidéo pendant les conférences en ligne",
+      "Éteindre la caméra lors des réunions à distance",
+      "Désactiver la caméra pendant les conférences en ligne"
+    ],
+    "thanks": "Merci pour votre contribution à la réduction de notre consommation d’énergie !",
+    "description": "Désactiver la vidéo lors d'une visioconférence permet de consommer 12 fois moins de données et d'économiser en moyenne 53 % d'énergie, par minute d'utilisation (la réduction peut varier en fonction de l'outil utilisé).",
+    "sources": "Données : Greenspector",
     "tag": "je-baisse",
     "points": 6,
-    "credit": "Image : Christin Hume",
     "collectiveEffort": "Désactiver la vidéo lors d'une visioconférence permet de consommer 12 fois moins de données et d'économiser en moyenne 53% d'énergie, par minute d'utilisation (la réduction peut varier en fonction de l'outil utilisé)."
   },
   "electromenager": {
-    "title": "Optimiser l'utilisation des gros appareils électroménagers",
-    "thanks": "Merci pour votre contribution, chaque geste compte !",
-    "description": "Le sèche linge, le lave vaisselle et la machine à laver sont les appareils électroménagers qui consomment le plus d'électricité dans leur usage au quotidien.",
-    "sources": "Données : Ecowatt, Déclics",
+    "titles": [
+      "Optimiser l’utilisation des gros appareils électroménagers (heures creuses)",
+      "Utiliser les gros appareils électroménagers pendant les heures creuses",
+      "Maximiser l’utilisation des gros appareils électroménagers pendant les heures creuses",
+      "Utiliser les gros appareils électroménagers de manière optimale pendant les heures creuses"
+    ],
+    "thanks": "Merci pour votre engagement en faveur de l’économie d’énergie !",
+    "description": "Le sèche-linge, le lave-vaisselle et la machine à laver sont les appareils électroménagers qui consomment le plus d'électricité dans leur usage au quotidien.",
+    "sources": "Données : Ecowatt, Déclics",
     "tag": "je-decale",
-    "points": 8,
-    "credit": "Image : rawpixel.com",
-    "collectiveEffort": "Si la moitié des foyers français optimisait son usage des appareils de lavage (gros électroménager), cela permettrait une économie de 1.2TWh, soit presque l'équivalent de la consommation annuelle d'électricité de Montpellier en 2021 (1.3TWh)."
+    "points": 12,
+    "credit": "Image : meilleurtest.fr",
+    "hasPicture": true,
+    "collectiveEffort": "Si la moitié des foyers français optimisait son usage des appareils de lavage (gros électroménager), cela permettrait une économie de 1.2 TWh, soit presque l'équivalent de la consommation annuelle d'électricité de Montpellier en 2021 (1.3 TWh)."
   },
   "chargement": {
-    "title": "Décaler le chargement des appareils pouvant fonctionner sur batterie sauf impératif",
-    "thanks": "Merci pour votre contribution, chaque geste compte !",
-    "description": "Concerne surtout les voitures, dont la demande en puissance est la plus conséquente. On estime à un peu plus de 500 000 le nombre de véhicules électriques circulant en France en 2022, dont 60% sont régulièrement chargés à domicile.",
-    "sources": "Données : ADEME, RTE, Delta-EE, Le Dauphiné Libéré",
+    "titles": [
+      "Décaler le chargement des appareils pouvant fonctionner sur batterie sauf impératif",
+      "Reporter le chargement des appareils fonctionnant sur batterie sauf en cas de nécessité",
+      "Retarder le chargement des appareils à batterie sauf si c’est impératif",
+      "Repousser le chargement des appareils à batterie sauf si c’est absolument nécessaire"
+    ],
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "Concerne surtout les voitures, dont la demande en puissance est la plus conséquente. On estime à un peu plus de 500 000 le nombre de véhicules électriques circulant en France en 2022, dont 60 % sont régulièrement chargés à domicile.",
+    "sources": "Données : ADEME, RTE, Delta-EE, Le Dauphiné Libéré",
     "tag": "je-decale",
     "points": 8,
-    "credit": "Image : Chuttersnap",
-    "collectiveEffort": "Si l'ensemble des usagers de véhicules électriques ou plug-in hybrides qui chargent leur véhicule à domicile décalent celle-ci, ce sont près de 700MW qui ne sont pas consommés immédiatement soit quasiment l'équivalent de la puissance d'un petit réacteur nucléaire français (900MW)."
+    "collectiveEffort": "Si l'ensemble des usagers de véhicules électriques ou plug-ins hybrides qui chargent leur véhicule à domicile décalent celui-ci, ce sont près de 700 MW qui ne sont pas consommés immédiatement soit quasiment l'équivalent de la puissance d'un petit réacteur nucléaire français (900 MW)."
   },
   "box": {
-    "title": "Programmer la box internet ou l'éteindre lors des périodes d'inactivités",
-    "thanks": "Merci pour votre contribution, chaque geste compte !",
-    "description": "Une box consomme en moyenne de 150 à 300 kWh par an (un peu plus qu'un lave-linge). Pour économiser, débranchez votre box quand vous n’en avez pas besoin, ou branchez la sur une prise programmable.",
-    "sources": "Données : ADEME, association négaWatt, agence ORE",
+    "titles": [
+      "Programmer la box Internet ou l’éteindre lors des périodes d’inactivité",
+      "Planifier l’arrêt de la box Internet pendant les périodes d’inactivité",
+      "Configurer la box Internet pour qu’elle s’éteigne pendant les périodes d’inactivité",
+      "Programmer l’extinction de la box Internet lors des périodes d’inactivité"
+    ],
+    "thanks": "Merci pour votre contribution à la réduction de notre consommation d’énergie !",
+    "description": "Une box consomme en moyenne de 150 à 300 kWh par an (un peu plus qu'un lave-linge). Pour économiser, débranchez votre box quand vous n’en avez pas besoin, ou branchez-la sur une prise programmable.",
+    "sources": "Données : ADEME, association négaWatt, agence ORE",
     "tag": "j-eteins",
     "points": 8,
-    "credit": "Image : Compare Fibre",
-    "collectiveEffort": "Si 70% des foyers français appliquaient cette mesure pour les box internet et 90% pour les box TV, cela permettrait d'économiser près de 3.1TWh soit un peu plus que la consommation électrique annuelle totale de Toulouse en 2021 (2.8TWh)."
+    "collectiveEffort": "Si 70 % des foyers français appliquaient cette mesure pour les box internet et 90 % pour les box TV, cela permettrait d'économiser près de 3.1 TWh soit un peu plus que la consommation électrique annuelle totale de Toulouse en 2021 (2.8 TWh)."
   },
   "veille": {
-    "title": "Eteindre les appareils qui se trouvent en mode veille",
-    "thanks": "Merci pour votre contribution, chaque geste compte !",
-    "description": "Les appareils consomment de l'électricité même s'ils sont en veille. Cette consommation a augmenté de 30 % ces dix dernières années. Elle peut atteindre 300 à 500 kWh par an et par logement, tous équipements confondus.",
-    "sources": "Données : ADEME, association négaWatt, agence ORE",
+    "titles": [
+      "Éteindre les appareils qui se trouvent en mode veille",
+      "Éteindre les appareils en veille",
+      "Éteindre tous les appareils en mode veille",
+      "Éteindre les appareils qui ne sont pas complètement éteints"
+    ],
+    "thanks": "Merci pour votre contribution à la réduction de notre consommation d’énergie !",
+    "description": "Les appareils consomment de l'électricité même s'ils sont en veille. Cette consommation a augmenté de 30 % ces dix dernières années. Elle peut atteindre 300 à 500 kWh par an et par logement, tous équipements confondus.",
+    "sources": "Données : ADEME, association négaWatt, agence ORE",
     "tag": "j-eteins",
     "points": 12,
-    "credit": "Image : Isaac Li Shung Tan",
-    "collectiveEffort": "Si 80% des foyers français appliquaient cette mesure, cela permettrait d'économiser près de 11.4TWh soit l'équivalent d'environ 12 fois la consommation électrique annuelle de Grenoble en 2021."
+    "credit": "Image : Isaac Li Shung Tan",
+    "hasPicture": true,
+    "collectiveEffort": "Si 80 % des foyers français appliquaient cette mesure, cela permettrait d'économiser près de 11.4 TWh soit l'équivalent d'environ 12 fois la consommation électrique annuelle de Grenoble en 2021."
   },
   "teletravail": {
-    "title": "Favoriser le télétravail pour limiter la consommation d'électricité",
-    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "titles": [
+      "Favoriser le télétravail pour limiter la consommation d’électricité",
+      "Privilégier le travail à distance pour réduire la consommation d’énergie",
+      "Encourager le télétravail pour économiser l’électricité",
+      "Promouvoir le travail à domicile pour diminuer la consommation d’énergie"
+    ],
+    "thanks": "Merci pour votre engagement en faveur de l’économie d’énergie !",
     "description": "Le télétravail permet de moins chauffer les espaces de bureaux ce qui induit une économie d'électricité. Cependant, il faut être vigilant vis-à-vis des reports de consommation à domicile, notamment de chauffage et de cuisine.",
-    "sources": "Données : ADEME, l'Obs, RTE.",
+    "sources": "Données : ADEME, l'Obs, RTE.",
     "tag": "je-baisse",
     "points": 6,
-    "credit": "Image : rawpixel.com",
     "collectiveEffort": "Le télétravail permet de moins chauffer les espaces de bureaux ce qui induit une économie d'électricité. Cependant, il faut être vigilant vis-à-vis des reports de consommation à domicile, notamment de chauffage et de cuisine."
   }
 }

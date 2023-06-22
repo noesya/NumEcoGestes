@@ -1,5 +1,6 @@
 <script>
 import EcogesteCard from '../EcogesteCard.vue';
+import state from "../../services/State";
 
 export default {
   components: {
@@ -51,14 +52,12 @@ export default {
 
   methods: {
     loadEcogestes: function () {
-      fetch("data/ecogestes.json").then(result => result.json()).then(function (data) {
-        this.ecogestes = data;
-        this.ecogestesKeys = Object.keys(this.ecogestes);
-        chrome.storage.local.get("unaffectedEcogestes", function (data) {
-          this.unaffectedEcogestes = Object.values(data.unaffectedEcogestes || {});
-          this.nextEcogeste();
-        }.bind(this));
-      }.bind(this))
+      this.ecogestes = state.ecogestes;
+      this.ecogestesKeys = Object.keys(this.ecogestes);
+      chrome.storage.local.get("unaffectedEcogestes", function (data) {
+        this.unaffectedEcogestes = Object.values(data.unaffectedEcogestes || {});
+        this.nextEcogeste();
+      }.bind(this));
     },
 
     loadEcowattData: function () {
@@ -176,8 +175,10 @@ export default {
   },
 
   mounted () {
-    this.loadEcogestes()
-    this.loadEcowattData()
+    setTimeout(function () {
+      this.loadEcogestes()
+      this.loadEcowattData()
+    }.bind(this), 10);
   }
 }
 </script>

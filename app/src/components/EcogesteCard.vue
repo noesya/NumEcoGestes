@@ -7,7 +7,8 @@
         showButtons: this.buttons || false,
         showCredit: this.credit || false,
         showAffectionToggle: this.affectionToggle || false,
-        ecogesteMetadata: { affected: true }
+        ecogesteMetadata: { affected: true },
+        ecogesteTitle: this.ecogeste.randomTitle()
       }
     },
 
@@ -16,6 +17,9 @@
         if (typeof this.$parent.onAffectChange !== 'undefined') {
           this.$parent.onAffectChange(this.ecogesteKey, value);
         }
+      },
+      "ecogeste": function (value) {
+        this.ecogesteTitle = value.randomTitle();
       }
     },
 
@@ -74,12 +78,17 @@
                   {{ ecogesteMetadata.affected ? "Cet écogeste me concerne" : "Cet écogeste ne me concerne pas" }}
                 </label>
               </div>
-              <p class="fr-tag">
-                <VIcon class="fr-mr-1v" :name="tagIcon()" :label="humanizedTag()" :scale="0.8" />
-                <span class="fr-text--sm" v-if="!iconOnly">{{ humanizedTag() }}</span>
-              </p>
+              <div class="fr-card__metadata">
+                <p class="fr-tag">
+                  <VIcon class="fr-mr-1v" :name="tagIcon()" :label="humanizedTag()" :scale="0.8" />
+                  <span class="fr-text--sm" v-if="!iconOnly">{{ humanizedTag() }}</span>
+                </p>
+                <p class="fr-badge fr-badge--no-icon" v-if="!ecogeste.hasPicture">
+                  {{ totalPoints() }} points
+                </p>
+              </div>
             </div>
-            <h3 class="fr-card__title">{{ ecogeste.title }}</h3>
+            <h3 class="fr-card__title">{{ ecogesteTitle }}</h3>
             <p class="fr-card__desc fr-text--md">{{ ecogeste.description }}</p>
             <div class="fr-card__end" v-if="!showButtons">
               <p class="fr-hint-text">{{ ecogeste.sources }}</p>
@@ -93,10 +102,10 @@
             </div>
           </div>
         </div>
-        <div class="fr-card__header">
+        <div class="fr-card__header" v-if="ecogeste.hasPicture">
           <div class="fr-card__img">
             <p class="fr-badge fr-badge--no-icon">{{ totalPoints() }} points</p>
-            <img class="fr-responsive-img" :src="portraitImageUrl()" :alt="ecogeste.title" />
+            <img class="fr-responsive-img" :src="portraitImageUrl()" :alt="ecogeste.randomTitle()" />
             <p v-if="showCredit" class="fr-card__img__credit">{{ ecogeste.credit }}</p>
           </div>
         </div>
@@ -114,7 +123,7 @@
             </div>
             <h3 class="fr-card__title">{{ ecogeste.thanks }}</h3>
             <div class="fr-callout fr-card__desc">
-              <h3 class="fr-callout__title">{{ ecogeste.title }}</h3>
+              <h3 class="fr-callout__title">{{ ecogesteTitle }}</h3>
               <p class="fr-callout__text fr-mb-2w">{{ ecogeste.collectiveEffort }}</p>
               <p>{{ ecogeste.sources }}</p>
             </div>
@@ -190,6 +199,12 @@
 
 .affection-toggle .fr-toggle__label:after {
   top: 0;
+}
+
+.fr-card__metadata {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 </style>
