@@ -221,5 +221,117 @@
     "tag": "j-entretiens",
     "points": 6,
     "collectiveEffort": "Pour éviter l’entartrage, qui provoque une surconsommation d’énergie, remplacez l’assouplissant par du vinaigre blanc. Il détartre la machine, fixe les couleurs du linge et assouplit les fibres, tout cela sans laisser d’odeur. Attention toutefois à la dose."
-  }
+  },
+  "filtres-electromenager": {
+    "titles": [
+      "Nettoyer et entretenir régulièrement les filtres des appareils électroménagers",
+      "Assurer un nettoyage et un entretien réguliers des filtres des appareils électroménagers",
+      "Veiller à nettoyer et entretenir fréquemment les filtres des équipements électroménagers",
+      "Maintenir les filtres des appareils électroménagers propres et en bon état en les nettoyant et les entretenant régulièrement"
+    ],
+    "thanks": "Merci pour votre contribution à la réduction de notre consommation d’énergie !",
+    "description": "La plupart des appareils électroménagers (machine à laver, lave-vaisselle, sèche-linge, machine à café, aspirateur, etc.) est équipée d'un ou de plusieurs filtres. Leur entretien et nettoyage régulier améliore leur efficacité et augmente leur durée de vie.",
+    "sources": "Déclics",
+    "tag": "j-entretiens",
+    "points": 6,
+    "collectiveEffort": "La plupart des appareils électroménagers (machine à laver, lave-vaisselle, sèche-linge, machine à café, aspirateur, etc.) est équipée d'un ou de plusieurs filtres. Leur entretien et nettoyage régulier améliore leur efficacité et augmente leur durée de vie."
+  },
+  "chargeurs": {
+    "titles": [
+      "Débrancher les chargeurs dès que les appareils sont suffisamment rechargés",
+      "Déconnecter les chargeurs dès que les batteries sont pleines",
+      "Retirer les chargeurs dès que les appareils sont rechargés",
+      "Enlever les chargeurs dès que les batteries sont chargées"
+    ],
+    "thanks": "Merci pour votre contribution à la réduction de notre consommation d’énergie !",
+    "description": "Débrancher les chargeurs dès que les appareils sont suffisamment rechargés permet de réduire la consommation d’énergie des chargeurs qui continuent de consommer de l’électricité même lorsqu’ils ne sont pas utilisés. Cela permet également de prolonger la durée de vie des batteries de vos appareils électroniques en évitant une surcharge.",
+    "sources": "Selectra",
+    "tag": "j-eteins",
+    "points": 6,
+    "collectiveEffort": "Débrancher les chargeurs dès que les appareils sont suffisamment rechargés permet de réduire la consommation d’énergie des chargeurs qui continuent de consommer de l’électricité même lorsqu’ils ne sont pas utilisés. Cela permet également de prolonger la durée de vie des batteries de vos appareils électroniques en évitant une surcharge."
+  },
+  "reflecteur-chaleur": {
+    "titles": [
+      "Mettre un réflecteur de chaleur derrière ses radiateurs",
+      "Installer un réflecteur de chaleur derrière les radiateurs",
+      "Poser un réflecteur de chaleur à l’arrière des radiateurs",
+      "Placer un réflecteur de chaleur derrière les radiateurs"
+    ],
+    "thanks": "Votre geste est important pour économiser l’énergie, merci !",
+    "description": "Le réflecteur de chaleur est un dispositif à installer derrière un radiateur qui permet de réaliser des économies d’énergie et d’optimiser le confort thermique de votre logement en réfléchissant la chaleur vers l’intérieur de la pièce, empêchant ainsi les murs d’en absorber une partie. Selon l’ADEME, la mise en place d’un panneau réfléchissant derrière chaque radiateur permet une économie d’énergie de 5 à 10 %.",
+    "sources": "Selectra",
+    "tag": "j-optimise",
+    "points": 6,
+    "collectiveEffort": "Le réflecteur de chaleur est un dispositif à installer derrière un radiateur qui permet de réaliser des économies d’énergie et d’optimiser le confort thermique de votre logement en réfléchissant la chaleur vers l’intérieur de la pièce, empêchant ainsi les murs d’en absorber une partie. Selon l’ADEME, la mise en place d’un panneau réfléchissant derrière chaque radiateur permet une économie d’énergie de 5 à 10 %."
+  },
+  "rideaux-volets": {
+    "titles": [
+      "Fermer les rideaux et volets autant que possible les jours de froid, ouvrez-les les jours de chaleur sauf en cas de canicule ou d'exposition sud",
+      "Pour économiser de l’énergie, fermez les rideaux et volets autant que possible les jours de froid et ouvrez-les les jours de chaleur sauf en cas de canicule ou d’exposition sud",
+      "Pour réduire votre consommation d’énergie, fermez les rideaux et volets autant que possible les jours de froid et ouvrez-les les jours de chaleur sauf en cas de canicule ou d’exposition sud",
+      "Pour économiser sur votre facture d’énergie, fermez les rideaux et volets autant que possible les jours de froid et ouvrez-les les jours de chaleur sauf en cas de canicule ou d’exposition sud"
+    ],
+    "thanks": "Merci pour votre engagement en faveur de l’économie d’énergie !",
+    "description": "Il s'agit d'un geste simple qui permet de limiter les déperditions de chaleur et de garder la maison fraîche en été. Les rideaux et volets créent une couche d’air agissant comme isolant supplémentaire et limitent les déperditions de chaleur. Ils empêchent également les rayons du soleil de pénétrer dans la maison en été afin de maintenir une température confortable.",
+    "sources": "Selectra",
+    "tag": "j-optimise",
+    "points": 6,
+    "collectiveEffort": "Il s'agit d'un geste simple qui permet de limiter les déperditions de chaleur et de garder la maison fraîche en été. Les rideaux et volets créent une couche d’air agissant comme isolant supplémentaire et limitent les déperditions de chaleur. Ils empêchent également les rayons du soleil de pénétrer dans la maison en été afin de maintenir une température confortable."
+  },
+  "aeration-piece": {
+    "titles": [
+      "Aérer la pièce au moins 10 minutes par jour pour chasser l’humidité de l’air",
+      "Ouvrir les fenêtres pendant au moins 10 minutes par jour pour évacuer l’humidité",
+      "Ventiler la pièce pendant au moins 10 minutes chaque jour pour éliminer l’humidité",
+      "Aérer la pièce quotidiennement pendant au moins 10 minutes pour réduire l’humidité"
+    ],
+    "thanks": "Merci pour votre engagement en faveur de l’économie d’énergie !",
+    "description": "Cela permet de renouveler intégralement l’air, sans que les murs aient le temps de refroidir. L’hiver, pensez à éteindre les radiateurs avant d’ouvrir les fenêtres. Chauffer un air humide est plus énergivore que chauffer un air sec et renouvelé. Ne pas ventiler le logement en hiver fera donc augmenter votre facture de chauffage.",
+    "sources": "Selectra",
+    "tag": "j-optimise",
+    "points": 6,
+    "collectiveEffort": "Cela permet de renouveler intégralement l’air, sans que les murs aient le temps de refroidir. L’hiver, pensez à éteindre les radiateurs avant d’ouvrir les fenêtres. Chauffer un air humide est plus énergivore que chauffer un air sec et renouvelé. Ne pas ventiler le logement en hiver fera donc augmenter votre facture de chauffage."
+  },
+  "mousseurs": {
+    "titles": [
+      "Équiper les robinets de mousseurs",
+      "Installer des mousseurs sur les robinets",
+      "Ajouter des mousseurs aux robinets",
+      "Poser des mousseurs sur les robinets"
+    ],
+    "thanks": "Merci pour votre contribution, l'eau est une ressource précieuse !",
+    "description": "Pour économiser l’eau, pensez à équiper vos robinets de mousseurs, également appelés économiseurs d’eau, que l’on fixe sur la sortie d’eau. Le principe est simple : réduire le débit en injectant de l’air dans l’eau qui coule, sans impact sur la pression. Facile à installer et vite rentabilisé, cet équipement vous permettra de réduire jusqu’à 50 % votre consommation au robinet.",
+    "sources": "Déclics",
+    "tag": "j-optimise",
+    "points": 6,
+    "collectiveEffort": "Pour économiser l’eau, pensez à équiper vos robinets de mousseurs, également appelés économiseurs d’eau, que l’on fixe sur la sortie d’eau. Le principe est simple : réduire le débit en injectant de l’air dans l’eau qui coule, sans impact sur la pression. Facile à installer et vite rentabilisé, cet équipement vous permettra de réduire jusqu’à 50 % votre consommation au robinet."
+  },
+  "branchement-eau-chaude": {
+    "titles": [
+      "Brancher si possible le lave-linge/lave-vaisselle sur l’arrivée d’eau chaude",
+      "Raccorder le lave-linge/lave-vaisselle à l’arrivée d’eau chaude si possible",
+      "Connecter le lave-linge/lave-vaisselle à l’alimentation en eau chaude si c’est faisable",
+      "Brancher le lave-linge/lave-vaisselle sur l’arrivée d’eau chaude si c’est possible"
+    ],
+    "thanks": "Merci pour votre engagement en faveur de l’économie d’énergie !",
+    "description": "80 % de l’électricité consommée par votre appareil servent à chauffer l’eau. Si vous chauffez votre eau avec un système non électrique (sauf fioul et propane), il est économique d’y raccorder directement votre machine à laver. Il existe également des kits de raccordement.",
+    "sources": "Déclics",
+    "tag": "j-optimise",
+    "points": 6,
+    "collectiveEffort": "80 % de l’électricité consommée par votre appareil servent à chauffer l’eau. Si vous chauffez votre eau avec un système non électrique (sauf fioul et propane), il est économique d’y raccorder directement votre machine à laver. Il existe également des kits de raccordement."
+  },
+  "economiseur-pommeau": {
+    "titles": [
+      "Installer un économiseur d’eau sur le pommeau de douche",
+      "Équiper son pommeau de douche d’un économiseur d’eau",
+      "Ajouter un économiseur d’eau sur son pommeau de douche",
+      "Poser un économiseur d’eau sur son pommeau de douche"
+    ],
+    "thanks": "Merci pour votre contribution, l'eau est une ressource précieuse !",
+    "description": "Utiliser un économiseur d’eau sur les robinets et les douchettes permet de réduire jusqu’à 50 % la consommation d’eau, ainsi que l’énergie utilisée pour la chauffer.",
+    "sources": "Déclics",
+    "tag": "j-optimise",
+    "points": 6,
+    "collectiveEffort": "Utiliser un économiseur d’eau sur les robinets et les douchettes permet de réduire jusqu’à 50 % la consommation d’eau, ainsi que l’énergie utilisée pour la chauffer."
+  },
 }
