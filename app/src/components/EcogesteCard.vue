@@ -37,6 +37,10 @@
             return "J'éteins";
           case "je-decale":
             return "Je décale";
+          case "j-optimise":
+            return "J'optimise";
+          case "j-entretiens":
+            return "J'entretiens";
         }
       },
 
@@ -48,11 +52,15 @@
             return "ri-shut-down-line";
           case "je-decale":
             return "ri-arrow-right-line";
+          case "j-optimise":
+            return "ri-refresh-line";
+          case "j-entretiens":
+            return "ri-tools-line";
         }
       },
 
-      portraitImageUrl() {
-        return `/assets/images/ecogestes/portrait/${this.ecogesteKey}.png`
+      imageUrl() {
+        return `/assets/images/ecogestes/${this.ecogesteKey}.png`
       }
     },
 
@@ -105,7 +113,7 @@
         <div class="fr-card__header" v-if="ecogeste.hasPicture">
           <div class="fr-card__img">
             <p class="fr-badge fr-badge--no-icon">{{ totalPoints() }} points</p>
-            <img class="fr-responsive-img" :src="portraitImageUrl()" :alt="ecogeste.randomTitle()" />
+            <img class="fr-responsive-img" :src="imageUrl()" :alt="ecogeste.randomTitle()" />
             <p v-if="showCredit" class="fr-card__img__credit">{{ ecogeste.credit }}</p>
           </div>
         </div>

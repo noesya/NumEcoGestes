@@ -49,6 +49,8 @@ export default {
             { label: "Je baisse", value: "je-baisse", icon: "ri-arrow-right-down-line" },
             { label: "J'éteins", value: "j-eteins", icon: "ri-shut-down-line" },
             { label: "Je décale", value: "je-decale", icon: "ri-arrow-right-line" },
+            { label: "J'optimise", value: "j-optimise", icon: "ri-refresh-line" },
+            { label: "J'entretiens", value: "j-entretiens", icon: "ri-tools-line" },
           ]
         }
     },
