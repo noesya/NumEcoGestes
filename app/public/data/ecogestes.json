@@ -131,5 +131,95 @@
     "tag": "je-baisse",
     "points": 6,
     "collectiveEffort": "Le télétravail permet de moins chauffer les espaces de bureaux ce qui induit une économie d'électricité. Cependant, il faut être vigilant vis-à-vis des reports de consommation à domicile, notamment de chauffage et de cuisine."
+  },
+  "chauffage-chauffe-eau": {
+    "titles": [
+      "Éteindre le chauffage lorsqu’on ne se trouve pas dans le logement (travail, vacances, etc.) et le chauffe-eau lors d’une absence supérieure à deux jours",
+      "Couper le chauffage et le chauffe-eau lors d’absences prolongées (travail, vacances, etc.)",
+      "Éteindre le chauffage et le chauffe-eau lorsqu’on est absent du logement pour une période de plus de deux jours",
+      "Arrêter le chauffage et le chauffe-eau lorsqu’on quitte le logement pour une durée supérieure à deux jours"
+    ],
+    "thanks": "Merci pour votre contribution à la réduction de notre consommation d’énergie !",
+    "description": "1 °C en moins, c’est 7 % de consommation d’énergie économisée. Dans l'idéal : 19 °C pour les pièces occupées sinon 16 °C, et 8 °C si les lieux sont inoccupés plus de deux jours.",
+    "sources": "Selectra",
+    "tag": "j-eteins",
+    "points": 12,
+    "credit": "Image : Bernard Hermant",
+    "hasPicture": true,
+    "collectiveEffort": "1 °C en moins, c’est 7 % de consommation d’énergie économisée. Dans l'idéal : 19 °C pour les pièces occupées sinon 16 °C, et 8 °C si les lieux sont inoccupés plus de deux jours."
+  },
+  "ecotransport": {
+    "titles": [
+      "Se rendre au bureau en prenant le vélo, les transports en commun ou en covoiturage et adopter l’écoconduite à défaut de pouvoir télétravailler",
+      "Aller au travail à vélo, en transports en commun ou en covoiturage et pratiquer l’écoconduite si le télétravail n’est pas possible",
+      "Se déplacer au bureau à vélo, en transports publics ou en covoiturage et adopter une conduite écologique si le travail à distance n’est pas envisageable",
+      "Rejoindre son lieu de travail à vélo, en transports collectifs ou en covoiturage et suivre les principes de l’écoconduite si le télétravail n’est pas une option"
+    ],
+    "thanks": "Merci pour votre contribution à la réduction de notre consommation d’énergie !",
+    "description": "Se rendre au bureau en prenant le vélo, les transports en commun ou en covoiturage et adopter l’écoconduite sont des gestes écologiques qui permettent de réduire les émissions de gaz à effet de serre et la pollution de l’air.",
+    "sources": "Selectra",
+    "tag": "j-optimise",
+    "points": 12,
+    "credit": "Image : TL Actualités",
+    "hasPicture": true,
+    "collectiveEffort": "Se rendre au bureau en prenant le vélo, les transports en commun ou en covoiturage et adopter l’écoconduite sont des gestes écologiques qui permettent de réduire les émissions de gaz à effet de serre et la pollution de l’air."
+  },
+  "deplacement-pro": {
+    "titles": [
+      "Éviter les déplacement professionnels en avion autant que possible pour privilégier la visio ou le train",
+      "Limiter les voyages professionnels en avion autant que possible en optant pour la visioconférence ou le train",
+      "Réduire les déplacements professionnels en avion autant que possible en choisissant la visioconférence ou le train",
+      "Minimiser les voyages d’affaires en avion autant que possible en préférant la visioconférence ou le train"
+    ],
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "L’avion est un moyen de transport qui consomme beaucoup d’énergie et qui émet des gaz à effet de serre. En revanche, la visioconférence permet de communiquer à distance sans avoir besoin de se déplacer physiquement. Le train est un moyen de transport plus écologique que l’avion car il consomme moins d’énergie et émet moins de gaz à effet de serre. Les TTR (temps de trajet responsable) font d'ailleurs leur apparition dans les entreprises pour faciliter ce report.",
+    "sources": "Selectra, novethic",
+    "tag": "je-baisse",
+    "points": 12,
+    "credit": "Image : rawpixel.com",
+    "hasPicture": true,
+    "collectiveEffort": "Le télétravail permet de moins chauffer les espaces de bureaux ce qui induit une économie d'électricité. Cependant, il faut être vigilant vis-à-vis des reports de consommation à domicile, notamment de chauffage et de cuisine."
+  },
+  "degivrage": {
+    "titles": [
+      "Dégivrer au moins deux fois par an les équipements réfrigérants",
+      "Dégivrer régulièrement (au moins deux fois par an) les appareils réfrigérants",
+      "Effectuer un dégivrage au moins deux fois par an sur les équipements réfrigérants",
+      "Dégivrer fréquemment (au minimum deux fois par an) les appareils réfrigérants"
+    ],
+    "thanks": "Merci pour votre engagement en faveur de l’économie d’énergie !",
+    "description": "Dégivrer au moins deux fois par an les équipements réfrigérants permet de maintenir leur efficacité énergétique et de prolonger leur durée de vie. En effet, le givre accumulé sur les parois intérieures des équipements réfrigérants peut entraîner une surconsommation d’énergie et une usure prématurée du matériel.",
+    "sources": "Selectra",
+    "tag": "j-entretiens",
+    "points": 6,
+    "collectiveEffort": "Dégivrer au moins deux fois par an les équipements réfrigérants permet de maintenir leur efficacité énergétique et de prolonger leur durée de vie. En effet, le givre accumulé sur les parois intérieures des équipements réfrigérants peut entraîner une surconsommation d’énergie et une usure prématurée du matériel."
+  },
+  "vmc": {
+    "titles": [
+      "Nettoyer et entretenir les grilles d’entrée d’air et d’extraction de la VMC (ventilation mécanique contrôlée)",
+      "Entretenir et nettoyer régulièrement les grilles d’entrée et de sortie d’air de la VMC (ventilation mécanique contrôlée)",
+      "Veiller à la propreté et au bon fonctionnement des grilles d’admission et d’évacuation d’air de la VMC (ventilation mécanique contrôlée)",
+      "Assurer l’entretien et le nettoyage des grilles d’entrée et de sortie d’air de la VMC (ventilation mécanique contrôlée)"
+    ],
+    "thanks": "Merci pour votre engagement en faveur de l’économie d’énergie !",
+    "description": "Si votre logement est équipé de VMC, l’air que vous respirez passe par les grilles d’entrée d’air : mieux vaut donc qu’elles soient propres ! De plus, si les bouches d’entrée et d’extraction sont encrassées, elles auront tendance à être moins efficaces (surconsommation du moteur de la VMC et moindre efficacité pour évacuer l’humidité).",
+    "sources": "Déclics",
+    "tag": "j-entretiens",
+    "points": 6,
+    "collectiveEffort": "Si votre logement est équipé de VMC, l’air que vous respirez passe par les grilles d’entrée d’air : mieux vaut donc qu’elles soient propres ! De plus, si les bouches d’entrée et d’extraction sont encrassées, elles auront tendance à être moins efficaces (surconsommation du moteur de la VMC et moindre efficacité pour évacuer l’humidité)."
+  },
+  "detartrage-machine-laver": {
+    "titles": [
+      "Détartrer régulièrement la machine à laver",
+      "Effectuer un détartrage régulier de la machine à laver",
+      "Détartrer fréquemment la machine à laver",
+      "Entretenir régulièrement la machine à laver en la détartrant"
+    ],
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "Pour éviter l’entartrage, qui provoque une surconsommation d’énergie, remplacez l’assouplissant par du vinaigre blanc. Il détartre la machine, fixe les couleurs du linge et assouplit les fibres, tout cela sans laisser d’odeur. Attention toutefois à la dose.",
+    "sources": "Déclics",
+    "tag": "j-entretiens",
+    "points": 6,
+    "collectiveEffort": "Pour éviter l’entartrage, qui provoque une surconsommation d’énergie, remplacez l’assouplissant par du vinaigre blanc. Il détartre la machine, fixe les couleurs du linge et assouplit les fibres, tout cela sans laisser d’odeur. Attention toutefois à la dose."
   }
 }
