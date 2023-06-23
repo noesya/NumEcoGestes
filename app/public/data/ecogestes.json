@@ -334,4 +334,129 @@
     "points": 6,
     "collectiveEffort": "Utiliser un économiseur d’eau sur les robinets et les douchettes permet de réduire jusqu’à 50 % la consommation d’eau, ainsi que l’énergie utilisée pour la chauffer."
   },
+  "robinet-thermostatique": {
+    "titles": [
+      "Équiper les robinets de la salle de bain et de la douche d’un robinet thermostatique",
+      "Installer des robinets thermostatiques dans la salle de bain et la douche",
+      "Ajouter des robinets thermostatiques aux robinets de la salle de bain et de la douche",
+      "Poser des robinets thermostatiques sur les robinets de la salle de bain et de la douche"
+    ],
+    "thanks": "Merci pour votre contribution, l'eau et l'électricité sont des ressources précieuses !",
+    "description": "Prérégler la température grâce à un robinet de type « thermostatique » vous permet d’économiser jusqu’à 30 % d’énergie par rapport à un robinet mélangeur. Ce type de robinet est notamment bien adapté pour la douche.",
+    "sources": "Déclics",
+    "tag": "j-optimise",
+    "points": 6,
+    "collectiveEffort": "Prérégler la température grâce à un robinet de type « thermostatique » vous permet d’économiser jusqu’à 30 % d’énergie par rapport à un robinet mélangeur. Ce type de robinet est notamment bien adapté pour la douche."
+  },
+  "conservation-frais": {
+    "titles": [
+      "Conserver certains produits au frais plutôt que dans le réfrigérateur",
+      "Garder certains aliments au frais plutôt que dans le réfrigérateur",
+      "Stocker certains produits à une température fraîche plutôt que dans le réfrigérateur",
+      "Entreposer certains aliments dans un endroit frais plutôt que dans le réfrigérateur"
+    ],
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "Nous conservons souvent des aliments au réfrigérateur alors qu’ils ne le méritent pas forcément : légumes, boissons. Ils se conservent très bien dans un cellier frais ou sur un balcon en hiver.",
+    "tag": "j-optimise",
+    "points": 6,
+    "collectiveEffort": "Nous conservons souvent des aliments au réfrigérateur alors qu’ils ne le méritent pas forcément : légumes, boissons. Ils se conservent très bien dans un cellier frais ou sur un balcon en hiver."
+  },
+  "arriere-appareils": {
+    "titles": [
+      "L’arrière des équipements réfrigérants ne doit pas être collé au mur ni être placé à proximité de sources de chaleur",
+      "Ne pas coller l’arrière des appareils réfrigérants au mur ni les placer près d’une source de chaleur",
+      "Éviter de placer l’arrière des équipements réfrigérants contre un mur ou à proximité d’une source de chaleur",
+      "S’assurer que l’arrière des appareils réfrigérants ne touche pas un mur et n’est pas proche d’une source de chaleur"
+    ],
+    "thanks": "Merci pour votre contribution à la réduction de notre consommation d’énergie !",
+    "description": "L’arrière des équipements réfrigérants ne doit pas être collé au mur ni être placé à proximité de sources de chaleur pour éviter que la chaleur produite par l’équipement ne soit pas évacuée correctement et que cela entraîne une surconsommation d’énergie. Il est donc recommandé de garder une distance entre le mur et le matériel et d’éloigner le matériel des sources de chaleur comme le radiateur, la cuisinière, le four ou autres matériels de chauffage.",
+    "sources": "Selectra",
+    "tag": "je-baisse",
+    "points": 6,
+    "collectiveEffort": "L’arrière des équipements réfrigérants ne doit pas être collé au mur ni être placé à proximité de sources de chaleur pour éviter que la chaleur produite par l’équipement ne soit pas évacuée correctement et que cela entraîne une surconsommation d’énergie. Il est donc recommandé de garder une distance entre le mur et le matériel et d’éloigner le matériel des sources de chaleur comme le radiateur, la cuisinière, le four ou autres matériels de chauffage."
+  },
+  "moteur-recherche": {
+    "titles": [
+      "Utiliser un moteur de recherche écoresponsable et limiter ses recherches sur les moteurs pour privilégier les accès directs aux sites",
+      "Privilégier un moteur de recherche écologique et réduire ses recherches sur les moteurs pour favoriser les accès directs aux sites web",
+      "Opter pour un moteur de recherche respectueux de l’environnement et limiter ses recherches sur les moteurs en privilégiant les accès directs aux sites internet",
+      "Choisir un moteur de recherche vert et restreindre ses recherches sur les moteurs pour préférer les accès directs aux sites"
+    ],
+    "thanks": "Merci pour votre contribution à la réduction de notre consommation d’énergie !",
+    "description": "Un moteur de recherche écoresponsable est un moteur de recherche qui respecte l’environnement et qui permet de limiter son empreinte carbone. Il existe plusieurs moteurs de recherche écoresponsables tels que Qwant, DuckDuckGo, Ecosia, Lilo et Ecogine. Ces moteurs de recherche ont des fonctionnalités différentes mais ont en commun le respect de la vie privée et la protection de l’environnement. Pour limiter ses recherches sur les moteurs, il est conseillé de privilégier les accès directs aux sites.",
+    "sources": "Selectra",
+    "tag": "je-baisse",
+    "points": 6,
+    "collectiveEffort": "Un moteur de recherche écoresponsable est un moteur de recherche qui respecte l’environnement et qui permet de limiter son empreinte carbone. Il existe plusieurs moteurs de recherche écoresponsables tels que Qwant, DuckDuckGo, Ecosia, Lilo et Ecogine. Ces moteurs de recherche ont des fonctionnalités différentes mais ont en commun le respect de la vie privée et la protection de l’environnement. Pour limiter ses recherches sur les moteurs, il est conseillé de privilégier les accès directs aux sites."
+  },
+  "escaliers": {
+    "titles": [
+      "Privilégier les escaliers à l’ascenseur",
+      "Choisir les escaliers plutôt que l’ascenseur (c’est excellent pour la santé cardiovasculaire)",
+      "Opter pour les escaliers au lieu de l’ascenseur (c’est bénéfique pour le coeur)",
+      "Préférer les escaliers à l’ascenseur (c’est bon pour la santé cardiaque)"
+    ],
+    "thanks": "Merci pour votre engagement en faveur de l’économie d’énergie !",
+    "description": "Privilégier les escaliers à l’ascenseur est un geste écologique qui permet de faire de l’exercice physique et de réduire la consommation d’énergie. C'est même très bon pour le cœur !",
+    "sources": "Selectra",
+    "tag": "je-baisse",
+    "points": 6,
+    "collectiveEffort": "Privilégier les escaliers à l’ascenseur est un geste écologique qui permet de faire de l’exercice physique et de réduire la consommation d’énergie. C'est même très bon pour le cœur !"
+  },
+  "lavage-mains": {
+    "titles": [
+      "Utiliser de l’eau froide pour se laver les mains",
+      "Se laver les mains à l’eau froide",
+      "Laver ses mains avec de l’eau froide",
+      "Nettoyer ses mains à l’eau froide"
+    ],
+    "thanks": "Merci pour votre contribution, l'eau et l'électricité sont des ressources précieuses !",
+    "description": "Bien souvent, le temps de se laver les mains est trop court pour que l’eau chaude arrive jusqu’à soi ! Ainsi, pour éviter de consommer de l’énergie inutilement, mieux vaut utiliser de l’eau froide.",
+    "sources": "Déclics",
+    "tag": "je-baisse",
+    "points": 6,
+    "collectiveEffort": "Bien souvent, le temps de se laver les mains est trop court pour que l’eau chaude arrive jusqu’à soi ! Ainsi, pour éviter de consommer de l’énergie inutilement, mieux vaut utiliser de l’eau froide."
+  },
+  "rincage-vaisselle": {
+    "titles": [
+      "Éviter de rincer la vaisselle à l’eau très chaude",
+      "Ne pas rincer la vaisselle à l’eau brûlante",
+      "Éviter de rincer la vaisselle avec de l’eau très chaude",
+      "S’abstenir de rincer la vaisselle à l’eau bouillante"
+    ],
+    "thanks": "Merci pour votre contribution, l'eau et l'électricité sont des ressources précieuses !",
+    "description": "Pendant la vaisselle, l’eau chaude n’est utile que pour faciliter le dégraissage et pour éviter les bouchons de graisse dans les canalisations.",
+    "sources": "Déclics",
+    "tag": "je-baisse",
+    "points": 6,
+    "collectiveEffort": "Pendant la vaisselle, l’eau chaude n’est utile que pour faciliter le dégraissage et pour éviter les bouchons de graisse dans les canalisations."
+  },
+  "chaudiere-ete": {
+    "titles": [
+      "Basculer ma chaudière individuelle en mode « eau chaude seule » en été",
+      "Passer sa chaudière individuelle en mode « eau chaude uniquement » pendant l’été",
+      "Changer le mode de sa chaudière individuelle en « eau chaude seulement » durant l’été",
+      "Activer le mode « eau chaude uniquement » sur sa chaudière individuelle en été"
+    ],
+    "thanks": "Merci pour votre contribution, l'eau et l'électricité sont des ressources précieuses !",
+    "description": "Cela permet d'éviter le fonctionnement inutile de la chaudière et du circulateur en mode chauffage.",
+    "sources": "Déclics",
+    "tag": "je-baisse",
+    "points": 6,
+    "collectiveEffort": "Cela permet d'éviter le fonctionnement inutile de la chaudière et du circulateur en mode chauffage."
+  },
+  "usage-numerique": {
+    "titles": [
+      "J’ai un usage raisonné de mes équipements et des services numériques (logiciels, sites web)",
+      "J’utilise mes équipements et services numériques (logiciels, sites web) de manière réfléchie",
+      "Je fais un usage judicieux de mes équipements et services numériques (logiciels, sites web)",
+      "J’emploie mes équipements et services numériques (logiciels, sites web) de manière raisonnable"
+    ],
+    "thanks": "Merci pour votre engagement en faveur de l’économie d’énergie !",
+    "description": "Je stocke le moins possible de documents et j’évite les multiples copies dans le cloud. Je fais régulièrement le ménage dans mes fichiers. Je désinstalle régulièrement les logiciels que je n’utilise pas. Je limite mon usage de vidéo en streaming, surtout en 4G.",
+    "sources": "Selectra",
+    "tag": "je-baisse",
+    "points": 6,
+    "collectiveEffort": "Je stocke le moins possible de documents et j’évite les multiples copies dans le cloud. Je fais régulièrement le ménage dans mes fichiers. Je désinstalle régulièrement les logiciels que je n’utilise pas. Je limite mon usage de vidéo en streaming, surtout en 4G."
+  },
 }
