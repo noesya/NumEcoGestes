@@ -45,6 +45,15 @@ Pour compiler l'extension pour Firefox:
 scripts/build-firefox.sh
 ```
 
+### Build sans débogage
+
+Dans `app/src/views/HomeView.vue`
+- Supprimer l'import du composant `Debug`
+- Supprimer le composant `Debug` dans la liste des components
+- Supprimer l'élément `<Debug />` présent dans le template
+
+Puis faire la commande de build.
+
 ## Sources
 
 * [VueDsfr](https://github.com/dnum-mi/vue-dsfr)
