@@ -6,6 +6,6 @@ export {
     RiShareBoxLine,
     RiClipboardLine,
     RiApps2Line,
-    RiToolsLine,
-    RiRefreshLine
+    RiDashboard3Line,
+    RiFirstAidKitLine
 } from 'oh-vue-icons/icons/ri/index.js'

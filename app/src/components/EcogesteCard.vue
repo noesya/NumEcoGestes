@@ -53,9 +53,9 @@
           case "je-decale":
             return "ri-arrow-right-line";
           case "j-optimise":
-            return "ri-refresh-line";
+            return "ri-dashboard-3-line";
           case "j-entretiens":
-            return "ri-tools-line";
+            return "ri-first-aid-kit-line";
         }
       },
 
