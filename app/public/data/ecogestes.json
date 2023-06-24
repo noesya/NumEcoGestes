@@ -459,4 +459,284 @@
     "points": 6,
     "collectiveEffort": "Je stocke le moins possible de documents et j’évite les multiples copies dans le cloud. Je fais régulièrement le ménage dans mes fichiers. Je désinstalle régulièrement les logiciels que je n’utilise pas. Je limite mon usage de vidéo en streaming, surtout en 4G."
   },
+  "objets-occasion": {
+    "titles": [
+      "Acheter moins d’objets neufs et privilégier la réparation, le partage ou l’occasion.",
+      "Privilégier la réparation, le partage ou l’occasion plutôt que d’acheter des objets neufs.",
+      "Éviter d’acheter des objets neufs en optant pour la réparation, le partage ou l’occasion.",
+      "Choisir la réparation, le partage ou l’occasion au lieu d’acheter des objets neufs."
+    ],
+    "thanks": "Merci pour votre contribution à la réduction de notre consommation d’énergie et de matière !",
+    "description": "Acheter moins d’objets neufs et privilégier la réparation, le partage ou l’occasion est un geste écologique qui permet de réduire la production de déchets et la consommation de ressources naturelles. La réparation permet de prolonger la durée de vie des objets et de réduire le gaspillage. Le partage permet de mutualiser les ressources et de réduire la consommation individuelle. L’achat d’objets d’occasion permet de donner une seconde vie aux objets et de réduire la production de déchets.",
+    "sources": "Greenpeace",
+    "tag": "j-entretiens",
+    "points": 8,
+    "collectiveEffort": "Acheter moins d’objets neufs et privilégier la réparation, le partage ou l’occasion est un geste écologique qui permet de réduire la production de déchets et la consommation de ressources naturelles. La réparation permet de prolonger la durée de vie des objets et de réduire le gaspillage. Le partage permet de mutualiser les ressources et de réduire la consommation individuelle. L’achat d’objets d’occasion permet de donner une seconde vie aux objets et de réduire la production de déchets."
+  },
+  "entretien-chaudiere": {
+    "titles": [
+      "Entretenir la chaudière et régler sa température tous les ans",
+      "Assurer un entretien annuel de sa chaudière et ajuster sa température chaque année",
+      "Effectuer un entretien régulier de sa chaudière et régler sa température tous les ans",
+      "Réaliser un entretien annuel de sa chaudière et adapter sa température chaque année"
+    ],
+    "thanks": "Merci pour votre contribution, l'eau et l'électricité sont des ressources précieuses !",
+    "description": "Le mauvais entretien ou réglage d’une chaudière peut réduire son efficacité. Pour obtenir un rendement maximal, faites vérifier votre équipement de chauffage tous les ans. L’entretien régulier permet d’éviter les sur-consommations. Indispensable pour votre sécurité, la révision annuelle des chaudières à combustion (gaz, fioul, bois) est obligatoire.",
+    "sources": "Déclics",
+    "tag": "j-entretiens",
+    "points": 8,
+    "collectiveEffort": "Le mauvais entretien ou réglage d’une chaudière peut réduire son efficacité. Pour obtenir un rendement maximal, faites vérifier votre équipement de chauffage tous les ans. L’entretien régulier permet d’éviter les sur-consommations. Indispensable pour votre sécurité, la révision annuelle des chaudières à combustion (gaz, fioul, bois) est obligatoire."
+  },
+  "desembouage-chauffage": {
+    "titles": [
+      "Faire désembouer le circuit hydraulique du chauffage régulièrement",
+      "Effectuer un désembouage régulier du circuit hydraulique du chauffage",
+      "Réaliser fréquemment un désembouage du circuit hydraulique du chauffage",
+      "Procéder à un désembouage périodique du circuit hydraulique du chauffage"
+    ],
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "Au fil du temps, la tuyauterie s’oxyde, entraînant la formation de boues et autres sédiments dans le circuit. L’embouage de l’installation nuit à la diffusion de chaleur : cela peut entraîner une perte de la performance allant jusqu’à 40 %.",
+    "sources": "Déclics",
+    "tag": "j-entretiens",
+    "points": 8,
+    "collectiveEffort": "Au fil du temps, la tuyauterie s’oxyde, entraînant la formation de boues et autres sédiments dans le circuit. L’embouage de l’installation nuit à la diffusion de chaleur : cela peut entraîner une perte de la performance allant jusqu’à 40 %."
+  },
+  "ordinateur": {
+    "titles": [
+      "Penser à éteindre l’ordinateur, l’écran et les lumières, et débrancher les chargeurs dès que vous avez fini la journée",
+      "Ne pas oublier d’éteindre votre ordinateur, votre écran et vos lumières ainsi que de débrancher vos chargeurs lorsque vous avez terminé votre journée",
+      "Se rappeler d’éteindre son ordinateur, son écran et ses lumières ainsi que de retirer ses chargeurs une fois sa journée terminée",
+      "N’oubliez pas d’éteindre votre ordinateur, votre écran et vos lumières ainsi que de déconnecter vos chargeurs lorsque vous avez fini votre journée"
+    ],
+    "thanks": "Merci pour votre engagement en faveur de l’économie d’énergie !",
+    "description": "Les appareils en veille consomment de l’électricité même s’ils ne sont pas utilisés. En éteignant complètement les appareils électriques et en débranchant les chargeurs, vous économisez de l'électricité qui aurait été gaspillée. Selon l’ADEME, éteindre les appareils électriques en veille permettrait d’économiser jusqu’à 10 % de la consommation électrique. Le fait de débrancher les chargeurs économise un peu d'électricité et permet surtout d'allonger leur durée de vie.",
+    "sources": "Selectra",
+    "tag": "j-eteins",
+    "points": 8,
+    "collectiveEffort": "Les appareils en veille consomment de l’électricité même s’ils ne sont pas utilisés. En éteignant complètement les appareils électriques et en débranchant les chargeurs, vous économisez de l'électricité qui aurait été gaspillée. Selon l’ADEME, éteindre les appareils électriques en veille permettrait d’économiser jusqu’à 10 % de la consommation électrique. Le fait de débrancher les chargeurs économise un peu d'électricité et permet surtout d'allonger leur durée de vie."
+  },
+  "actions-collectives": {
+    "titles": [
+      "Mettre en place et privilégier des actions collectives de sobriété",
+      "Instaurer et favoriser des initiatives collectives pour réduire sa consommation",
+      "Établir et encourager des actions communes pour une consommation plus sobre",
+      "Créer et promouvoir des démarches collectives pour une consommation plus responsable"
+    ],
+    "thanks": "Merci pour votre engagement en faveur de l’économie d’énergie !",
+    "description": "Cela consiste à mettre en place des organisations collectives favorisant la mutualisation des biens, comme par exemple la location ou le prêt entre voisins plutôt que l’achat lorsque c’est possible. Il existe également des solutions de partage d’équipements, de savoir-faire, de connaissances, et de diverses ressources (auto-partage, bricothèques, médiathèques, etc.)",
+    "sources": "Déclics, Transitions Résilience Grand Lyon blog",
+    "tag": "j-optimise",
+    "points": 8,
+    "collectiveEffort": "Chaque foyer français possède en moyenne 34 objets utilisés moins de 3 fois par an. Un exemple flagrant : une perceuse est utilisée 12 minutes en moyenne dans sa vie ! Appareil à raclette, fer à repasser, aspirateur, escabeau… la liste des objets « pas souvent utiles » est longue et vos voisins ont certainement ce que vous cherchez ! Il existe des solutions simples comme celle consistant à coller sur votre boîte aux lettres des autocollants représentant des objets que vous souhaitez prêter à vos voisins, qui en font de même."
+  },
+  "recuperation-eau-appareils": {
+    "titles": [
+      "Faire installer un système pour récupérer l’eau utilisée par le lave-linge et le sèche-linge et la stocker pour ses toilettes",
+      "Installer un dispositif pour récupérer et stocker l’eau utilisée par le lave-linge et le sèche-linge afin de l’utiliser pour les toilettes",
+      "Mettre en place un système permettant de récupérer l’eau du lave-linge et du sèche-linge et de la conserver pour les toilettes",
+      "Équiper son logement d’un dispositif permettant de récupérer et stocker l’eau du lave-linge et du sèche-linge pour alimenter les toilettes"
+    ],
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "Pour une personne qui va aux toilettes 4 fois par jour, ce sont 38 à 48 litres par jour consommés pour la chasse d'eau uniquement, soit 14 à 17 m³ par an. Utiliser un circuit de récupération permet donc de réduire la consommation d’eau potable et de préserver les ressources en eau douce. Il existe plusieurs systèmes de récupération d’eau de pluie ou d’eau grise qui peuvent être installés chez soi.",
+    "sources": "Selectra, Déclics, mercipourlinfo.com, guide-piscine.fr",
+    "tag": "j-optimise",
+    "points": 8,
+    "collectiveEffort": "Si 50 % des français (soit environ 33 millions de personnes) utilisaient un tel système, cela représenterait une économie totale d’environ 462 à 561 millions de m³ d’eau potable par an. En admettant que seuls les passages aux toilettes effectués chez soi reposent sur ce système (soit à peu près 50 % des passages), l'économie annuelle serait tout de même de 231 à 280 millions de m³ d’eau potable par an, soit l'équivalent de 112 000 piscines olympiques (fun fact, les différents décomptes estiment à un peu plus de 200 le nombre de piscines aux normes olympiques en France)."
+  },
+  "micro-ondes": {
+    "titles": [
+      "Eviter d’utiliser le micro-ondes pour décongeler les aliments",
+      "Ne pas utiliser le micro-ondes pour décongeler les aliments",
+      "Éviter de décongeler les aliments au micro-ondes",
+      "S’abstenir d’utiliser le micro-ondes pour décongeler les aliments"
+    ],
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "Les aliments peuvent se décongeler dans le réfrigérateur. C’est certes moins rapide et il faut s’y prendre à l’avance, mais cela ne consomme aucune énergie supplémentaire... et, en lui donnant du froid, fait même économiser de l’énergie au réfrigérateur !",
+    "sources": "Déclics",
+    "tag": "j-optimise",
+    "points": 8,
+    "collectiveEffort": "Les aliments peuvent se décongeler dans le réfrigérateur. C’est certes moins rapide et il faut s’y prendre à l’avance, mais cela ne consomme aucune énergie supplémentaire... et, en lui donnant du froid, fait même économiser de l’énergie au réfrigérateur !"
+  },
+  "dimensions-frigo": {
+    "titles": [
+      "Dimensionner le réfrigérateur en fonction des besoins",
+      "Choisir un réfrigérateur adapté à ses besoins",
+      "Sélectionner un réfrigérateur en fonction de ses besoins",
+      "Opter pour un réfrigérateur correspondant à ses besoins"
+    ],
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "Les volumes suggérés en fonction du nombre de personnes sont les suivants : 1 personne 100 à 150 L, 2 ou 3 personnes 150 à 250 L, 3 ou 4 personnes 250 à 350 L, plus de 4 personnes 350 à 500 L.",
+    "sources": "Déclics",
+    "tag": "j-optimise",
+    "points": 8,
+    "collectiveEffort": "Les volumes suggérés en fonction du nombre de personnes sont les suivants : 1 personne 100 à 150 L, 2 ou 3 personnes 150 à 250 L, 3 ou 4 personnes 250 à 350 L, plus de 4 personnes 350 à 500 L."
+  },
+  "remplissage-frigo": {
+    "titles": [
+      "Optimiser le remplissage de mes appareils réfrigérants",
+      "Maximiser l’utilisation de l’espace dans les appareils réfrigérants",
+      "Remplir efficacement les appareils réfrigérants",
+      "Utiliser au mieux l’espace disponible dans les appareils réfrigérants"
+    ],
+    "thanks": "Merci pour votre contribution à la réduction de notre consommation d’énergie !",
+    "description": "Moins il y a d'espace vide dans le congélateur, moins il consomme. De nombreux aliments ne nécessitent pas forcément d’être placés au réfrigérateur, et vous pouvez profiter de vos pièces non chauffées en hiver comme lieux de stockage.",
+    "sources": "Déclics",
+    "tag": "j-optimise",
+    "points": 8,
+    "collectiveEffort": "Moins il y a d'espace vide dans le congélateur, moins il consomme. De nombreux aliments ne nécessitent pas forcément d’être placés au réfrigérateur, et vous pouvez profiter de vos pièces non chauffées en hiver comme lieux de stockage."
+  },
+  "recuperation-eau-pluie": {
+    "titles": [
+      "Récupérer et stocker les eaux de pluie et de ruissellement",
+      "Collecter et conserver les eaux de pluie et de ruissellement",
+      "Recueillir et stocker les eaux de pluie et de ruissellement",
+      "Capturer et entreposer les eaux de pluie et de ruissellement"
+    ],
+    "thanks": "Merci pour votre contribution, l'eau est une ressource précieuse !",
+    "description": "Jardinage, usages domestiques ne nécessitant pas d'eau potable (lavage des sols, chasses d'eau, douches si possible, etc.)",
+    "sources": "Déclics",
+    "tag": "j-optimise",
+    "points": 8,
+    "collectiveEffort": "Jardinage, usages domestiques ne nécessitant pas d'eau potable (lavage des sols, chasses d'eau, douches si possible, etc.)"
+  },
+  "douches": {
+    "titles": [
+      "Privilégier les douches rapides aux bains",
+      "Choisir une douche rapide plutôt qu’un bain",
+      "Opter pour une douche rapide au lieu d’un bain",
+      "Préférer une douche rapide à un bain"
+    ],
+    "thanks": "Merci pour votre contribution, l'eau est une ressource précieuse !",
+    "description": "En vous douchant, vous consommez 2 à 4 fois moins d’eau qu’en prenant un bain. Attention toutefois : cette affirmation n’est vraie que pour une douche de 5 minutes ou moins. Pour vous aider, utilisez un sablier.",
+    "sources": "Déclics",
+    "tag": "j-optimise",
+    "points": 8,
+    "collectiveEffort": "En vous douchant, vous consommez 2 à 4 fois moins d’eau qu’en prenant un bain. Attention toutefois : cette affirmation n’est vraie que pour une douche de 5 minutes ou moins. Pour vous aider, utilisez un sablier."
+  },
+  "chaudiere-thermostat": {
+    "titles": [
+      "Relier la chaudière au thermostat d’ambiance",
+      "Connecter la chaudière au thermostat d’ambiance",
+      "Raccorder la chaudière au thermostat d’ambiance",
+      "Brancher la chaudière sur le thermostat d’ambiance"
+    ],
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "La majorité des circulateurs de chaudière individuelle tourne 24h/24 pendant la saison de chauffe, voire même en été. Les asservir (régulation automatique par le thermostat) permet d’économiser en moyenne 230 kWh/an (soit jusqu’à 25 €). Demandez à votre chauffagiste de vérifier si votre chaudière est bien asservie au thermostat d’ambiance lors de sa visite annuelle.",
+    "sources": "Déclics",
+    "tag": "j-optimise",
+    "points": 8,
+    "collectiveEffort": "La majorité des circulateurs de chaudière individuelle tourne 24h/24 pendant la saison de chauffe, voire même en été. Les asservir (régulation automatique par le thermostat) permet d’économiser en moyenne 230 kWh/an (soit jusqu’à 25 €). Demandez à votre chauffagiste de vérifier si votre chaudière est bien asservie au thermostat d’ambiance lors de sa visite annuelle."
+  },
+  "analyse-compteur": {
+    "titles": [
+      "Repérer, analyser et lisser ses fortes consommations avec les données de consommations d’énergie envoyées par les compteurs communicants Linky et Gazpar",
+      "Utiliser les données des compteurs Linky et Gazpar pour identifier, analyser et réguler ses pics de consommation d’énergie",
+      "Suivre ses consommations d’énergie grâce aux données des compteurs Linky et Gazpar pour repérer, comprendre et lisser ses fortes consommations",
+      "Exploiter les données des compteurs Linky et Gazpar pour détecter, étudier et équilibrer ses consommations d’énergie importantes"
+    ],
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "Les compteurs communicants Linky et Gazpar permettent de suivre sa consommation d’énergie en temps réel et de recevoir des alertes en cas de surconsommation. Ils peuvent également aider à identifier les appareils énergivores et à ajuster leur utilisation pour économiser de l’énergie.",
+    "sources": "Selectra",
+    "tag": "je-baisse",
+    "points": 8,
+    "collectiveEffort": "Les compteurs communicants Linky et Gazpar permettent de suivre sa consommation d’énergie en temps réel et de recevoir des alertes en cas de surconsommation. Ils peuvent également aider à identifier les appareils énergivores et à ajuster leur utilisation pour économiser de l’énergie."
+  },
+  "classe-energie-cuisine": {
+    "titles": [
+      "Vérifier la classe de consommation de vos équipements de cuisine pour opter pour le plus économe à l’achat",
+      "Contrôler la classe énergétique de vos appareils de cuisine avant l’achat pour choisir le plus économique",
+      "Vérifier l’efficacité énergétique de vos équipements de cuisine avant de les acheter pour privilégier les plus économes",
+      "Examiner la classe de consommation d’énergie de vos appareils de cuisine avant l’achat pour opter pour les plus performants"
+    ],
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "Par exemple, un four de classe A+++ permet de réduire la consommation d'énergie de plus de 70 % par rapport à un four classé C. De plus, les plaques à induction sont 40 % moins énergivores que les plaques en fonte.",
+    "sources": "Selectra",
+    "tag": "je-baisse",
+    "points": 8,
+    "collectiveEffort": "Par exemple, un four de classe A+++ permet de réduire la consommation d'énergie de plus de 70 % par rapport à un four classé C. De plus, les plaques à induction sont 40 % moins énergivores que les plaques en fonte."
+  },
+  "climatisation": {
+    "titles": [
+      "Limiter l’utilisation de la climatisation pour prioriser le ventilateur si possible, ou optimiser la température",
+      "Réduire l’usage de la climatisation en privilégiant le ventilateur si possible, ou en ajustant la température",
+      "Minimiser l’utilisation de la climatisation en favorisant le ventilateur si possible, ou en réglant la température",
+      "Diminuer l’usage de la climatisation en optant pour le ventilateur si possible, ou en optimisant la température"
+    ],
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "Limiter l’utilisation de la climatisation pour prioriser le ventilateur est un écogeste qui permet de réduire la consommation d’énergie et donc de limiter les émissions de gaz à effet de serre. En effet, la climatisation est un équipement énergivore qui consomme beaucoup d’électricité et qui contribue à l’augmentation de la température globale. En revanche, le ventilateur est un équipement moins énergivore qui permet de rafraîchir l’air ambiant en créant un courant d’air. Il est donc recommandé d’utiliser le ventilateur en priorité si possible. Si vous devez utiliser la climatisation, il est conseillé d’optimiser la température en la réglant à 26 °C pour limiter la consommation d’énergie.",
+    "sources": "Selectra",
+    "tag": "je-baisse",
+    "points": 8,
+    "collectiveEffort": "A l'usage, les ventilateurs sont moins énergivores que la climatisation et doivent être utilisés en priorité. Il est également recommandé de ne pas mettre en fonctionnement la climatisation lorsque des appareils qui chauffent la pièce (comme le four) sont utilisés. Dans le cas d'un usage nécessaire de la climatisation, il est recommandé de ne pas régler celle-ci sous 26 °C qui constitue une température de confort optimale."
+  },
+  "taille-tv": {
+    "titles": [
+      "Ne pas voir trop grand lors du choix d’un nouveau téléviseur",
+      "Choisir un téléviseur de taille raisonnable lors de l’achat d’un nouvel appareil",
+      "Opter pour un téléviseur de dimensions modestes lors du renouvellement de son équipement",
+      "Privilégier un téléviseur de taille modérée lors de l’acquisition d’un nouvel appareil"
+    ],
+    "thanks": "Merci pour votre contribution à la réduction de notre consommation d’énergie et de matière !",
+    "description": "Fiez-vous à l’étiquette énergie pour choisir votre nouveau téléviseur. Attention à ne pas choisir un écran trop grand : plus sa taille est importante, plus la TV consomme de l’énergie. Idéalement, privilégiez l'occasion ou le reconditionné.",
+    "sources": "Déclics",
+    "tag": "je-baisse",
+    "points": 8,
+    "collectiveEffort": "Fiez-vous à l’étiquette énergie pour choisir votre nouveau téléviseur. Attention à ne pas choisir un écran trop grand : plus sa taille est importante, plus la TV consomme de l’énergie. Idéalement, privilégiez l'occasion ou le reconditionné."
+  },
+  "seche-linge": {
+    "titles": [
+      "Limiter l’utilisation du sèche-linge",
+      "Réduire l’usage du sèche-linge",
+      "Utiliser le sèche-linge avec parcimonie",
+      "Éviter autant que possible l’utilisation du sèche-linge"
+    ],
+    "thanks": "Merci pour votre contribution à la réduction de notre consommation d’énergie !",
+    "description": "La façon la plus économe de faire sécher le linge est de l’étendre à l’air libre.",
+    "sources": "Déclics",
+    "tag": "je-baisse",
+    "points": 8,
+    "collectiveEffort": "La façon la plus économe de faire sécher le linge est de l’étendre à l’air libre."
+  },
+  "radiateur-appoint": {
+    "titles": [
+      "Éviter les radiateurs d’appoint, ou s’ils sont nécessaires, éviter les appareils à combustion",
+      "Ne pas utiliser de radiateurs d’appoint, ou si c’est indispensable, choisir des appareils sans combustion",
+      "Éviter les chauffages d’appoint, ou si c’est nécessaire, privilégier les appareils sans combustion",
+      "S’abstenir d’utiliser des radiateurs d’appoint, ou si c’est inévitable, opter pour des appareils sans combustion"
+    ],
+    "thanks": "Merci pour votre engagement en faveur de l’économie d’énergie !",
+    "description": "Si vous avez besoin d’un chauffage d’appoint, un radiateur électrique rayonnant ou à bain d’huile est préférable aux appareils à combustibles d’appoint (pétrole ou gaz) : ces derniers sont plus chers à l’usage, plus dangereux (monoxyde de carbone, incendie) et moins bon pour la qualité de l’air de votre logement (résidus imbrûlés).",
+    "sources": "Déclics",
+    "tag": "je-baisse",
+    "points": 8,
+    "collectiveEffort": "Si vous avez besoin d’un chauffage d’appoint, un radiateur électrique rayonnant ou à bain d’huile est préférable aux appareils à combustibles d’appoint (pétrole ou gaz) : ces derniers sont plus chers à l’usage, plus dangereux (monoxydes de carbones, incendie) et moins bon pour la qualité de l’air de votre logement (résidus imbrûlés)."
+  },
+  "chasse-eau-double-flux": {
+    "titles": [
+      "Installer une chasse d’eau à double flux",
+      "Équiper ses toilettes d’une chasse d’eau à double débit et si possible la relier à un système de récupération d’eau de pluie ou d’eau grise (cuisine, douche)",
+      "Mettre en place une chasse d’eau à double commande et idéalement la connecter à un dispositif de récupération d’eau de pluie ou d’eau grise (cuisine, douche)",
+      "Ajouter une chasse d’eau à double flux aux toilettes et si possible la raccorder à un système de récupération d’eau de pluie ou d’eau grise (cuisine, douche)"
+    ],
+    "thanks": "Merci pour votre contribution, l'eau est une ressource précieuse !",
+    "description": "Dans l’idéal, je la relie à mon dispositif de récupération d’eau de pluie ou d’eau grise (cuisine, douche). À défaut, il est possible de réduire le volume de la chasse d’eau grâce à une éco-plaquette ou à une bouteille d’eau pleine placée dans le réservoir.",
+    "sources": "Déclics",
+    "tag": "je-baisse",
+    "points": 8,
+    "collectiveEffort": "Dans l’idéal, je la relie à mon dispositif de récupération d’eau de pluie ou d’eau grise (cuisine, douche). À défaut, il est possible de réduire le volume de la chasse d’eau grâce à une éco-plaquette ou à une bouteille d’eau pleine placée dans le réservoir."
+  },
+  "chauffe-eau": {
+    "titles": [
+      "Régler la température du chauffe-eau entre 55 et 60 °C",
+      "Ajuster la température du chauffe-eau entre 55 et 60 degrés Celsius",
+      "Configurer la température du chauffe-eau entre 55 et 60 degrés Celsius",
+      "Définir la température du chauffe-eau entre 55 et 60 degrés Celsius"
+    ],
+    "thanks": "Merci pour votre contribution, chaque geste compte !",
+    "description": "Cela suffit à limiter le développement de bactéries pathogènes et évite un entartrage trop rapide de l’appareil tout en économisant de l'énergie.",
+    "sources": "Déclics",
+    "tag": "je-baisse",
+    "points": 8,
+    "collectiveEffort": "Cela suffit à limiter le développement de bactéries pathogènes et évite un entartrage trop rapide de l’appareil."
+  }
 }
